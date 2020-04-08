@@ -1,17 +1,37 @@
+// src/index.js
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+// Styled-components
+import styled, { ThemeProvider } from 'styled-components';
+// Pages
+import AppPage from './components/page/AppPage';
+// import NotFoundPage from 'components/page/NotFoundPage';
+// UI components
+// import Header from 'components/ui/Header';
+// Constants
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const globalNavigationBar = (
+  <Wrapper>
+    <Router>
+      {/* Header */}
+      {/* <Header /> */}
+
+      {/* Content */}
+      <Switch>
+          <Route exact path='/' component={AppPage} />
+          {/* <Route component={NotFoundPage} /> */}
+      </Switch>
+    </Router>
+  </Wrapper>
+)
+
+ReactDOM.render(globalNavigationBar, document.getElementById('root'));
