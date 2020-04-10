@@ -4,9 +4,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 // Styled-components
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 // Pages
 import AppPage from './components/page/AppPage';
+import QuizPage from './components/page/QuizPage';
 // import NotFoundPage from 'components/page/NotFoundPage';
 // Constants
 
@@ -23,6 +24,7 @@ const globalNavigationBar = (
       {/* Content */}
       <Switch>
           <Route exact path='/' component={AppPage} />
+          <Route path='/quiz' component={QuizPage} />
           {/* <Route component={NotFoundPage} /> */}
       </Switch>
     </Router>
