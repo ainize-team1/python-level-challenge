@@ -10,7 +10,6 @@ const Wrapper = styled.div`
 `;
 
 const InfoText = styled.div`
-    margin-top: ${props => props.marginTop || 0}px;
     font-family: Roboto;
     font-size: 14px;
     line-height: 1.71;
