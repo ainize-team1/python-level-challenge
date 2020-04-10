@@ -15,7 +15,7 @@ const InfoText = styled.div`
     font-size: 14px;
     line-height: 1.71;
     text-align: center;
-    color: ${props => props.theme[props.color] || props.theme.GREY};
+    color: #ffffff;
 `;
 
 class AppPage extends React.Component {
