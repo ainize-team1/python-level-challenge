@@ -28,13 +28,17 @@ const CountText = styled.div`
     color: #f2f2f2;
 `;
 
-const InfoText = styled.div`
-    margin-top: ${props => props.marginTop || 0}px;
-    font-family: Roboto;
-    font-size: 14px;
-    line-height: 1.71;
-    text-align: center;
-    color: #ffffff;
+const SubjectText = styled.div`
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 42px;
+    letter-spacing: 0.15px;
+    background: linear-gradient(to right, #AD1DF0 0%, #FF8C25 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    margin-bottom: 24px;
 `;
 
 class Questionboard extends React.Component {
@@ -57,9 +61,9 @@ class Questionboard extends React.Component {
                         {`${count + 1}/10`}
                     </CountText>
                 </Header>
-                <InfoText marginTop={20}>
+                <SubjectText>
                     {`${questions[count].Subject}`}
-                </InfoText>
+                </SubjectText>
             </Wrapper>
         );
     }
