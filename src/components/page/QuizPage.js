@@ -11,7 +11,6 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: 360px;
-    background-color: #123123;
 `;
 
 class Quiz extends React.Component {
