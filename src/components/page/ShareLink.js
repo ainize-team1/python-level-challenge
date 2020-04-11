@@ -1,6 +1,8 @@
 
 import React from 'react';
 import Toast from 'light-toast'
+import {FaLink,FaFacebook} from 'react-icons/fa'
+import {AiFillTwitterCircle} from 'react-icons/ai'
 class ShareLink extends React.Component {
     constructor() {
         super();
@@ -16,8 +18,8 @@ class ShareLink extends React.Component {
     render(){
         return(
             <>  <div style={{display:"flex"}}>
-                    <div>F.... </div>
-                    <div>T.... </div>
+                    <div style={{marginRight:"15px"}}><FaFacebook size={32}/></div>
+                    <div style={{marginRight:"15px"}}><AiFillTwitterCircle size={35.5}/></div>
                     <div onClick={() => {
                         Toast.info('URL copied to clipboard', 500, () => {
                             // do something after the toast disappears
@@ -30,7 +32,7 @@ class ShareLink extends React.Component {
                             document.execCommand('copy');
                             document.body.removeChild(dummy);
                         });
-                    }}>L... </div>
+                    }}style={{marginTop:"5px"}}><FaLink size={25}/> </div>
                 </div>
             </>
         )
