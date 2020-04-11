@@ -7,6 +7,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 // Pages
 import AppPage from './components/page/AppPage';
+import Result from './components/page/Result';
 // import NotFoundPage from 'components/page/NotFoundPage';
 // UI components
 // import Header from 'components/ui/Header';
@@ -28,6 +29,7 @@ const globalNavigationBar = (
       {/* Content */}
       <Switch>
           <Route exact path='/' component={AppPage} />
+          <Route path='/result' component={Result} />
           {/* <Route component={NotFoundPage} /> */}
       </Switch>
     </Router>
