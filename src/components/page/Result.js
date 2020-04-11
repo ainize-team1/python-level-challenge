@@ -1,52 +1,56 @@
 import React from 'react';
 import styled from 'styled-components';
+import _ from 'underscore'
 
 import resultList from '../api/resultList'
+import {GradationButton} from '../utils/Buttons.js'
+import {GradationText} from '../utils/Texts.js'
+import Answers from './Answers'
 
 const TitleText = styled.div`
     margin-top: ${props => props.marginTop || 0}px;
     font-family: Roboto;
-    font-size: 15px;
+    font-size: 10px;
     line-height: 1.71;
     text-align: center;
-    color: ${props => props.theme[props.color] || props.theme.GREY};
+    color: white;
 `;
-
-const GradationButton = styled.button`
-  padding: 0.375rem 0.75rem;
-  font-size: 0.75rem;
-  line-height: 1.5;
-  margin: 5px;
-  width: 100%;
-  max-width: 400px;
-  font-weight: 500;
-  background: #ef4e28;
-  background: linear-gradient(to right, #ef4e28 0%, #ec6d28 21%, #f7a358 74%, #f7c158 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;  
-
-  border: 3px solid transparent;
-  border-image: linear-gradient(to right, #ef4e28 0%, #ec6d28 21%, #f7a358 74%, #f7c158 100%);
-  border-image-slice: 1;
-  border-radius: 0.5rem;
-  
-`
+const imageStyle = {
+    maxHeight:"400px",
+    maxWidth:"300px",
+    width:"90%",
+    height:"100%"
+}
 class Result extends React.Component {
     constructor() {
         super();
 
         this.state = {
+            title: "",
+            description:"",
+            imgsrc:"",
+            
+            
         };
     }
-    
-
+    componentDidMount(){
+        const result = _.sample(resultList[this.props.score||0])
+        this.setState({
+        })
+    }
     render() {
         return (<>
-                <TitleText marginTop={10} >
+                <TitleText marginTop={10}>
                     Your level is
                 </TitleText>
-                <div>
+                <GradationText fontSize={1.5} fontWeight= {"bold"}>
                     {resultList[0][0].name}
+                </GradationText >
+                {/* TODO 
+                - ADD percents
+                */}
+                <div style={{color:"grey", fontSize:"5px", margin:"5px"}}>
+                    Score: {this.props.socre||0}/10
                 </div>
                 {/* 
                     TODO(DONGCHEOL)
@@ -54,13 +58,13 @@ class Result extends React.Component {
                     - show percent
                     - add style description, title, image, button
                 */}
-                <img src={resultList[0][0].imgSrc} style={{width:"100%",height:"100%"}}></img>
-                <div>
+                <img src={resultList[0][0].imgSrc} style={imageStyle}></img>
+                <div style= {{color : "white", fontSize: "0.5rem", width: "90%", textAlign:"center" }}>
                     {resultList[0][0].description}
                 </div>
-                <GradationButton color="white">
-                    Flex Now
-                </GradationButton>
+                <GradationText fontSize={0.7}>
+                    Flex your level
+                </GradationText>
 
                 {/* TODO 
                 Share Link
@@ -72,15 +76,8 @@ class Result extends React.Component {
                 <GradationButton color="white">
                     Discuss the quiz with others
                 </GradationButton>
-                see your answers
-                {/* 
-                    TODO (DONGCHEOL)
-                    How to show my answers??
-                    - see your ansers
-                */}
-
-
-
+                
+                <Answers answersList={[1,2]}></Answers>
 
                 </>
         );
