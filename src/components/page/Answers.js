@@ -13,13 +13,13 @@ class Answers extends React.Component {
         else this.setState({clicked: true})
     }
     render() {
-        const renderedList = this.props.answersList.map((answer) =>{
-            return <div>answer</div>;
+        const renderedList = this.props.answersList.map((answer,index) =>{
+            return <div key={index}>answer</div>;
         });
     
         return (<>
         
-            <button onClick={ this.onClick} style={{color :"lightgrey", fontSize : "10px"}}> See your answers  {this.state.clicked ? "▲":"▼"}</button>
+            <div onClick={ this.onClick} style={{color :"grey", fontSize : "10px"}}> {this.state.clicked ? "Hide your answers ▲":"See your answers ▼"}</div>
             {this.state.clicked ? renderedList: ""}
             
             </>
