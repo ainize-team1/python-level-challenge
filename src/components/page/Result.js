@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import _ from 'underscore'
 
 import resultList from '../api/resultList'
