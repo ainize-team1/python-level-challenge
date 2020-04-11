@@ -9,8 +9,6 @@ import styled, { ThemeProvider } from 'styled-components';
 import AppPage from './components/page/AppPage';
 import Result from './components/page/Result';
 // import NotFoundPage from 'components/page/NotFoundPage';
-// UI components
-// import Header from 'components/ui/Header';
 // Constants
 
 const Wrapper = styled.div`
@@ -23,9 +21,6 @@ const Wrapper = styled.div`
 const globalNavigationBar = (
   <Wrapper>
     <Router>
-      {/* Header */}
-      {/* <Header /> */}
-
       {/* Content */}
       <Switch>
           <Route exact path='/' component={AppPage} />
