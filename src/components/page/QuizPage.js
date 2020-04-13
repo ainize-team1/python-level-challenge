@@ -24,7 +24,8 @@ class Quiz extends React.Component {
     render() {
         return (
             <Wrapper>
-                <QuestionBoard questions={_.sampleSize(questions, 3)} />
+                {/* TODO: more languages will be supported. */}
+                <QuestionBoard questions={_.sampleSize(questions, 3)} language='python' />
             </Wrapper>
         );
     }

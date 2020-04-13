@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { tomorrowNight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const Wrapper = styled.div`
     width: 100%;
@@ -50,7 +52,6 @@ const QuestionText = styled.div`
     line-height: 21px;
     letter-spacing: 0.15px;
     color: #f2f2f2;
-    margin-bottom: 24px;
 `;
 
 class Questionboard extends React.Component {
@@ -64,7 +65,7 @@ class Questionboard extends React.Component {
 
     render() {
         const { count } = this.state;
-        const { questions } = this.props;
+        const { questions, language } = this.props;
 
         return (
             <Wrapper>
@@ -79,6 +80,9 @@ class Questionboard extends React.Component {
                 <QuestionText marginLeft={24}>
                     {`${questions[count].Question}`}
                 </QuestionText>
+                {language && <SyntaxHighlighter language={language} style={tomorrowNight}>
+                    {questions[count].Code}
+                </SyntaxHighlighter>}
             </Wrapper>
         );
     }
