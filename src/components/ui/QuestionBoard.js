@@ -7,6 +7,7 @@ const Wrapper = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
+    background-color: #123123;
 `;
 
 const Header = styled.div`
@@ -54,6 +55,26 @@ const QuestionText = styled.div`
     color: #f2f2f2;
 `;
 
+const AnswerButton = styled.button`
+    width: 312px;
+    height: 45px;
+    margin-top: 16px;
+    border-radius: 4px;
+    outline: none;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    transition: background-color 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s;
+    :hover {
+        background-color: #ae78f1;
+    }
+    :active {
+        background-color: #612ba5;
+    }
+`;
+
 class Questionboard extends React.Component {
     constructor() {
         super();
@@ -83,6 +104,15 @@ class Questionboard extends React.Component {
                 {language && <SyntaxHighlighter language={language} style={tomorrowNight}>
                     {questions[count].Code}
                 </SyntaxHighlighter>}
+                {questions[count].Answers.map((answer, i) => {
+                    if (answer) {
+                        return (
+                            <AnswerButton key={`button${i}`}
+                                onClick={this.doSearch}>
+                            </AnswerButton>
+                        )
+                    }
+                })}
             </Wrapper>
         );
     }
