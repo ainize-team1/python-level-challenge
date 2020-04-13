@@ -1,11 +1,13 @@
 import React from 'react';
-import _ from 'underscore'
+import _ from 'underscore';
 
-import resultList from '../api/resultList'
-import {GradationButton} from '../utils/Buttons.js'
-import {GradationText} from '../utils/Texts.js'
-import ShareLink from './ShareLink'
-import Answers from './Answers'
+import resultList from '../../static/json/resultList.js';
+
+import ShareLink from '../ui/ShareLink';
+import Answers from '../ui/Answers';
+
+import { GradationButton } from '../ui/button/Buttons.js';
+import { GradationText } from '../ui/text/Texts.js';
 
 const imageStyle = {
     maxHeight:"400px",
@@ -21,8 +23,6 @@ class Result extends React.Component {
             title: "",
             description:"",
             imgsrc:"",
-            
-            
         };
     }
      

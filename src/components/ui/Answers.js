@@ -1,5 +1,5 @@
 import React from 'react';
-import Answer from '../utils/Answer'
+import Answer from './Answer'
 
 
 class Answers extends React.Component {
