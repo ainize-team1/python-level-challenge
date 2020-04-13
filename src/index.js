@@ -7,7 +7,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 // Pages
 import AppPage from './components/page/AppPage';
-import Result from './components/page/Result';
+import Result from './components/page/ResultPage';
 import QuizPage from './components/page/QuizPage';
 // import NotFoundPage from 'components/page/NotFoundPage';
 // Constants

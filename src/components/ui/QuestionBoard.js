@@ -95,15 +95,19 @@ class Questionboard extends React.Component {
                         {`${count + 1}/10`}
                     </CountText>
                 </Header>
+
                 <SubjectText marginLeft={24}>
                     {`${questions[count].Subject}`}
                 </SubjectText>
+
                 <QuestionText marginLeft={24}>
                     {`${questions[count].Question}`}
                 </QuestionText>
+
                 {language && <SyntaxHighlighter language={language} style={tomorrowNight}>
                     {questions[count].Code}
                 </SyntaxHighlighter>}
+
                 {questions[count].Answers.map((answer, i) => {
                     if (answer) {
                         return (

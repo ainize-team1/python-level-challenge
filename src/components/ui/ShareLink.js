@@ -1,8 +1,9 @@
 
 import React from 'react';
-import Toast from 'light-toast'
-import {FaLink,FaFacebook} from 'react-icons/fa'
-import {AiFillTwitterCircle} from 'react-icons/ai'
+import Toast from 'light-toast';
+import { FaLink, FaFacebook } from 'react-icons/fa';
+import { AiFillTwitterCircle } from 'react-icons/ai';
+
 class ShareLink extends React.Component {
     constructor() {
         super();
