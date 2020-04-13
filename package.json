@@ -8,11 +8,13 @@
     "@testing-library/user-event": "^7.1.2",
     "express": "^4.17.1",
     "light-toast": "^0.2.3",
+    "lodash": "^4.17.15",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.9.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
+    "react-syntax-highlighter": "^12.2.1",
     "styled-components": "^5.1.0",
     "underscore": "^1.10.2"
   },
