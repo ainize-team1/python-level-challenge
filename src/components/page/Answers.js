@@ -1,4 +1,7 @@
 import React from 'react';
+import Answer from '../utils/Answer'
+
+
 class Answers extends React.Component {
     constructor() {
         super();
@@ -14,12 +17,14 @@ class Answers extends React.Component {
     }
     render() {
         const renderedList = this.props.answersList.map((answer,index) =>{
-            return <div key={index}>answer</div>;
+            return (
+                    <Answer key={index} index={index+1} answer={answer}/>
+            );
         });
     
         return (<>
         
-            <div onClick={ this.onClick} style={{color :"grey", fontSize : "10px"}}> {this.state.clicked ? "Hide your answers ▲":"See your answers ▼"}</div>
+            <div onClick={ this.onClick} style={{color :"grey", fontSize : "10px", paddingBottom : "7px"}}> {this.state.clicked ? "Hide your answers ▲":"See your answers ▼"}</div>
             {this.state.clicked ? renderedList: ""}
             
             </>
