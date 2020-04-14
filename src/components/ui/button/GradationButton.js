@@ -10,12 +10,12 @@ const GradationButton = styled.button`
   max-width: 300px;
   font-weight: 500;
   background: #ef4e28;
-  background: linear-gradient(to right, #cb60b3 0%, #f2513c 100%);
+  background: linear-gradient(to right, #6f00cc 0%, #f2513c 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;  
 
   border: 1px solid transparent;
-  border-image: linear-gradient(to right, #cb60b3 0%, #f2513c 100%);
+  border-image: linear-gradient(to right, #6f00cc 0%, #f2513c 100%);
   border-image-slice: 1;
   border-radius: 0.5rem;
 `;
