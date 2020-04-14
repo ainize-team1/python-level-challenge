@@ -1,112 +1,155 @@
 [
     {
-        "Subject": "Test Subject",
-        "Question": "0 Test question?",
-        "Code": "print('tesT')",
+        "id":1,
+        "Subject": "",
+        "Question": "What is the output of the following code?",
+        "Code": "def add_some(data=[]):\ndata.append('1')\nreturn data\nadd_some()\nadd_some()\nprint(add_some())",
         "Answers": [
-            "What",
-            "Is",
-            "The",
-            "Answer"
+            "[1,1,1]",
+            "[1]",
+            "[]"
         ]
     },
     {
+        "id":2,
         "Subject": "Test Subject",
-        "Question": "1 Test question?",
-        "Code": "print('tesT')",
+        "Question": "What is the output of the following code?",
+        "Code": "x = 100\ndef foo():\nprint(x)\\nx += 1\nfoo()",
         "Answers": [
-            "What",
-            "Is",
-            "The",
-            "Answer"
+            "NameError: name 'x' is not defined",
+            "UnboundLocalError: local variable 'x' referenced before assignment",
+            "100",
+            "None"
         ]
     },
     {
+        "id":3,
         "Subject": "Test Subject",
-        "Question": "2 Test question?",
-        "Code": "print('tesT')",
+        "Question": "What is the output of the following code? ",
+        "Code": "x=1\ny=5\nprint(++x*(--y))",
         "Answers": [
-            "What",
-            "Is",
-            "The",
-            "Answer"
+            "5",
+            "10",
+            "4",
+            "SyntaxError: invalid syntax"
         ]
     },
     {
+        "id":4,
         "Subject": "Test Subject",
-        "Question": "3 Test question?",
-        "Code": "print('tesT')",
+        "Question": "What is the output of the following code? ",
+        "Code": "print(bool([]), bool(None), bool(''))",
         "Answers": [
-            "What",
-            "Is",
-            "The",
-            "Answer"
+            "True True True",
+            "True False False",
+            "False False True",
+            "False False False"
         ]
     },
     {
+        "id":5,
         "Subject": "Test Subject",
-        "Question": "4 Test question?",
-        "Code": "print('tesT')",
+        "Question": "In Python 3, the maximum value for an integer is 2^63 - 1",
+        "Code": "",
         "Answers": [
-            "What",
-            "Is",
-            "The",
-            "Answer"
+            "True",
+            "False"
         ]
     },
     {
+        "id":6,
         "Subject": "Test Subject",
-        "Question": "5 Test question?",
-        "Code": "print('tesT')",
+        "Question": "Which of the following statements is true?",
+        "Code": "",
         "Answers": [
-            "What",
-            "Is",
-            "The",
-            "Answer"
+            "Comments are for programmers for better understanding of the program.",
+            "Python Interpreter ignores comment.",
+            "All of the above"
         ]
     },
     {
+        "id":7,
         "Subject": "Test Subject",
-        "Question": "6 Test question?",
-        "Code": "print('tesT')",
+        "Question": "Which of the following is correct?",
+        "Code": "",
         "Answers": [
-            "What",
-            "Is",
-            "The",
-            "Answer"
+            "Variable name can start with an underscore.",
+            "Variable name can start with a digit.",
+            "Keywords cannot be used as a variable name.",
+            "Variable name can have symbols like: @, #, $ etc."
         ]
     },
     {
+        "id":8,
         "Subject": "Test Subject",
-        "Question": "7 Test question?",
-        "Code": "print('tesT')",
+        "Question": "Which of the following is type n ? ",
+        "Code": "n = '5'",
         "Answers": [
-            "What",
-            "Is",
-            "The",
-            "Answer"
+            "Integer",
+            "string",
+            "tuple",
+            "operatore"
         ]
     },
     {
+        "id":9,
         "Subject": "Test Subject",
-        "Question": "8 Test question?",
-        "Code": "print('tesT')",
+        "Question": "What is the output of the following code? ",
+        "Code": "print(1, 2, 3, 4, sep='*')",
         "Answers": [
-            "What",
-            "Is",
-            "The",
-            "Answer"
+            "1 2 3 4",
+            "1234",
+            "1*2*3*4",
+            "24"
         ]
     },
     {
+        "id":10,
         "Subject": "Test Subject",
-        "Question": "9 Test question?",
-        "Code": "print('tesT')",
+        "Question": "What is used to take input from the user in Python?",
+        "Code": "",
         "Answers": [
-            "What",
-            "Is",
-            "The",
-            "Answer"
+            "cin",
+            "scanf",
+            "input",
+            "<>"
         ]
+    },
+    {
+        "id":11,
+        "Subject": "Test Subject",
+        "Question": "Can we use the “else” clause for loops?",
+        "Code": "",
+        "Answers": [
+            "No",
+            "Yes"
+        ],
+        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/"
+    },
+    {
+        "id":12,
+        "Subject": "Test Subject",
+        "Question": "Which operator has higher precedence in the following list",
+        "Code": "",
+        "Answers": [
+            "% Modulus",
+            "& BitWise AND",
+            "**, Exponent",
+            "> Comparison"
+        ],
+        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/"
+    },
+    {
+        "id":13,
+        "Subject": "Test Subject",
+        "Question": "What is the output of the following",
+        "Code": "x= 36/4 *(3+2) * 4 + 2 \n print(x)",
+        "Answers": [
+            "182",
+            "37",
+            "117",
+            "The Program executed with errors"
+        ],
+        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/"
     }
 ]

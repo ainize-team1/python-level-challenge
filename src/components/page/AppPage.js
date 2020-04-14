@@ -1,20 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
+import GradationText from '../ui/text/GradationText.js';
+import NormalText from '../ui/text/NormalText';
+import FilledGradationButton from '../ui/button/FilledGradationButton';
 
 const Wrapper = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 80px 0;
+    background-color: #333333;
 `;
 
-const InfoText = styled.div`
-    font-family: Roboto;
-    font-size: 14px;
-    line-height: 1.71;
-    text-align: center;
-    color: #ffffff;
+const Background = styled.div`
+    width: 100%;
+    background-image: url('./intro_background.png;
+    background-position: 'center';
+    background-size: 'cover';
+    background-repeat: 'no-repeat';
 `;
 
 class AppPage extends React.Component {
@@ -28,9 +31,13 @@ class AppPage extends React.Component {
     render() {
         return (
             <Wrapper>
-                <InfoText marginTop={20}>
-                    {'test'}
-                </InfoText>
+                {/* TODO: Background Image */}
+                <GradationText style= {{marginTop:"56px"}} fontSize={2.6} fontWeight={'bold'}>PythonQuizFlex</GradationText>
+                <NormalText style= {{marginTop:"24px", fontSize:"16px"}}>
+                    Challenge and brag your<br/>
+                    python language level
+                </NormalText>
+                <FilledGradationButton onClick={()=>window.location.href = '/quiz'}>Start a Quiz</FilledGradationButton>
             </Wrapper>
         );
     }
