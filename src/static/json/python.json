@@ -1,8 +1,8 @@
 [
     {
-        "id":1,
+        "Id": 1,
         "Subject": "Data Type",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "Which of these collections defines a LIST?",
         "Code": "",
         "Answers": [
@@ -11,12 +11,12 @@
             "{\"name\": \"apple\", \"color\": \"green\"}",
             "[\"apple\", \"banana\", \"cherry\"]"
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     },
     {
-        "id":2,
+        "Id": 2,
         "Subject": "Data Type",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "Which of these collections defines a TUPLE?",
         "Code": "",
         "Answers": [
@@ -25,12 +25,12 @@
             "{\"name\": \"apple\", \"color\": \"green\"}",
             "[\"apple\", \"banana\", \"cherry\"]"
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     },
     {
-        "id":3,
+        "Id": 3,
         "Subject": "Data Type",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "Which of these collections defines a SET?",
         "Code": "",
         "Answers": [
@@ -39,12 +39,12 @@
             "{\"name\": \"apple\", \"color\": \"green\"}",
             "[\"apple\", \"banana\", \"cherry\"]"
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     },
     {
-        "id":4,
+        "Id": 4,
         "Subject": "Data Type",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "Which of these collections defines a DICTIONARY?",
         "Code": "",
         "Answers": [
@@ -53,24 +53,24 @@
             "{\"name\": \"apple\", \"color\": \"green\"}",
             "[\"apple\", \"banana\", \"cherry\"]"
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     },
     {
-        "id":5,
+        "Id": 5,
         "Subject": "Data Type",
-        "diff": 1,
+        "Difficulty": 1,
         "Question": "In Python 3, the maximum value for an integer is 2^63 - 1",
         "Code": "",
         "Answers": [
             "True",
             "False"
         ],
-        "Ref": "https://realpython.com/"
+        "Reference": "https://realpython.com/"
     },
     {
-        "id":6,
+        "Id": 6,
         "Subject": "Comment",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "Which of the following statements is true?",
         "Code": "",
         "Answers": [
@@ -78,12 +78,12 @@
             "Python Interpreter ignores comment.",
             "All of the above"
         ],
-        "Ref": "https://www.programiz.com/python-programming/quiz"
+        "Reference": "https://www.programiz.com/python-programming/quiz"
     },
     {
-        "id":7,
+        "Id": 7,
         "Subject": "Variable",
-        "diff": 1,
+        "Difficulty": 1,
         "Question": "Which of the following is correct?",
         "Code": "",
         "Answers": [
@@ -92,12 +92,12 @@
             "Keywords cannot be used as a variable name.",
             "Variable name can have symbols like: @, #, $ etc."
         ],
-        "Ref": "https://www.programiz.com/python-programming/quiz"
+        "Reference": "https://www.programiz.com/python-programming/quiz"
     },
     {
-        "id":8,
+        "Id": 8,
         "Subject": "Data Type",
-        "diff": 1,
+        "Difficulty": 1,
         "Question": "Which of the following is type n ? ",
         "Code": "n = '5'",
         "Answers": [
@@ -106,12 +106,12 @@
             "tuple",
             "operatore"
         ],
-        "Ref": "https://www.programiz.com/python-programming/quiz"
+        "Reference": "https://www.programiz.com/python-programming/quiz"
     },
     {
-        "id":9,
+        "Id": 9,
         "Subject": "Syntax",
-        "diff": 2,
+        "Difficulty": 2,
         "Question": "What is the output of the following code? ",
         "Code": "print(1, 2, 3, 4, sep='*')",
         "Answers": [
@@ -120,12 +120,12 @@
             "1*2*3*4",
             "24"
         ],
-        "Ref": "https://www.programiz.com/python-programming/quiz"
+        "Reference": "https://www.programiz.com/python-programming/quiz"
     },
     {
-        "id":10,
+        "Id": 10,
         "Subject": "Syntax",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "What is used to take input from the user in Python?",
         "Code": "",
         "Answers": [
@@ -134,24 +134,24 @@
             "input",
             "<>"
         ],
-        "Ref": "https://www.programiz.com/python-programming/quiz"
+        "Reference": "https://www.programiz.com/python-programming/quiz"
     },
     {
-        "id":11,
+        "Id": 11,
         "Subject": "Loop",
-        "diff": 2,
+        "Difficulty": 2,
         "Question": "Can we use the “else” clause for loops?",
         "Code": "",
         "Answers": [
             "No",
             "Yes"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/"
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/"
     },
     {
-        "id":12,
+        "Id": 12,
         "Subject": "Operator",
-        "diff": 1,
+        "Difficulty": 1,
         "Question": "Which operator has higher precedence in the following list",
         "Code": "",
         "Answers": [
@@ -160,12 +160,12 @@
             "**, Exponent",
             "> Comparison"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/"
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/"
     },
     {
-        "id":13,
+        "Id": 13,
         "Subject": "Syntax",
-        "diff": 2,
+        "Difficulty": 2,
         "Question": "What is the output of the following",
         "Code": "x= 36/4 *(3+2) * 4 + 2 \n print(x)",
         "Answers": [
@@ -174,12 +174,12 @@
             "117",
             "The Program executed with errors"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/"
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/"
     },
     {
-        "id":14,
+        "Id": 14,
         "Subject": "Function Syntax",
-        "diff": 2,
+        "Difficulty": 2,
         "Question": "For the following code, which of the following statements is true?",
         "Code": "def printHello():\n\tprint(\"Hello\")\na = printHello()",
         "Answers": [
@@ -188,12 +188,12 @@
             "printHello() and a refer to different objects.",
             "Syntax error! You cannot assign function to a variable in Python."
         ],
-        "Ref": "https://www.programiz.com/"
+        "Reference": "https://www.programiz.com/"
     },
     {
-        "id":15,
+        "Id": 15,
         "Subject": "Syntax",
-        "diff": 2,
+        "Difficulty": 2,
         "Question": "What is the output of the following program?",
         "Code": "def outerFunction():\n\tglobal a\n\ta = 20\n\tdef innerFunction():\n\t\tglobal a\n\t\ta = 30\n\t\tprint('a =', a)  \na = 10\nouterFunction()\nprint('a =', a)",
         "Answers": [
@@ -202,12 +202,12 @@
             "a = 20",
             "a = 30"
         ],
-        "Ref": "https://www.programiz.com/"
+        "Reference": "https://www.programiz.com/"
     },
     {
-        "id":16,
+        "Id": 16,
         "Subject": "Class",
-        "diff": 1,
+        "Difficulty": 1,
         "Question": "Which of the following statements is true?",
         "Code": "",
         "Answers": [
@@ -216,12 +216,12 @@
             "Both statements are true.",
             "Neither statement is true."
         ],
-        "Ref": "https://www.programiz.com/"
+        "Reference": "https://www.programiz.com/"
     },
     {
-        "id":17,
+        "Id": 17,
         "Subject": "Class",
-        "diff": 1,
+        "Difficulty": 1,
         "Question": "What is the output of the following code?",
         "Code": "class Foo:\n\tdef printLine(self, line='Python'):\n\t\tprint(line)\n\no1 = Foo()\no1.printLine('Java')",
         "Answers": [
@@ -230,12 +230,12 @@
             "Java",
             "Java\n\tPython"
         ],
-        "Ref": "https://www.programiz.com/"
+        "Reference": "https://www.programiz.com/"
     },
     {
-        "id":18,
+        "Id": 18,
         "Subject": "Syntax",
-        "diff": 2,
+        "Difficulty": 2,
         "Question": "What does the '__init__()' function do in Python?",
         "Code": "",
         "Answers": [
@@ -244,12 +244,12 @@
             "Initializes all the data attributes to zero when called.",
             "None of the above."
         ],
-        "Ref": "https://www.programiz.com/"
+        "Reference": "https://www.programiz.com/"
     },
     {
-        "id":19,
+        "Id": 19,
         "Subject": "Syntax",
-        "diff": 2,
+        "Difficulty": 2,
         "Question": "What is the output of the following code?",
         "Code": "class Point:\n\tdef __init__(self, x = 0, y = 0):\n\t\tself.x = x+1\n\t\tself.y = y+1\n\np1 = Point()\nprint(p1.x, p1.y)",
         "Answers": [
@@ -258,12 +258,12 @@
             "None None",
             "x y"
         ],
-        "Ref": "https://www.programiz.com/"
+        "Reference": "https://www.programiz.com/"
     },
     {
-        "id":20,
+        "Id": 20,
         "Subject": "Class",
-        "diff": 1,
+        "Difficulty": 1,
         "Question": "If you a class is derived from two different classes, it’s called ______",
         "Code": "",
         "Answers": [
@@ -272,12 +272,12 @@
             "Hierarchical Inheritance",
             "Python Inheritance"
         ],
-        "Ref": "https://www.programiz.com/"
+        "Reference": "https://www.programiz.com/"
     },
     {
-        "id":21,
+        "Id": 21,
         "Subject": "Theory",
-        "diff": 2,
+        "Difficulty": 2,
         "Question": "Which of the following statements is true?",
         "Code": "",
         "Answers": [
@@ -286,12 +286,12 @@
             "Special method __add()__ is called when + operator is used.",
             "All of the above."
         ],
-        "Ref": "https://www.programiz.com/"
+        "Reference": "https://www.programiz.com/"
     },
     {
-        "id":22,
+        "Id": 22,
         "Subject": "Function",
-        "diff": 1,
+        "Difficulty": 1,
         "Question": "What is the output of the following code",
         "Code": "salary = 8000\n\ndef printSalary():\n\tsalary = 12000\n\tprint(\"Salary:\", salary)\n\nprintSalary();\nprint(\"Salary:\", salary)",
         "Answers": [
@@ -299,26 +299,26 @@
             "Salary: 8000 Salary: 12000",
             "The program failed with errors\n"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/",
-        "Exp": "If you define a variable with the same name inside the scope of function as well at the global scope, then it will print the value given inside the function only and not the global value."
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/",
+        "Explain": "If you define a variable with the same name inside the scope of function as well at the global scope, then it will print the value given inside the function only and not the global value."
     },
     {
-        "id":23,
+        "Id": 23,
         "Subject": "Syntax",
-        "diff": 1,
+        "Difficulty": 1,
         "Question": "What is the output of the following code?",
         "Code": "for i in range(10, 15, 1):\n\tprint( i, end=', ')",
         "Answers": [
             "10, 11, 12, 13, 14,",
             "10, 11, 12, 13, 14, 15,"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/",
-        "Exp": "Remember, the range doesn’t include a stop number in the output"
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/",
+        "Explain": "Remember, the range doesn’t include a stop number in the output"
     },
     {
-        "id":24,
+        "Id": 24,
         "Subject": "Syntax",
-        "diff": 2,
+        "Difficulty": 2,
         "Question": "What is the Output of the following code?",
         "Code": "for x in range(0.5, 5.5, 0.5):\n\tprint(x)",
         "Answers": [
@@ -326,13 +326,13 @@
             "[0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]",
             "The Program executed with errors"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/",
-        "Exp": "We cannot use the float numbers in range() function. Please refer to the following articles"
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/",
+        "Explain": "We cannot use the float numbers in range() function. Please refer to the following articles"
     },
     {
-        "id":25,
+        "Id": 25,
         "Subject": "Syntax",
-        "diff": 1,
+        "Difficulty": 1,
         "Question": "What is the output of the following code?",
         "Code": "sampleList = [\"Jon\", \"Kelly\", \"Jessa\"]\nsampleList.append(2, \"Scott\")\nprint(sampleList)",
         "Answers": [
@@ -341,13 +341,13 @@
             "[‘Jon’, ‘Kelly’, ‘Jessa’, ‘Scott’]",
             "[‘Jon’, ‘Scott’, ‘Kelly’, ‘Jessa’]"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/",
-        "Exp": "The append() method appends an item to the end of the list. SO we cannot pass the index number to it."
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/",
+        "Explain": "The append() method appends an item to the end of the list. SO we cannot pass the index number to it."
     },
     {
-        "id":26,
+        "Id": 26,
         "Subject": "Syntax",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "What is the output of the following code?",
         "Code": "p, q, r = 10, 20 ,30\nprint(p, q, r)",
         "Answers": [
@@ -355,13 +355,13 @@
             "10 20 30",
             "Error: invalid syntax"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/",
-        "Exp": "In Python, We can do simultaneous assignments on more than one variable."
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/",
+        "Explain": "In Python, We can do simultaneous assignments on more than one variable."
     },
     {
-        "id":27,
+        "Id": 27,
         "Subject": "Syntax",
-        "diff": 2,
+        "Difficulty": 2,
         "Question": "What is the output of the following code?",
         "Code": "var = \"James\" * 2  * 3\nprint(var)",
         "Answers": [
@@ -369,13 +369,13 @@
             "JamesJamesJamesJamesJames",
             "Error: invalid syntax"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/",
-        "Exp": "We can use * operator to repeat the string n number of times. Here in the above question, First, we repeated string two times, and again we repeated the output string three times."
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/",
+        "Explain": "We can use * operator to repeat the string n number of times. Here in the above question, First, we repeated string two times, and again we repeated the output string three times."
     },
     {
-        "id":28,
+        "Id": 28,
         "Subject": "Syntax",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "What is the output of the following code?",
         "Code": "listOne = [20, 40, 60, 80]\nlistTwo = [20, 40, 60, 80]\nprint(listOne == listTwo)\nprint(listOne is listTwo)",
         "Answers": [
@@ -384,26 +384,26 @@
             "False\nTrue",
             "False\nFalse"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/",
-        "Exp": "Equal To operator == used to compare the values of two objects while The is operator compares the identity of two objects."
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/",
+        "Explain": "Equal To operator == used to compare the values of two objects while The is operator compares the identity of two objects."
     },
     {
-        "id":29,
+        "Id": 29,
         "Subject": "String",
-        "diff": 1,
+        "Difficulty": 1,
         "Question": "A string is immutable in Python? Every time when we modify the string, Python Always create a new String and assign a new string to that variable.",
         "Code": "",
         "Answers": [
             "True",
             "False"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/",
-        "Exp": " Strings are immutable in Python. You cannot modify string once created. If you change a string, Python builds a new string with the updated value and assigns it to the variable."
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/",
+        "Explain": " Strings are immutable in Python. You cannot modify string once created. If you change a string, Python builds a new string with the updated value and assigns it to the variable."
     },
     {
-        "id":30,
+        "Id": 30,
         "Subject": "Syntax",
-        "diff": 1,
+        "Difficulty": 1,
         "Question": "What is the output of the following code?",
         "Code": "var= \"James Bond\"\nprint(var[2::-1])",
         "Answers": [
@@ -412,24 +412,24 @@
             "maJ",
             "dnoB semaJ"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/"
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/"
     },
     {
-        "id":31,
+        "Id": 31,
         "Subject": "Operator",
-        "diff": 1,
+        "Difficulty": 1,
         "Question": "The ‘in’ operator is used to check if a value exists within an iterable object container such as a list. Evaluates to true if it finds a variable in the specified sequence and false otherwise.",
         "Code": "",
         "Answers": [
             "True",
             "False"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/"
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/"
     },
     {
-        "id":32,
+        "Id": 32,
         "Subject": "Syntax",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "What is the output of the following code?",
         "Code": "sampleSet = {\"Jodi\", \"Eric\", \"Garry\"}\nsampleSet.add(1, \"Vicki\")\nprint(sampleSet)",
         "Answers": [
@@ -437,13 +437,13 @@
             "{‘Jodi’, ‘Vicki’, ‘Garry’, ‘Eric’}",
             "The program executed with error"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/",
-        "Exp": "The set is an unordered data structure. So you cannot access/add/remove its elements by index number."
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/",
+        "Explain": "The set is an unordered data structure. So you cannot access/add/remove its elements by index number."
     },
     {
-        "id":33,
+        "Id": 33,
         "Subject": "Syntax",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "What is the output of the following",
         "Code": "x = 36 / 4 * (3 +  2) * 4 + 2\nprint(x)\n",
         "Answers": [
@@ -452,13 +452,13 @@
             "117",
             "The Program executed with errors"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/",
-        "Exp": "To choose the correct answer, You must know the operator precedence and associativity"
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/",
+        "Explain": "To choose the correct answer, You must know the operator precedence and associativity"
     },
     {
-        "id":34,
+        "Id": 34,
         "Subject": "Syntax",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "What is the output of the following code?",
         "Code": "valueOne = 5 ** 2\nvalueTwo = 5 ** 3\n\nprint(valueOne)\nprint(valueTwo)",
         "Answers": [
@@ -466,13 +466,13 @@
             "25\n125",
             "Error: invalid syntax"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/",
-        "Exp": "Using two multiplication symbols, we can make a power relationship in Python. We call ** operator as an exponent operator. That is, in the expression 5 ** 3, 5 is being raised to the 3rd power."
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/",
+        "Explain": "Using two multiplication symbols, we can make a power relationship in Python. We call ** operator as an exponent operator. That is, in the expression 5 ** 3, 5 is being raised to the 3rd power."
     },
     {
-        "id":35,
+        "Id": 35,
         "Subject": "Syntax",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "What is the output of the following code?",
         "Code": "str = \"pynative\"\nprint (str[1:3])",
         "Answers": [
@@ -481,13 +481,13 @@
             "pyn",
             "yna"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/",
-        "Exp": "Remember, the index always starts at 0. Therefore, str [1 : 3] is “yn”"
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/",
+        "Explain": "Remember, the index always starts at 0. Therefore, str [1 : 3] is “yn”"
     },
     {
-        "id":36,
+        "Id": 36,
         "Subject": "Syntax",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "What is the output of the following code?",
         "Code": "def calculate (num1, num2=4):\n\tres = num1 * num2\n\tprint(res)\n\ncalculate(5, 6)",
         "Answers": [
@@ -495,13 +495,13 @@
             "The program executed with errors",
             "30"
         ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/",
-        "Exp": "In Python, we can set default values for arguments. If the function is called without the argument, the default value is used."
+        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/",
+        "Explain": "In Python, we can set default values for arguments. If the function is called without the argument, the default value is used."
     },
     {
-        "id":37,
+        "Id": 37,
         "Subject": "Syntax",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "What is a correct syntax to output \"Hello World\" in Python?",
         "Code": "",
         "Answers": [
@@ -510,12 +510,12 @@
             "echo(\"Hello World\");",
             "echo \"Hello World\""
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     },
     {
-        "id":38,
+        "Id": 38,
         "Subject": "Comment",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "How do you insert COMMENTS in Python code?",
         "Code": "",
         "Answers": [
@@ -523,12 +523,12 @@
             "#This is a comment   ",
             "//This is a comment"
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     },
     {
-        "id":39,
+        "Id": 39,
         "Subject": "Variable Naming",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "Which one is NOT a legal variable name?",
         "Code": "",
         "Answers": [
@@ -537,12 +537,12 @@
             "my_var",
             "Myvar"
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     },
     {
-        "id":40,
+        "Id": 40,
         "Subject": "Syntax",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "How do you create a variable with the numeric value 5?",
         "Code": "",
         "Answers": [
@@ -550,12 +550,12 @@
             "Both the other answers are correct",
             "x = 5"
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     },
     {
-        "id":41,
+        "Id": 41,
         "Subject": "Source File",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "What is the correct file extension for Python files?",
         "Code": "",
         "Answers": [
@@ -564,12 +564,12 @@
             ".py",
             ".pt"
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     },
     {
-        "id":42,
+        "Id": 42,
         "Subject": "Syntax",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "How do you create a variable with the floating number 2.8?",
         "Code": "",
         "Answers": [
@@ -577,12 +577,12 @@
             "x = float(2.8)",
             "x = 2.8"
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     },
     {
-        "id":43,
+        "Id": 43,
         "Subject": "Syntax",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "What is the correct syntax to output the type of a variable or object in Python?",
         "Code": "",
         "Answers": [
@@ -591,12 +591,12 @@
             "print(typeof(x))",
             "print(typeof x)"
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     },
     {
-        "id":44,
+        "Id": 44,
         "Subject": "Function Syntax",
-        "diff": 1,
+        "Difficulty": 1,
         "Question": "What is the correct way to create a function in Python?",
         "Code": "",
         "Answers": [
@@ -604,24 +604,24 @@
             "def myFunction(): ",
             "function myfunction():"
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     },
     {
-        "id":45,
+        "Id": 45,
         "Subject": "Theory",
-        "diff": 1,
+        "Difficulty": 1,
         "Question": "In Python, 'Hello', is the same as \"Hello\"",
         "Code": "",
         "Answers": [
             "False",
             "True"
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     },
     {
-        "id":46,
+        "Id": 46,
         "Subject": "Syntax",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "What is a correct syntax to return the first character in a string?",
         "Code": "",
         "Answers": [
@@ -629,12 +629,12 @@
             "x = \"Hello\".sub(0, 1)",
             "x = \"Hello\"[0]"
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     },
     {
-        "id":47,
+        "Id": 47,
         "Subject": "Syntax",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "Which method can be used to remove any whitespace from both the beginning and the end of a string?",
         "Code": "",
         "Answers": [
@@ -643,12 +643,12 @@
             "strip()",
             "trim()"
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     },
     {
-        "id":48,
+        "Id": 48,
         "Subject": "Syntax",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "Which method can be used to return a string in upper case letters?",
         "Code": "",
         "Answers": [
@@ -657,12 +657,12 @@
             "uppercase()",
             "toUpperCase()"
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     },
     {
-        "id":49,
+        "Id": 49,
         "Subject": "Syntax",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "Which method can be used to replace parts of a string?",
         "Code": "",
         "Answers": [
@@ -671,12 +671,12 @@
             "repl()",
             "replace()"
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     },
     {
-        "id":50,
+        "Id": 50,
         "Subject": "Operator",
-        "diff": 0,
+        "Difficulty": 0,
         "Question": "Which operator is used to multiply numbers?",
         "Code": "",
         "Answers": [
@@ -685,6 +685,6 @@
             "x",
             "#"
         ],
-        "Ref": "https://www.w3schools.com/quiztest/"
+        "Reference": "https://www.w3schools.com/quiztest/"
     }
 ]
