@@ -1,5 +1,6 @@
 [
     {
+        "id":1,
         "Subject": "",
         "Question": "What is the output of the following code?",
         "Code": "def add_some(data=[]):\ndata.append('1')\nreturn data\nadd_some()\nadd_some()\nprint(add_some())",
@@ -10,6 +11,7 @@
         ]
     },
     {
+        "id":2,
         "Subject": "Test Subject",
         "Question": "What is the output of the following code?",
         "Code": "x = 100\ndef foo():\nprint(x)\\nx += 1\nfoo()",
@@ -21,6 +23,7 @@
         ]
     },
     {
+        "id":3,
         "Subject": "Test Subject",
         "Question": "What is the output of the following code? ",
         "Code": "x=1\ny=5\nprint(++x*(--y))",
@@ -32,6 +35,7 @@
         ]
     },
     {
+        "id":4,
         "Subject": "Test Subject",
         "Question": "What is the output of the following code? ",
         "Code": "print(bool([]), bool(None), bool(''))",
@@ -43,6 +47,7 @@
         ]
     },
     {
+        "id":5,
         "Subject": "Test Subject",
         "Question": "In Python 3, the maximum value for an integer is 2^63 - 1",
         "Code": "",
@@ -52,6 +57,7 @@
         ]
     },
     {
+        "id":6,
         "Subject": "Test Subject",
         "Question": "Which of the following statements is true?",
         "Code": "",
@@ -62,6 +68,7 @@
         ]
     },
     {
+        "id":7,
         "Subject": "Test Subject",
         "Question": "Which of the following is correct?",
         "Code": "",
@@ -73,6 +80,7 @@
         ]
     },
     {
+        "id":8,
         "Subject": "Test Subject",
         "Question": "Which of the following is type n ? ",
         "Code": "n = '5'",
@@ -84,6 +92,7 @@
         ]
     },
     {
+        "id":9,
         "Subject": "Test Subject",
         "Question": "What is the output of the following code? ",
         "Code": "print(1, 2, 3, 4, sep='*')",
@@ -95,6 +104,7 @@
         ]
     },
     {
+        "id":10,
         "Subject": "Test Subject",
         "Question": "What is used to take input from the user in Python?",
         "Code": "",
@@ -106,6 +116,7 @@
         ]
     },
     {
+        "id":11,
         "Subject": "Test Subject",
         "Question": "Can we use the “else” clause for loops?",
         "Code": "",
@@ -116,6 +127,7 @@
         "Ref": "https://pynative.com/basic-python-quiz-for-beginners/"
     },
     {
+        "id":12,
         "Subject": "Test Subject",
         "Question": "Which operator has higher precedence in the following list",
         "Code": "",
@@ -128,21 +140,10 @@
         "Ref": "https://pynative.com/basic-python-quiz-for-beginners/"
     },
     {
+        "id":13,
         "Subject": "Test Subject",
         "Question": "What is the output of the following",
         "Code": "x= 36/4 *(3+2) * 4 + 2 \n print(x)",
-        "Answers": [
-            "182",
-            "37",
-            "117",
-            "The Program executed with errors"
-        ],
-        "Ref": "https://pynative.com/basic-python-quiz-for-beginners/"
-    },
-    {
-        "Subject": "Test Subject",
-        "Question": "What is the output of the following",
-        "Code": "for x in range(0.5, 5.5,0.5",
         "Answers": [
             "182",
             "37",
