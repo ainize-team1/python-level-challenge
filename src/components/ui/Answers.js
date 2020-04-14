@@ -8,7 +8,7 @@ const Grid = styled.div`
     width: 100%;
     max-width: 300px;
     background: #191919;
-    grid-template-columns: 40px auto 40px;    
+    grid-template-columns: 40px auto 40px;
 `;
 
 const Row = styled.div`
