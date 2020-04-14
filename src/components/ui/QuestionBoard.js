@@ -1,20 +1,15 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { tomorrowNight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const Wrapper = styled.div`
     width: 100%;
-    display: flex;
     flex-direction: column;
-    background-color: #123123;
 `;
 
 const Header = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     margin-bottom: 30px;
 `;
 
@@ -56,22 +51,22 @@ const QuestionText = styled.div`
 `;
 
 const AnswerButton = styled.button`
-    width: 312px;
+    width: 90%;
+    max-width: 312px;
     height: 45px;
-    margin-top: 16px;
+    margin-bottom: 16px;
     border-radius: 4px;
     outline: none;
     font-family: Roboto;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
-    color: #ffffff;
-    transition: background-color 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s;
+    color: #333333;
     :hover {
-        background-color: #ae78f1;
+        background-color: #b2b2b2;
     }
     :active {
-        background-color: #612ba5;
+        background-color: #f2f2f2;
     }
 `;
 
@@ -80,8 +75,33 @@ class Questionboard extends React.Component {
         super();
 
         this.state = {
+            redirect: false,
             count: 0,
+            answers: [],
         };
+    }
+
+    setRedirect = () => {
+        this.setState({
+            redirect: true
+        })
+    }
+
+    renderRedirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to={ { pathname: '/result',
+                                    state: { answers: this.state.answers } } } />
+        }
+    }
+
+    onButtonClick = (index) => {
+        if (this.state.count < this.props.questions.length - 1) {
+            this.setState({ count: this.state.count + 1 });
+            this.state.answers.push(index);
+        } else {
+            this.state.answers.push(index);
+            this.setRedirect();
+        }
     }
 
     render() {
@@ -92,7 +112,7 @@ class Questionboard extends React.Component {
             <Wrapper>
                 <Header>
                     <CountText marginLeft={24} marginTop={24}>
-                        {`${count + 1}/10`}
+                        {`${count + 1}/${this.props.questions.length}`}
                     </CountText>
                 </Header>
 
@@ -111,12 +131,15 @@ class Questionboard extends React.Component {
                 {questions[count].Answers.map((answer, i) => {
                     if (answer) {
                         return (
-                            <AnswerButton key={`button${i}`}
-                                onClick={this.doSearch}>
+                            <AnswerButton key={`${i}`}
+                                onClick={() => this.onButtonClick(i)}>
+                                    {questions[count].Answers}
                             </AnswerButton>
                         )
                     }
                 })}
+
+                {this.renderRedirect()}
             </Wrapper>
         );
     }
