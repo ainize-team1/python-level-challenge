@@ -50,6 +50,18 @@ const QuestionText = styled.div`
     color: #f2f2f2;
 `;
 
+const SelectText = styled.div`
+    margin-bottom: 16px;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 0.15px;
+    color: #828282;
+`;
+
 const AnswerButton = styled.button`
     width: 90%;
     max-width: 312px;
@@ -127,6 +139,10 @@ class Questionboard extends React.Component {
                 {language && <SyntaxHighlighter language={language} style={tomorrowNight}>
                     {questions[count].Code}
                 </SyntaxHighlighter>}
+
+                <SelectText>
+                    {`Select an answer`}
+                </SelectText>
 
                 {questions[count].Answers.map((answer, i) => {
                     if (answer) {

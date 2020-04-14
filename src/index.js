@@ -15,6 +15,7 @@ import QuizPage from './components/page/QuizPage';
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
+  justify-content: space-between;
   justify-content: center;
 `;
 
