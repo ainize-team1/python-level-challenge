@@ -1,8 +1,24 @@
 
 import React from 'react';
 import Toast from 'light-toast';
+import styled from 'styled-components'
 import { FaLink, FaFacebook } from 'react-icons/fa';
 import { AiFillTwitterCircle } from 'react-icons/ai';
+
+
+const Grid = styled.div`  
+    display: grid;
+    width: 100%;
+    max-width: 300px;
+    grid-template-columns: auto auto auto;    
+`;
+
+const Row = styled.div`
+    margin-left : 10px;
+    font-size : 12px;
+    text-align: center;
+    padding-top : 2px;
+`;
 
 class ShareLink extends React.Component {
     constructor() {
@@ -18,10 +34,15 @@ class ShareLink extends React.Component {
     }
     render(){
         return(
-            <>  <div style={{display:"flex"}}>
-                    <div style={{marginRight:"15px"}}><FaFacebook size={32}/></div>
-                    <div style={{marginRight:"15px"}}><AiFillTwitterCircle size={35.5}/></div>
-                    <div onClick={() => {
+            <>  
+                <Grid>
+                    <Row>
+                        <FaFacebook size={32}/>
+                    </Row>
+                    <Row>
+                        <AiFillTwitterCircle size={35.5}/>
+                    </Row>
+                    <Row onClick={() => {
                         Toast.info('URL copied to clipboard', 500, () => {
                             // do something after the toast disappears
                             const dummy = document.createElement('input'),
@@ -33,11 +54,13 @@ class ShareLink extends React.Component {
                             document.execCommand('copy');
                             document.body.removeChild(dummy);
                         });
-                    }}style={{marginTop:"5px"}}><FaLink size={25}/> </div>
-                </div>
+                    }}>
+                        <FaLink size={25} style={{marginTop:"5.5px"}}/> 
+                    </Row>
+                </Grid>
             </>
         )
-    }
+    };
 }
 
 export default ShareLink;

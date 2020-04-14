@@ -1,20 +1,38 @@
 import React from 'react';
 import _ from 'underscore';
-
-import resultList from '../../static/json/resultList.js';
-
+import styled from 'styled-components'
+import resultList from '../../static/json/resultList';
 import ShareLink from '../ui/ShareLink';
 import Answers from '../ui/Answers';
+import GradationButton from '../ui/button/GradationButton.js';
+import GradationText from '../ui/text/GradationText.js';
 
-import { GradationButton } from '../ui/button/Buttons.js';
-import { GradationText } from '../ui/text/Texts.js';
 
-const imageStyle = {
-    maxHeight:"400px",
-    maxWidth:"300px",
-    width:"90%",
-    height:"100%"
-}
+const Image = styled.img`
+    max-height:400px;
+    max-width:300px;
+    width:90%;
+    height:100%;
+`;
+
+
+const Description = styled.div`
+    font-size:0.5rem;
+    width:90%;
+    text-align:center;
+`;
+
+const ScoreText = styled.div`
+    color:grey;
+    font-size:5px;
+    margin:5px;
+`;
+
+const LevelText = styled.div`
+    margin-top:8px;
+    font-size:8px
+`;
+
 class Result extends React.Component {
     constructor() {
         super();
@@ -29,11 +47,11 @@ class Result extends React.Component {
     render() {
         const result = _.sample(resultList[this.props.score||0])
     
-        return (<>
-                
-                <div style= {{marginTop:"8px", fontSize:"8px"}}>
+        return (
+            <>
+                <LevelText>
                     Your level is
-                </div>
+                </LevelText>
 
                 <GradationText fontSize={1.5} fontWeight= {"bold"}>
                     {result.name}
@@ -41,19 +59,22 @@ class Result extends React.Component {
                 {/* TODO 
                     - ADD percents
                 */}
-                <div> Top 0.01%</div>
-                <div style={{color:"grey", fontSize:"5px", margin:"5px"}}>
+                Top 0.01%
+                <ScoreText>
                     Score: {this.props.socre||0}/10
-                </div>
-                <img src={result.imgSrc} style={imageStyle}></img>
-                <div style= {{color : "white", fontSize: "0.5rem", width: "90%", textAlign:"center" }}>
+                </ScoreText>
+
+                <Image src={result.imgSrc}/>
+
+                <Description>
                     {result.description}
-                </div>
+                </Description>
+
                 <GradationText fontSize={0.7}>
                     Flex your level
                 </GradationText>
 
-                <ShareLink></ShareLink>
+                <ShareLink />
 
                 <GradationButton color="white" onClick={()=>window.location.href = '/'}>
                     Start a new quiz
@@ -64,11 +85,10 @@ class Result extends React.Component {
                 </GradationButton>
                 
                 {/* TODO should fix default array for debugging([1,2]) */}
-                <Answers answersList={this.props.answersList||[1,2,3,4,5,6,7,8,9,10]}></Answers>
-
-                </>
-        );
-    }
+                <Answers answersList={this.props.answersList||[1,2,3,4,5,6,7,8,9,10]}/>
+            </>
+        )
+    };
 }
 
 export default Result;
