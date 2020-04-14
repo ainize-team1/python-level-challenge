@@ -10,7 +10,18 @@ background: linear-gradient(to right, #cb60b3 0%, #f2513c 100%);
 -webkit-text-fill-color: transparent;
 `
 
-export {GradationText}
+const NormalText = styled.div`
+font-family: IBM Plex Sans;
+font-style: normal;
+font-weight: normal;
+font-size: ${props => props.fontSize || 20}px;
+line-height: 21px;
+text-align: center;
+letter-spacing: 0.15px;
+color: #FFFFFF;
+`
+
+export {GradationText, NormalText}
 
 
 
