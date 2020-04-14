@@ -13,10 +13,9 @@ import QuizPage from './components/page/QuizPage';
 // Constants
 
 const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 `;
 
 const globalNavigationBar = (
@@ -24,10 +23,10 @@ const globalNavigationBar = (
     <Router>
       {/* Content */}
       <Switch>
-          <Route exact path='/' component={AppPage} />
-          <Route path='/result' component={Result} />
-          <Route path='/quiz' component={QuizPage} />
-          {/* <Route component={NotFoundPage} /> */}
+        <Route exact path='/' component={AppPage} />
+        <Route path='/result' component={Result} />
+        <Route path='/quiz' component={QuizPage} />
+        {/* <Route component={NotFoundPage} /> */}
       </Switch>
     </Router>
   </Wrapper>
