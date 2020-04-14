@@ -13,10 +13,11 @@ npm start
 
 ### Docker build
 ```
-TBD
+docker build -t <Name> .
 ```
 
 ### Docker run
 ```
-TBD
+docker run -it -p 80:3000 -d <Name>
+
 ```
