@@ -13,11 +13,14 @@ const Wrapper = styled.div`
 `;
 
 const Background = styled.div`
-    width: 100%;
-    background-image: url('./intro_background.png;
-    background-position: 'center';
-    background-size: 'cover';
-    background-repeat: 'no-repeat';
+    height: 100vh;
+    width: 48vh;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg') no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
 `;
 
 class AppPage extends React.Component {
@@ -32,12 +35,14 @@ class AppPage extends React.Component {
         return (
             <Wrapper>
                 {/* TODO: Background Image */}
-                <GradationText style= {{marginTop:"56px"}} fontSize={2.6} fontWeight={'bold'}>PythonQuizFlex</GradationText>
-                <NormalText style= {{marginTop:"24px", fontSize:"16px"}}>
-                    Challenge and brag your<br/>
-                    python language level
-                </NormalText>
-                <FilledGradationButton onClick={()=>window.location.href = '/quiz'}>Start a Quiz</FilledGradationButton>
+                <Background>
+                    <GradationText style= {{marginTop:"56px"}} fontSize={2.6} fontWeight={'bold'}>PythonQuizFlex</GradationText>
+                    <NormalText style= {{marginTop:"24px", fontSize:"16px"}}>
+                        Challenge and brag your<br/>
+                        python language level
+                    </NormalText>
+                    <FilledGradationButton onClick={()=>window.location.href = '/quiz'}>Start a Quiz</FilledGradationButton>
+                </Background>
             </Wrapper>
         );
     }
