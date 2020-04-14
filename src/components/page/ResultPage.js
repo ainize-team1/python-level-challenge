@@ -52,7 +52,7 @@ class Result extends React.Component {
         const result = _.sample(resultList[this.props.score||0])
     
         return (
-            <>
+            <Wrapper>
                 <LevelText>
                     Your level is
                 </LevelText>
@@ -90,7 +90,7 @@ class Result extends React.Component {
                 
                 {/* TODO should fix default array for debugging([1,2]) */}
                 <Answers answersList={this.props.answersList||[1,2,3,4,5,6,7,8,9,10]}/>
-            </>
+            </Wrapper>
         )
     };
 }
