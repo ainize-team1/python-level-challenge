@@ -7,7 +7,6 @@ const _ = require('lodash');
 
 const Wrapper = styled.div`
     width: 100%;
-    background-color: #321321;
 `;
 
 class Quiz extends React.Component {
