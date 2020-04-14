@@ -133,7 +133,7 @@ class Questionboard extends React.Component {
                         return (
                             <AnswerButton key={`${i}`}
                                 onClick={() => this.onButtonClick(i)}>
-                                    {questions[count].Answers}
+                                    {questions[count].Answers[i]}
                             </AnswerButton>
                         )
                     }
