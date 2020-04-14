@@ -14,7 +14,11 @@ const Image = styled.img`
     width:90%;
     height:100%;
 `;
-
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
 
 const Description = styled.div`
     font-size:0.5rem;
