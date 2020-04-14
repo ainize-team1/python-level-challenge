@@ -6,11 +6,8 @@ import questions from '../../static/json/python';
 const _ = require('lodash');
 
 const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 360px;
+    width: 100%;
+    background-color: #321321;
 `;
 
 class Quiz extends React.Component {
