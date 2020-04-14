@@ -16,6 +16,7 @@ const Header = styled.div`
 const CountText = styled.div`
     margin-top: ${props => props.marginTop || 0}px;
     margin-left: ${props => props.marginLeft || 0}px;
+    margin-right: ${props => props.marginRight || 0}px;
     font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: bold;
@@ -27,6 +28,7 @@ const CountText = styled.div`
 
 const SubjectText = styled.div`
     margin-left: ${props => props.marginLeft || 0}px;
+    margin-right: ${props => props.marginRight || 0}px;
     font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: bold;
@@ -41,6 +43,8 @@ const SubjectText = styled.div`
 
 const QuestionText = styled.div`
     margin-left: ${props => props.marginLeft || 0}px;
+    margin-right: ${props => props.marginRight || 0}px;
+    margin-bottom: 24px;
     font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: bold;
@@ -60,6 +64,17 @@ const SelectText = styled.div`
     text-align: center;
     letter-spacing: 0.15px;
     color: #828282;
+`;
+
+const SyntaxHighlighterWrapper = styled.div`
+    margin-left: 24px;
+    margin-right: 24px;
+`;
+
+const ButtonWrapper = styled.div`
+    text-align: center;
+    margin-left: 24px;
+    margin-right: 24px;
 `;
 
 const AnswerButton = styled.button`
@@ -123,37 +138,42 @@ class Questionboard extends React.Component {
         return (
             <Wrapper>
                 <Header>
-                    <CountText marginLeft={24} marginTop={24}>
+                    <CountText marginLeft={24} marginTop={24} marginRight={24}>
                         {`${count + 1}/${this.props.questions.length}`}
                     </CountText>
                 </Header>
 
-                <SubjectText marginLeft={24}>
+                <SubjectText marginLeft={24} marginRight={24}>
                     {`${questions[count].Subject}`}
                 </SubjectText>
 
-                <QuestionText marginLeft={24}>
+                <QuestionText marginLeft={24} marginRight={24}>
                     {`${questions[count].Question}`}
                 </QuestionText>
 
-                {language && <SyntaxHighlighter language={language} style={tomorrowNight}>
-                    {questions[count].Code}
-                </SyntaxHighlighter>}
+                <SyntaxHighlighterWrapper>
+                    {questions[count].Code && <SyntaxHighlighter language={language}
+                                                                 style={tomorrowNight}>
+                        {questions[count].Code}
+                    </SyntaxHighlighter>}
+                </SyntaxHighlighterWrapper>
 
                 <SelectText>
                     {`Select an answer`}
                 </SelectText>
 
-                {questions[count].Answers.map((answer, i) => {
-                    if (answer) {
-                        return (
-                            <AnswerButton key={`${i}`}
-                                onClick={() => this.onButtonClick(i)}>
-                                    {questions[count].Answers[i]}
-                            </AnswerButton>
-                        )
-                    }
-                })}
+                <ButtonWrapper>
+                    {questions[count].Answers.map((answer, i) => {
+                        if (answer) {
+                            return (
+                                <AnswerButton key={`${i}`}
+                                    onClick={() => this.onButtonClick(i)}>
+                                        {questions[count].Answers[i]}
+                                </AnswerButton>
+                            )
+                        }
+                    })}
+                </ButtonWrapper>
 
                 {this.renderRedirect()}
             </Wrapper>
