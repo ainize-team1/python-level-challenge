@@ -19,7 +19,7 @@ const Row = styled.div`
 `;
 
 
-const ShowAnswerList = styled.button`
+const ShowAnswerList = styled.div`
     color:grey;
     font-size:10px;
     paddingBottom:7px;
@@ -42,23 +42,23 @@ class Answers extends React.Component {
         const {title,qustionId, checkedAnwser, originalAnswer} = this.props.answer||"TEST";
         const renderedList = this.props.answersList.map((answer,index) =>{
             return (
-                <>
-                    <Grid >
-                        <Row>
-                            {index+1}
-                        </Row>
-    
-                        <Row> 
-                            {title||`Question ${index+1}`}  >
-                        </Row>
-                        <Row> 
-                            {checkedAnwser===originalAnswer ? 
-                                <FiCheckCircle color="#33CCFF"/>:
-                                <FaRegTimesCircle color="#FF6347"/>}
-                            <FaRegTimesCircle color="#FF6347"/>
-                        </Row>
-                    </Grid>
-                </>
+                
+                <Grid key={index}>
+                    <Row>
+                        {index+1}
+                    </Row>
+
+                    <Row> 
+                        {title||`Question ${index+1}`}  >
+                    </Row>
+                    <Row> 
+                        {checkedAnwser===originalAnswer ? 
+                            <FiCheckCircle color="#33CCFF"/>:
+                            <FaRegTimesCircle color="#FF6347"/>}
+                        <FaRegTimesCircle color="#FF6347"/>
+                    </Row>
+                </Grid>
+            
             );
         });
     
