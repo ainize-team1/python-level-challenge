@@ -52,7 +52,7 @@ class Result extends React.Component {
         const result = _.sample(resultList[this.props.score||0])
     
         return (
-            <Wrapper>
+            <Wrapper id ="fadein">
                 <LevelText>
                     Your level is
                 </LevelText>
