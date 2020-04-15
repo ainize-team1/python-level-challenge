@@ -18,6 +18,17 @@ const GradationButton = styled.button`
   border-image: linear-gradient(to right, #cb60b3 0%, #f2513c 100%);
   border-image-slice: 1;
   border-radius: 0.5rem;
+
+  :hover {
+    background: #ef4e28;
+    background: linear-gradient(to right, #f2513c 0%, #cb60b3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    border: 1px solid transparent;
+    border-image: linear-gradient(to right, #f2513c 0%, #cb60b3 100%);
+    border-image-slice: 1;
+    border-radius: 0.5rem;
+  }
 `;
 
 export default GradationButton
