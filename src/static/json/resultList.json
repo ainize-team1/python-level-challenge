@@ -1,80 +1,83 @@
 [
     [{
-        "name": "Alan Turing",
-        "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg",
-        "description": "Alan Mathison Turing OBE FRS (/ˈtjʊərɪŋ/; 23 June 1912 – 7 June 1954) was an English mathematician, computer scientist, logician, cryptanalyst, philosopher, and theoretical biologist.",
-        "refSrc": "",
-        "refTitle": ""
+        "Level": 1,
+        "Name": "Amoeba",
+        "Top": "100",
+        "Description": "No brain",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
     }],
     [{
-        "name": "Alan Turing",
-        "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg",
-        "description": "Alan Mathison Turing OBE FRS (/ˈtjʊərɪŋ/; 23 June 1912 – 7 June 1954) was an English mathematician, computer scientist, logician, cryptanalyst, philosopher, and theoretical biologist.",
-        "refSrc": "",
-        "refTitle": ""
+        "Level": 2,
+        "Name": "Non-CS Major",
+        "Top": "90",
+        "Description": "Level 2 Description",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
     }],
     [{
-        "name": "Alan Turing",
-        "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg",
-        "description": "Alan Mathison Turing OBE FRS (/ˈtjʊərɪŋ/; 23 June 1912 – 7 June 1954) was an English mathematician, computer scientist, logician, cryptanalyst, philosopher, and theoretical biologist.",
-        "refSrc": "",
-        "refTitle": ""
+        "Level": 3,
+        "Name": "CS Major",
+        "Top": "80",
+        "Description": "Level 3 Description",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
     }],
     [{
-        "name": "Alan Turing",
-        "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg",
-        "description": "Alan Mathison Turing OBE FRS (/ˈtjʊərɪŋ/; 23 June 1912 – 7 June 1954) was an English mathematician, computer scientist, logician, cryptanalyst, philosopher, and theoretical biologist.",
-        "refSrc": "",
-        "refTitle": ""
+        "Level": 4,
+        "Name": "Intern",
+        "Top": "70",
+        "Description": "Level 4 Description",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
     }],
     [{
-        "name": "Alan Turing",
-        "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg",
-        "description": "Alan Mathison Turing OBE FRS (/ˈtjʊərɪŋ/; 23 June 1912 – 7 June 1954) was an English mathematician, computer scientist, logician, cryptanalyst, philosopher, and theoretical biologist.",
-        "refSrc": "",
-        "refTitle": ""
+        "Level": 5,
+        "Name": "Software Engineer",
+        "Top": "60",
+        "Description": "Level 5 Description",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
     }],
     [{
-        "name": "Alan Turing",
-        "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg",
-        "description": "Alan Mathison Turing OBE FRS (/ˈtjʊərɪŋ/; 23 June 1912 – 7 June 1954) was an English mathematician, computer scientist, logician, cryptanalyst, philosopher, and theoretical biologist.",
-        "refSrc": "",
-        "refTitle": ""
+        "Level": 6,
+        "Name": "Senior Engineer",
+        "Top": "50",
+        "Description": "Level 6 Description",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
     }],
     [{
-        "name": "Alan Turing",
-        "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg",
-        "description": "Alan Mathison Turing OBE FRS (/ˈtjʊərɪŋ/; 23 June 1912 – 7 June 1954) was an English mathematician, computer scientist, logician, cryptanalyst, philosopher, and theoretical biologist.",
-        "refSrc": "",
-        "refTitle": ""
+        "Level": 7,
+        "Name": "Principal Engineer",
+        "Top": "40",
+        "Description": "Level 7 Description",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
     }],
     [{
-        "name": "Alan Turing",
-        "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg",
-        "description": "Alan Mathison Turing OBE FRS (/ˈtjʊərɪŋ/; 23 June 1912 – 7 June 1954) was an English mathematician, computer scientist, logician, cryptanalyst, philosopher, and theoretical biologist.",
-        "refSrc": "",
-        "refTitle": ""
+        "Level": 8,
+        "Name": "CTO",
+        "Top": "30",
+        "Description": "Level 8 Description",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
     }],
     [{
-        "name": "Alan Turing",
-        "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg",
-        "description": "Alan Mathison Turing OBE FRS (/ˈtjʊərɪŋ/; 23 June 1912 – 7 June 1954) was an English mathematician, computer scientist, logician, cryptanalyst, philosopher, and theoretical biologist.",
-        "refSrc": "",
-        "refTitle": ""
+        "Level": 9,
+        "Name": "Turing",
+        "Top": "20",
+        "Description": "Level 9 Description",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
     }],
     [{
-        "name": "Alan Turing",
-        "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg",
-        "description": "Alan Mathison Turing OBE FRS (/ˈtjʊərɪŋ/; 23 June 1912 – 7 June 1954) was an English mathematician, computer scientist, logician, cryptanalyst, philosopher, and theoretical biologist.",
-        "refSrc": "",
-        "refTitle": ""
-    }],
-    [{
-        "name": "Alan Turing",
-        "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg",
-        "description": "Alan Mathison Turing OBE FRS (/ˈtjʊərɪŋ/; 23 June 1912 – 7 June 1954) was an English mathematician, computer scientist, logician, cryptanalyst, philosopher, and theoretical biologist.",
-        "refSrc": "",
-        "refTitle": ""
+        "Level": 10,
+        "Name": "Alien",
+        "Top": "0.01",
+        "Description": "Level 10 Description",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
     }]
 ]
 

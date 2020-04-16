@@ -43,10 +43,11 @@ class Result extends React.Component {
             imgsrc:"",
         };
     }
-     
+
     render() {
-        const result = _.sample(resultList[this.props.score||0])
-    
+        const level = 10; // TODO: Change level according to result (1~10)
+        const result = _.sample(resultList[level-1]);
+
         return (
             <>
                 <LevelText>
@@ -54,20 +55,17 @@ class Result extends React.Component {
                 </LevelText>
 
                 <GradationText fontSize={1.5} fontWeight= {"bold"}>
-                    {result.name}
+                    {result.Name}
                 </GradationText >
-                {/* TODO 
-                    - ADD percents
-                */}
-                Top 0.01%
+                Top {result.Top}%
                 <ScoreText>
-                    Score: {this.props.socre||0}/10
+                    Score: {this.props.score||0}/10
                 </ScoreText>
 
-                <Image src={result.imgSrc}/>
+                <Image src={require(`../../static/img/result/level_${level}.png`)}/>
 
                 <Description>
-                    {result.description}
+                    {result.Description}
                 </Description>
 
                 <GradationText fontSize={0.7}>
@@ -83,7 +81,7 @@ class Result extends React.Component {
                 <GradationButton color="white" onClick={()=>window.location.href = '/'}>
                     Discuss the quiz with others
                 </GradationButton>
-                
+
                 {/* TODO should fix default array for debugging([1,2]) */}
                 <Answers answersList={this.props.answersList||[1,2,3,4,5,6,7,8,9,10]}/>
             </>
