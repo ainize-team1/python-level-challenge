@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import GradationText from '../ui/text/GradationText.js';
 import NormalText from '../ui/text/NormalText';
 import FilledGradationButton from '../ui/button/FilledGradationButton';
+import Spinner from '../ui/Spinner'
 
 const Wrapper = styled.div`
     flex: 1;
@@ -11,8 +12,6 @@ const Wrapper = styled.div`
     align-items: center;
     background-color: #333333;
 `;
-
-
 /* 
     TODO(Dongcheol,Daesung)
     - Add background image
@@ -36,19 +35,19 @@ class AppPage extends React.Component {
         this.state = {
         };
     }
-
     render() {
         return (
             <Wrapper>
                 {/* TODO: Background Image */}
                 <Background>
+                    <Spinner></Spinner>
                     <GradationText style= {{marginTop:"56px"}} fontSize={2.6} fontWeight={'bold'}>
                         PythonQuizFlex
                     </GradationText>
                     <NormalText style= {{marginTop:"24px", fontSize:"16px"}}>
                         Challenge and brag your<br/>
                         python language level
-                    </NormalText>
+                    </NormalText> 
                     <FilledGradationButton onClick={()=>window.location.href = '/quiz'}>
                         Start a Quiz
                     </FilledGradationButton>
