@@ -7,6 +7,8 @@ import Answers from '../ui/Answers';
 import GradationButton from '../ui/button/GradationButton.js';
 import GradationText from '../ui/text/GradationText.js';
 
+const base64url = require('base64-url');
+
 
 const Image = styled.img`
     max-height:400px;
@@ -86,9 +88,20 @@ class Result extends React.Component {
         };
     }
 
+    // base64 decode function
+    decodeAnswer(encoded) {
+        const decodedString = base64url.decode(encoded);
+        try {
+            return JSON.parse(decodedString);
+        } catch (e) {
+            return null;
+        }
+    }
+
     render() {
-        const level = 10; // TODO: Change level according to result (1~10)
+        const level = 10;   // TODO: Change level according to result (1~10)
         const result = _.sample(resultList[level-1]);
+        // this.props.location.search   // TODO(dongcheol): answer can be retrieved from props.
 
         return (
             <Wrapper>

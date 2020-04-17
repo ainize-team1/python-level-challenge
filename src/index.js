@@ -25,8 +25,8 @@ const globalNavigationBar = (
       {/* Content */}
       <Switch>
         <Route exact path='/' component={AppPage} />
-        <Route path='/result' component={Result} />
         <Route path='/quiz' component={QuizPage} />
+        <Route path='/result' component={Result} />
         {/* <Route component={NotFoundPage} /> */}
       </Switch>
     </Router>
