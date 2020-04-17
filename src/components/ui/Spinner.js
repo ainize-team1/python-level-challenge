@@ -11,19 +11,17 @@ const Background = styled.div`
 `;
 
 const LoadingText = styled.div`
-  
-  text-align:center; 
+  text-align:center;
   position: fixed;
   top:60%;
   left:50%;
-  color:#D7558A; 
+  color:#D7558A;
   font-weight:bold;
   transform: translate(-50%, 0);
 `;
 class Spinner extends React.Component {
     constructor() {
         super();
-
         this.state = {
     };
     }
@@ -33,10 +31,11 @@ class Spinner extends React.Component {
         <>
             <Background/>
             <Loader 
-            type="TailSpin" 
-            color="#D7558A" 
-            height={80} 
-            width={80} style={style}
+                type="TailSpin"
+                color="#D7558A"
+                height={80}
+                width={80}
+                style={style}
             />
             <LoadingText>
                 Populating a quiz...
