@@ -20,7 +20,6 @@ const Wrapper = styled.div`
 const Background = styled.div`
     height: 100vh;
     width: 48vh;
-    
     background: url(${require('../../static/img/intro/background.png')}) no-repeat center center; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
