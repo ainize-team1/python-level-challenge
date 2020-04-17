@@ -102,6 +102,7 @@ class AnswerPage extends React.Component {
     render() {
         const { questions, language } = this.props;
         const {index,checkedAnswer,id} = this.props.location.state
+        const {count} = this.state
         return (
             <Wrapper>
                 <Header>

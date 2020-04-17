@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import AppPage from './components/page/AppPage';
 import Result from './components/page/ResultPage';
 import QuizPage from './components/page/QuizPage';
-import AnswerPage from './components/page/AnswerPage'
+import AnswerPage from './components/page/AnswerPage';
 // import NotFoundPage from 'components/page/NotFoundPage';
 // Constants
 
