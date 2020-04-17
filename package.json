@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "base64-url": "^2.3.3",
     "express": "^4.17.1",
     "light-toast": "^0.2.3",
     "lodash": "^4.17.15",

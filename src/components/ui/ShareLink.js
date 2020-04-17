@@ -26,10 +26,8 @@ class ShareLink extends React.Component {
 
         this.state = {
             title: "",
-            description:"",
-            imgsrc:"",
-            
-            
+            description: "",
+            imgsrc: "",
         };
     }
     render(){
@@ -46,7 +44,7 @@ class ShareLink extends React.Component {
                         Toast.info('URL copied to clipboard', 500, () => {
                             // do something after the toast disappears
                             const dummy = document.createElement('input'),
-                                text = window.location.href;
+                            text = window.location.href;
 
                             document.body.appendChild(dummy);
                             dummy.value = text;
