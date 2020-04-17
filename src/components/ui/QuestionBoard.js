@@ -45,8 +45,6 @@ const QuestionText = styled.div`
     margin-left: ${props => props.marginLeft || 0}px;
     margin-right: ${props => props.marginRight || 0}px;
     margin-bottom: 24px;
-    font-family: IBM Plex Sans;
-    font-style: normal;
     font-weight: bold;
     font-size: 16px;
     line-height: 21px;
@@ -56,8 +54,6 @@ const QuestionText = styled.div`
 
 const SelectText = styled.div`
     margin-bottom: 16px;
-    font-family: IBM Plex Sans;
-    font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 21px;
@@ -84,7 +80,7 @@ const AnswerButton = styled.button`
     margin-bottom: 16px;
     border-radius: 4px;
     outline: none;
-    font-family: Roboto;
+    font-family: IBM Plex Sans;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
