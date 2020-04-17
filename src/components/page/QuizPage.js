@@ -6,7 +6,9 @@ import questions from '../../static/json/python';
 const _ = require('lodash');
 
 const Wrapper = styled.div`
-    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
 `;
 
 class Quiz extends React.Component {

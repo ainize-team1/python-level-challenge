@@ -16,6 +16,7 @@ import AnswerPage from './components/page/AnswerPage'
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
+  margin: 0 auto;
   justify-content: center;
 `;
 
@@ -25,9 +26,10 @@ const globalNavigationBar = (
       {/* Content */}
       <Switch>
         <Route exact path='/' component={AppPage} />
-        <Route path='/result' component={Result} />
         <Route path='/quiz' component={QuizPage} />
         <Route path='/answer' component={AnswerPage}/>
+        <Route path='/result' component={Result} />
+
         {/* <Route component={NotFoundPage} /> */}
       </Switch>
     </Router>
