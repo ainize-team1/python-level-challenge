@@ -10,7 +10,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #333333;
+    background-color: black;
 `;
 /* 
     TODO(Dongcheol,Daesung)
@@ -33,14 +33,23 @@ class AppPage extends React.Component {
         super();
 
         this.state = {
+            clicked: false
         };
+    }
+    onClick = () => {
+        this.setState({
+            clicked:true
+        })
+        setTimeout(() => {
+            window.location.href = '/quiz'
+        }, 750)
     }
     render() {
         return (
             <Wrapper>
                 {/* TODO: Background Image */}
                 <Background>
-                    <Spinner></Spinner>
+                    {this.state.clicked === true ? <Spinner/> : ""}
                     <GradationText style= {{marginTop:"56px"}} fontSize={2.6} fontWeight={'bold'}>
                         PythonQuizFlex
                     </GradationText>
@@ -48,7 +57,7 @@ class AppPage extends React.Component {
                         Challenge and brag your<br/>
                         python language level
                     </NormalText> 
-                    <FilledGradationButton onClick={()=>window.location.href = '/quiz'}>
+                    <FilledGradationButton onClick = {this.onClick}>
                         Start a Quiz
                     </FilledGradationButton>
                 </Background>
