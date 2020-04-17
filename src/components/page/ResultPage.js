@@ -14,7 +14,49 @@ const Image = styled.img`
     width:90%;
     height:100%;
 `;
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -webkit-animation: fadein 2s; 
+    -o-animation: fadein 2s;
+
+    @keyframes fadein {
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+    @-moz-keyframes fadein { 
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+    @-webkit-keyframes fadein { 
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+    @-o-keyframes fadein { 
+        from {
+            opacity:0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+`;
 
 const Description = styled.div`
     font-size:0.5rem;
@@ -49,7 +91,7 @@ class Result extends React.Component {
         const result = _.sample(resultList[level-1]);
 
         return (
-            <>
+            <Wrapper>
                 <LevelText>
                     Your level is
                 </LevelText>
@@ -84,7 +126,7 @@ class Result extends React.Component {
 
                 {/* TODO should fix default array for debugging([1,2]) */}
                 <Answers answersList={this.props.answersList||[1,2,3,4,5,6,7,8,9,10]}/>
-            </>
+            </Wrapper>
         )
     };
 }
