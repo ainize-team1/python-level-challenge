@@ -26,7 +26,7 @@ npm start
 ### On docker
 ```
 docker build -t <Name> .
-docker run -it -p 3000:3000 -d <Name>
+docker run -p 80:80 -d <Name>
 ```
 
 ## How to contribute
