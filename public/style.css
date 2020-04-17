@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap');
 
 html, body {
     margin: 0;
     background-color: #000000;
-    font-family: 'Roboto', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    color: white;
+    font-family: 'IBM Plex Sans';
+    color: #F2F2F2;
 }
 
 html,
