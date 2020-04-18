@@ -114,11 +114,13 @@ class Result extends React.Component {
         const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"))
         const result = _.sample(resultList[answers.score || 0]);
         // TODO : score
+        
         return (
             <Wrapper>
                 <LevelText>
                     Your level is
                 </LevelText>
+
                 <GradationText fontSize={1.5} fontWeight= {"bold"}>
                     {result.Name}
                 </GradationText >
