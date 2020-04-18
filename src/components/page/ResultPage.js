@@ -6,6 +6,7 @@ import ShareLink from '../ui/ShareLink';
 import Answers from '../ui/Answers';
 import GradationButton from '../ui/button/GradationButton.js';
 import GradationText from '../ui/text/GradationText.js';
+import Footer from '../ui/Footer';
 
 const base64url = require('base64-url');
 
@@ -115,7 +116,7 @@ class Result extends React.Component {
         const level = 10;   // TODO: Change level according to result (1~10)
         const result = _.sample(resultList[level-1]);
         const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"))
-        
+
         return (
             <Wrapper>
                 <LevelText>
@@ -151,6 +152,8 @@ class Result extends React.Component {
 
                 {/* TODO should fix default array for debugging([1,2]) */}
                 <Answers answersList={this.props.answersList||[1,2,3,4,5,6,7,8,9,10]}/>
+
+                <Footer/>
             </Wrapper>
         )
     };
