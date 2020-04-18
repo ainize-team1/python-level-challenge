@@ -6,14 +6,14 @@ import { tomorrowNight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const base64url = require('base64-url');
 
-
 const Wrapper = styled.div`
-    width: 100%;
+    width: 100vw;
+    max-width: 512px;
     flex-direction: column;
 `;
 
 const Header = styled.div`
-    margin-bottom: 30px;
+    margin-bottom: 16px;
 `;
 
 const CountText = styled.div`
@@ -56,6 +56,7 @@ const QuestionText = styled.div`
 `;
 
 const SelectText = styled.div`
+    margin-top: 32px;
     margin-bottom: 16px;
     font-weight: normal;
     font-size: 16px;
@@ -77,9 +78,9 @@ const ButtonWrapper = styled.div`
 `;
 
 const AnswerButton = styled.button`
-    width: 90%;
-    max-width: 312px;
-    height: 45px;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin-bottom: 16px;
     border-radius: 4px;
     outline: none;
@@ -96,7 +97,7 @@ const AnswerButton = styled.button`
     }
 `;
 
-class Questionboard extends React.Component {
+class QuestionBoard extends React.Component {
     constructor() {
         super();
 
@@ -182,4 +183,4 @@ class Questionboard extends React.Component {
     }
 }
 
-export default Questionboard;
+export default QuestionBoard;
