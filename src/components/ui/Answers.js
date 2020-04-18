@@ -5,8 +5,7 @@ import {FaRegTimesCircle} from 'react-icons/fa'
 
 const Grid = styled.div`  
     display: grid;
-    width: 100%;
-    max-width: 300px;
+    width: 80%;
     background: #191919;
     grid-template-columns: 40px auto 40px;
 `;
@@ -17,7 +16,6 @@ const Row = styled.div`
     text-align: left;
     padding-top : 2px;
 `;
-
 
 const ShowAnswerList = styled.div`
     color:grey;
@@ -34,13 +32,16 @@ class Answers extends React.Component {
             
         };
     }
+
     onClick= ()=>{
         if(this.state.clicked) this.setState({clicked:false})
         else this.setState({clicked: true})
     }
+
     render() {
-        const {title,qustionId, checkedAnwser, originalAnswer} = this.props.answer||"TEST";
-        const renderedList = this.props.answersList.map((answer,index) =>{
+        const {title, qustionId, checkedAnwser, originalAnswer} = this.props.answer|| "TEST";
+
+        const renderedList = this.props.answersList.map( (answer, index) => {
             return (
                 
                 <Grid key={index}>
@@ -49,26 +50,26 @@ class Answers extends React.Component {
                     </Row>
 
                     <Row> 
-                        {title||`Question ${index+1}`}  >
+                        {title|| `Question ${index+1}` } >
                     </Row>
+
                     <Row> 
-                        {checkedAnwser===originalAnswer ? 
-                            <FiCheckCircle color="#33CCFF"/>:
-                            <FaRegTimesCircle color="#FF6347"/>}
-                        <FaRegTimesCircle color="#FF6347"/>
+                        {checkedAnwser === originalAnswer ?
+                            <FiCheckCircle color= "#33CCFF"/> :
+                            <FaRegTimesCircle color= "#FF6347"/>}
+                        <FaRegTimesCircle color= "#FF6347"/>
                     </Row>
                 </Grid>
-            
             );
         });
     
         return (
             <>
-                <ShowAnswerList onClick={ this.onClick}>
+                <ShowAnswerList onClick= { this.onClick }>
                     {this.state.clicked ? "Hide your answers ▲":"See your answers ▼"}
                 </ShowAnswerList>
+
                 {this.state.clicked ? renderedList: ""}
-            
             </>
         )
     };
