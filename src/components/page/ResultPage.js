@@ -111,9 +111,8 @@ class Result extends React.Component {
     }
 
     render() {
-        const level = 10;   // TODO: Change level according to result (1~10)
-        const result = _.sample(resultList[level-1]);
         const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"))
+        const result = _.sample(resultList[answers.score || 0]);
         // TODO : score
         return (
             <Wrapper>
@@ -127,10 +126,10 @@ class Result extends React.Component {
                 Top {result.Top}%
 
                 <ScoreText>
-                    Score: {this.props.score||0}/10
+                    Score: {answers.score || 0} / {answers.length}
                 </ScoreText>
 
-                <Image src={require(`../../static/img/result/level_${level}.png`)}/>
+                <Image src={require(`../../static/img/result/level_${answers.score||1}.png`)}/>
 
                 <Description>
                     {result.Description}
@@ -151,7 +150,7 @@ class Result extends React.Component {
                 </GradationButton>
 
                 {/* TODO should fix default array for debugging([1,2]) */}
-                <Answers answersList={this.props.answersList||[1,2,3,4,5,6,7,8,9,10]}/>
+                <Answers answersList={answers}/>
 
                 <Footer/>
             </Wrapper>
