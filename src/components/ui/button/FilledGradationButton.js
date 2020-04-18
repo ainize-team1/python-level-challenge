@@ -18,8 +18,8 @@ background: linear-gradient(94.95deg, #6f00cc 3.46%, #FF8C25 101.16%);
 box-shadow: 0px 10px 20px rgba(215, 85, 138, 0.2);
 border-radius: 10px;
 position:relative;
-top: 55vh;
-left: 5vh;       
+top: 60%;
+margin: auto;
 `
 
 export default FilledGradationButton
