@@ -8,7 +8,8 @@ const base64url = require('base64-url');
 
 const Wrapper = styled.div`
     width: 100vw;
-    max-width: 512px;
+    min-width: 300px;
+    max-width: 800px;
     flex-direction: column;
 `;
 
