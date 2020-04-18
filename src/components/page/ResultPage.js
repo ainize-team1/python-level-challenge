@@ -11,10 +11,22 @@ const base64url = require('base64-url');
 
 
 const Image = styled.img`
-    max-height:600px;
-    max-width:600px;
-    width:90%;
-    height:100%;
+    @media (min-width: 1000px) {
+        height: 500px;
+        width: 500px;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    @media (max-width: 1000px) {
+        height: 50vh;
+        width: 50vh;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;     
+    }
 `;
 const Wrapper = styled.div`
     display: flex;
