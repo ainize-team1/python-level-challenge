@@ -10,7 +10,6 @@ import Footer from '../ui/Footer';
 
 const base64url = require('base64-url');
 
-
 const Image = styled.img`
     @media (min-width: 1000px) {
         height: 500px;
@@ -102,7 +101,6 @@ class Result extends React.Component {
         };
     }
 
-    // base64 decode function
     decodeAnswer(encoded) {
         const decodedString = base64url.decode(encoded);
         try {
@@ -116,7 +114,7 @@ class Result extends React.Component {
         const level = 10;   // TODO: Change level according to result (1~10)
         const result = _.sample(resultList[level-1]);
         const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"))
-
+        // TODO : score
         return (
             <Wrapper>
                 <LevelText>
@@ -125,7 +123,9 @@ class Result extends React.Component {
                 <GradationText fontSize={1.5} fontWeight= {"bold"}>
                     {result.Name}
                 </GradationText >
+
                 Top {result.Top}%
+
                 <ScoreText>
                     Score: {this.props.score||0}/10
                 </ScoreText>
