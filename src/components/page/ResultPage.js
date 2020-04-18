@@ -97,6 +97,7 @@ class Result extends React.Component {
             title: "",
             description:"",
             imgsrc:"",
+            answer:[],
         };
     }
 
@@ -113,14 +114,13 @@ class Result extends React.Component {
     render() {
         const level = 10;   // TODO: Change level according to result (1~10)
         const result = _.sample(resultList[level-1]);
-        // this.props.location.search   // TODO(dongcheol): answer can be retrieved from props.
-
+        const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"))
+        
         return (
             <Wrapper>
                 <LevelText>
                     Your level is
                 </LevelText>
-
                 <GradationText fontSize={1.5} fontWeight= {"bold"}>
                     {result.Name}
                 </GradationText >
