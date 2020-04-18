@@ -12,11 +12,11 @@ const Wrapper = styled.div`
     background-color: #333333;
 `;
 
-
 /*
     TODO(Dongcheol,Daesung)
     - Design for full screen
 */
+
 const Background = styled.div`
     height: 100vh;
     width: 48vh;
