@@ -11,8 +11,8 @@ const base64url = require('base64-url');
 
 
 const Image = styled.img`
-    max-height:400px;
-    max-width:300px;
+    max-height:600px;
+    max-width:600px;
     width:90%;
     height:100%;
 `;
