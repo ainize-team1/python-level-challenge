@@ -12,9 +12,9 @@ const Grid = styled.div`
 
 const Row = styled.div`
     margin-left : 10px;
-    font-size : 12px;
-    text-align: left;
+    font-size : 12px;\
     padding-top : 2px;
+    text-align: ${props => props.textAlign || "left"};
 `;
 
 const ShowAnswerList = styled.div`
@@ -29,7 +29,6 @@ class Answers extends React.Component {
 
         this.state = {
             clicked: false
-            
         };
     }
 
@@ -39,11 +38,10 @@ class Answers extends React.Component {
     }
 
     render() {
-        const {title, qustionId, checkedAnwser, originalAnswer} = this.props.answer|| "TEST";
+        const {title, qustionId, checkedAnwser, originalAnswer} = this.props.answersList;
 
         const renderedList = this.props.answersList.map( (answer, index) => {
             return (
-                
                 <Grid key={index}>
                     <Row>
                         {index+1}
@@ -53,11 +51,10 @@ class Answers extends React.Component {
                         {title|| `Question ${index+1}` } >
                     </Row>
 
-                    <Row> 
+                    <Row textAlign="center"> 
                         {checkedAnwser === originalAnswer ?
                             <FiCheckCircle color= "#33CCFF"/> :
                             <FaRegTimesCircle color= "#FF6347"/>}
-                        <FaRegTimesCircle color= "#FF6347"/>
                     </Row>
                 </Grid>
             );
