@@ -19,10 +19,10 @@ const Wrapper = styled.div`
 `;
 
 const Row = styled.div`
-    margin : 10px;
-    font-size : 12px;
+    margin: 10px;
+    font-size: 12px;
     text-align: center;
-    padding-top : 2px;
+    padding-top: 2px;
 `;
 
 class ShareLink extends React.Component {
@@ -35,38 +35,37 @@ class ShareLink extends React.Component {
             imgsrc: "",
         };
     }
+
     render(){
         return(
-            <>  
-                <Wrapper>
-                    <Row>
-                        <FacebookShareButton url= { window.location.href }>
-                            <FacebookIcon size= {32} round= {true}/>
-                        </FacebookShareButton>
-                    </Row>
+            <Wrapper>
+                <Row>
+                    <FacebookShareButton url= { window.location.href }>
+                        <FacebookIcon size= {32} round= {true}/>
+                    </FacebookShareButton>
+                </Row>
 
-                    <Row>
-                        <TwitterShareButton url= { window.location.href }>
-                            <TwitterIcon size={32} round= {true}/>
-                        </TwitterShareButton>
-                    </Row>
+                <Row>
+                    <TwitterShareButton url= { window.location.href }>
+                        <TwitterIcon size={32} round= {true}/>
+                    </TwitterShareButton>
+                </Row>
 
-                    <Row onClick={() => {
-                        Toast.info('URL copied to clipboard', 500, () => {
-                            const dummy = document.createElement('input'),
-                            text = window.location.href;
+                <Row onClick={() => {
+                    Toast.info('URL copied to clipboard', 500, () => {
+                        const dummy = document.createElement('input'),
+                        text = window.location.href;
 
-                            document.body.appendChild(dummy);
-                            dummy.value = text;
-                            dummy.select();
-                            document.execCommand('copy');
-                            document.body.removeChild(dummy);
-                        });
-                    }}>
-                        <FaLink size={20}/> 
-                    </Row>
-                </Wrapper>
-            </>
+                        document.body.appendChild(dummy);
+                        dummy.value = text;
+                        dummy.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(dummy);
+                    });
+                }}>
+                    <FaLink size={20}/> 
+                </Row>
+            </Wrapper>
         )
     };
 }
