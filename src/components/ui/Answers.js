@@ -1,10 +1,8 @@
 import React from 'react';
-import { Redirect, Link } from 'react-router-dom';
-import styled, { withTheme } from 'styled-components'
+import { Link } from 'react-router-dom';
+import styled from 'styled-components'
 import {FiCheckCircle} from 'react-icons/fi'
 import {FaRegTimesCircle} from 'react-icons/fa'
-
-const base64url = require('base64-url');
 
 const Grid = styled.div`  
     display: grid;
