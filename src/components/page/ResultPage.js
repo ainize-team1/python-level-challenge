@@ -73,20 +73,20 @@ const Wrapper = styled.div`
 `;
 
 const Description = styled.div`
-    font-size:0.5rem;
-    width:90%;
-    text-align:center;
+    font-size: 0.5rem;
+    width: 90%;
+    text-align: center;
 `;
 
 const ScoreText = styled.div`
-    color:grey;
-    font-size:5px;
-    margin:5px;
+    color: grey;
+    font-size: 5px;
+    margin: 5px;
 `;
 
 const LevelText = styled.div`
-    margin-top:8px;
-    font-size:8px
+    margin-top: 5%;
+    font-size: 8px
 `;
 
 class Result extends React.Component {
