@@ -2,19 +2,24 @@
 import React from 'react';
 import Toast from 'light-toast';
 import styled from 'styled-components'
-import { FaLink, FaFacebook } from 'react-icons/fa';
-import { AiFillTwitterCircle } from 'react-icons/ai';
+import { FaLink } from 'react-icons/fa';
+import { 
+    FacebookShareButton,
+    TwitterShareButton,
+    FacebookIcon,
+    TwitterIcon,
+} from "react-share";
 
-
-const Grid = styled.div`  
-    display: grid;
+const Wrapper = styled.div`  
+    display: flex;
     width: 100%;
     max-width: 300px;
-    grid-template-columns: auto auto auto;    
+    align-items: center;
+    justify-content: center;    
 `;
 
 const Row = styled.div`
-    margin-left : 10px;
+    margin : 10px;
     font-size : 12px;
     text-align: center;
     padding-top : 2px;
@@ -33,16 +38,21 @@ class ShareLink extends React.Component {
     render(){
         return(
             <>  
-                <Grid>
+                <Wrapper>
                     <Row>
-                        <FaFacebook size={32}/>
+                        <FacebookShareButton url= { window.location.href }>
+                            <FacebookIcon size= {32} round= {true}/>
+                        </FacebookShareButton>
                     </Row>
+
                     <Row>
-                        <AiFillTwitterCircle size={35.5}/>
+                        <TwitterShareButton url= { window.location.href }>
+                            <TwitterIcon size={32} round= {true}/>
+                        </TwitterShareButton>
                     </Row>
+
                     <Row onClick={() => {
                         Toast.info('URL copied to clipboard', 500, () => {
-                            // do something after the toast disappears
                             const dummy = document.createElement('input'),
                             text = window.location.href;
 
@@ -53,9 +63,9 @@ class ShareLink extends React.Component {
                             document.body.removeChild(dummy);
                         });
                     }}>
-                        <FaLink size={25} style={{marginTop:"5.5px"}}/> 
+                        <FaLink size={20}/> 
                     </Row>
-                </Grid>
+                </Wrapper>
             </>
         )
     };
