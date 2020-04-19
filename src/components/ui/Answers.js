@@ -12,16 +12,16 @@ const Grid = styled.div`
 `;
 
 const Row = styled.div`
-    margin-left : 10px;
-    font-size : 12px;\
-    padding-top : 2px;
+    margin-left: 10px;
+    font-size: 12px;\
+    padding-top: 2px;
     text-align: ${props => props.textAlign || "left"};
 `;
 
 const ShowAnswerList = styled.div`
-    color:grey;
-    font-size:10px;
-    paddingBottom:7px;
+    color: grey;
+    font-size: 10px;
+    paddingBottom: 7px;
 `;
 
 class Answers extends React.Component {
