@@ -22,12 +22,14 @@ const LoadingText = styled.div`
 class Spinner extends React.Component {
     constructor() {
         super();
+
         this.state = {
         };
     }
 
     render() {
         const style = {position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)"};
+        
         return(
             <div>
                 <Background/>
