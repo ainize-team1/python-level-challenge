@@ -152,7 +152,7 @@ class Result extends React.Component {
                 </GradationButton>
 
                 {/* TODO should fix default array for debugging([1,2]) */}
-                <Answers answersList={answers}/>
+                <Answers answerSheet = {answers}/>
 
                 <Footer/>
             </Wrapper>

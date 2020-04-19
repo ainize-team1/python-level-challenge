@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import {FiCheckCircle} from 'react-icons/fi'
 import {FaRegTimesCircle} from 'react-icons/fa'
+import questionsList from '../../static/json/python.json';
+import answerList from '../../static/json/python_answer.json';
 
 const Grid = styled.div`  
     display: grid;
@@ -39,9 +41,11 @@ class Answers extends React.Component {
     }
 
     render() {
-        const {title, qustionId, checkedAnwser, originalAnswer} = this.props.answersList;
-
-        const renderedList = this.props.answersList.map( (answer, index) => {
+        const renderedList = this.props.answerSheet.map( (result, index) => {
+            // FIX ME this(id=3) is code for debuging
+            const { id=3, selectedAnswer } = result
+            const subject = questionsList[id-1].Subject
+            const answer = answerList[id-1].Answer
 
             return (
                 <Grid key={ index } >
@@ -52,14 +56,14 @@ class Answers extends React.Component {
                     <Row>
                         <Link 
                             style={ {color: "white", textDecoration: "none",} } 
-                            to={ {pathname: '/answer', state: { answer },} }
+                            to={ {pathname: '/answer', state: { id, selectedAnswer },} }
                         >
-                            {title|| `Question ${index+1}` } >
+                            { subject || `Question ${index+1}` } >
                         </Link>
                     </Row>
 
                     <Row textAlign="center"> 
-                        {checkedAnwser === originalAnswer ?
+                        {answer === selectedAnswer ?
                             <FiCheckCircle color= "#33CCFF"/> :
                             <FaRegTimesCircle color= "#FF6347"/>}
                     </Row>
