@@ -97,7 +97,6 @@ class Result extends React.Component {
             title: "",
             description:"",
             imgsrc:"",
-            answer:[],
         };
     }
 
