@@ -1,7 +1,10 @@
 import React from 'react';
-import styled from 'styled-components'
+import { Redirect, Link } from 'react-router-dom';
+import styled, { withTheme } from 'styled-components'
 import {FiCheckCircle} from 'react-icons/fi'
 import {FaRegTimesCircle} from 'react-icons/fa'
+
+const base64url = require('base64-url');
 
 const Grid = styled.div`  
     display: grid;
@@ -28,7 +31,7 @@ class Answers extends React.Component {
         super();
 
         this.state = {
-            clicked: false
+            clicked: false,
         };
     }
 
@@ -41,14 +44,20 @@ class Answers extends React.Component {
         const {title, qustionId, checkedAnwser, originalAnswer} = this.props.answersList;
 
         const renderedList = this.props.answersList.map( (answer, index) => {
+
             return (
-                <Grid key={index}>
+                <Grid key={ index } >
                     <Row>
                         {index+1}
                     </Row>
 
-                    <Row> 
-                        {title|| `Question ${index+1}` } >
+                    <Row>
+                        <Link 
+                            style={ {color: "white", textDecoration: "none",} } 
+                            to={ {pathname: '/answer', state: { answer },} }
+                        >
+                            {title|| `Question ${index+1}` } >
+                        </Link>
                     </Row>
 
                     <Row textAlign="center"> 
