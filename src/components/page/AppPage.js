@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import GradationText from '../ui/text/GradationText.js';
 import NormalText from '../ui/text/NormalText';
 import FilledGradationButton from '../ui/button/FilledGradationButton';
+import Spinner from '../ui/Spinner'
 
 const Wrapper = styled.div`
 `;
@@ -39,26 +40,37 @@ class AppPage extends React.Component {
         super();
 
         this.state = {
+            clicked: false
         };
+    }
+
+    onClick = () => {
+        this.setState({
+            clicked:true
+        })
+
+        setTimeout(() => {
+            window.location.href = '/quiz'
+        }, 750)
     }
 
     render() {
         return (
-                <Background>
-                    <Wrapper>
-                        <GradationText style= {{marginTop:"56px"}} fontSize={2.6} fontWeight={'bold'}>
-                            PythonQuizFlex
-                        </GradationText>
+            <Background>
+                <Wrapper>
+                    <GradationText style= {{marginTop:"56px"}} fontSize={2.6} fontWeight={'bold'}>
+                        PythonQuizFlex
+                    </GradationText>
 
-                        <NormalText style= {{marginTop:"24px", fontSize:"16px"}}>
-                            Challenge and brag your python language level
-                        </NormalText>
-                    </Wrapper>
-                    
-                    <FilledGradationButton onClick={()=>window.location.href = '/quiz'}>
-                        Start a Quiz
-                    </FilledGradationButton>
-                </Background>
+                    <NormalText style= {{marginTop:"24px", fontSize:"16px"}}>
+                        Challenge and brag your python language level
+                    </NormalText>
+                </Wrapper>
+
+                <FilledGradationButton onClick={()=>window.location.href = '/quiz'}>
+                    Start a Quiz
+                </FilledGradationButton>
+            </Background>
         );
     }
 }
