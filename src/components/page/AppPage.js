@@ -5,10 +5,6 @@ import NormalText from '../ui/text/NormalText';
 import FilledGradationButton from '../ui/button/FilledGradationButton';
 
 const Wrapper = styled.div`
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 `;
 
 /*
@@ -18,9 +14,10 @@ const Wrapper = styled.div`
 
 const Background = styled.div`
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     @media (min-width: 1000px) {
-        max-height: 900px;
-        max-width: 1000px;
         height: 100vh;
         width: 100vh;
         background: url(${require('../../static/img/intro/background-desktop.jpg')}) no-repeat center center; 
@@ -52,23 +49,19 @@ class AppPage extends React.Component {
 
     render() {
         return (
-            <Wrapper>
-                {/* TODO: Background Image */}
                 <Background>
-                    <GradationText style= {{marginTop:"56px"}} fontSize={2.6} fontWeight={'bold'}>
-                        PythonQuizFlex
-                    </GradationText>
-
                     <NormalText style= {{marginTop:"24px", fontSize:"16px"}}>
-                        Challenge and brag your<br/>
-                        python language level
+                        <GradationText style= {{marginTop:"56px"}} fontSize={2.6} fontWeight={'bold'}>
+                            PythonQuizFlex
+                        </GradationText>
+
+                        Challenge and brag your python language level
                     </NormalText>
 
                     <FilledGradationButton onClick={()=>window.location.href = '/quiz'}>
                         Start a Quiz
                     </FilledGradationButton>
                 </Background>
-            </Wrapper>
         );
     }
 }
