@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'underscore';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { Helmet } from "react-helmet";
 import resultList from '../../static/json/resultList';
 import ShareLink from '../ui/ShareLink';
 import Answers from '../ui/Answers';
@@ -82,9 +83,9 @@ class Result extends React.Component {
         super();
 
         this.state = {
-            title: "",
-            description:"",
-            imgsrc:"",
+            title: `Python Quiz Flex`,
+            description: "Let's take a look Python quiz and show off your score.",
+            imgsrc: "",
         };
     }
 
@@ -99,12 +100,24 @@ class Result extends React.Component {
     }
 
     render() {
+        const { title, description } = this.state;
         const level = 10;   // TODO: Change level according to result (1~10)
         const result = _.sample(resultList[level-1]);
         // this.props.location.search   // TODO(dongcheol): answer can be retrieved from props.
 
         return (
             <Wrapper>
+                <Helmet>
+                    <title>{`${title}`}</title>
+                    <meta name="description" content={`${description}`} />
+                    <meta name="keywords" content={`ainize,python,programming languages,quiz`} />
+                    {/* Open Graph metadata */}
+                    <meta property="og:title" content={`${title}`} />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:description" content={`${description}`} />
+                    <meta property="og:image" content={require(`../../static/img/result/level_${level}.png`)} />
+                </Helmet>
+
                 <LevelText>
                     Your level is
                 </LevelText>
@@ -112,7 +125,7 @@ class Result extends React.Component {
                 <GradationText fontSize={1.5} fontWeight= {"bold"}>
                     {result.Name}
                 </GradationText >
-                Top {result.Top}%
+                    Top {result.Top}%
                 <ScoreText>
                     Score: {this.props.score||0}/10
                 </ScoreText>
@@ -138,7 +151,7 @@ class Result extends React.Component {
                 </GradationButton>
 
                 {/* TODO should fix default array for debugging([1,2]) */}
-                <Answers answersList={this.props.answersList||[1,2,3,4,5,6,7,8,9,10]}/>
+                <Answers answersList={this.props.answersList || [1,2,3,4,5,6,7,8,9,10]}/>
             </Wrapper>
         )
     };
