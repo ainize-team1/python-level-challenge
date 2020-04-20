@@ -125,7 +125,7 @@ class QuestionBoard extends React.Component {
     }
 
     onButtonClick = (index, question) => {
-        question.selected = index;
+        question.Selected = index;
         this.state.answers.push(question)
         
         if (this.state.count < this.props.questions.length - 1) {

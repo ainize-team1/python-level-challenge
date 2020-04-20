@@ -3,6 +3,7 @@ import _ from 'underscore';
 import styled from 'styled-components';
 import { Helmet } from "react-helmet";
 import resultList from '../../static/json/resultList';
+import answerList from '../../static/json/python_answer.json';
 import ShareLink from '../ui/ShareLink';
 import Answers from '../ui/Answers';
 import GradationButton from '../ui/button/GradationButton.js';
@@ -112,9 +113,10 @@ class Result extends React.Component {
     }
 
     render() {
-        const { title, description } = this.state;
-        const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"))
-        const result = _.sample(resultList[answers.score || 0])
+        const {title, description} = this.state;
+        const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"));
+        const score = answers.filter((answer) => {return answer.Selected==answerList[answer.Id-1].Answer}).length;
+        const result = _.sample(resultList[score]);
 
         return (
             <Wrapper>
@@ -126,7 +128,7 @@ class Result extends React.Component {
                     <meta property="og:title" content={`${title}`} />
                     <meta property="og:type" content="website" />
                     <meta property="og:description" content={`${description}`} />
-                    <meta property="og:image" content={require(`../../static/img/result/level_${answers.score||1}.png`)} />
+                    <meta property="og:image" content={require(`../../static/img/result/level_${score}.png`)} />
                 </Helmet>
 
                 <LevelText>
@@ -140,10 +142,10 @@ class Result extends React.Component {
                 Top {result.Top}%
 
                 <ScoreText>
-                    Score: {answers.score || 0} / {answers.length}
+                    Score: {score} / {answers.length}
                 </ScoreText>
 
-                <Image src={require(`../../static/img/result/level_${answers.score||1}.png`)}/>
+                <Image src={require(`../../static/img/result/level_${score}.png`)}/>
 
                 <Description>
                     {result.Description}

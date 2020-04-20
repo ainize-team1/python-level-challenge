@@ -42,10 +42,9 @@ class Answers extends React.Component {
 
     render() {
         const renderedList = this.props.answerSheet.map((result, index) => {
-            // FIX ME this(id=3) is code for debuging
-            const { id=3, selectedAnswer } = result;
-            const subject = questionsList[id-1].Subject;
-            const answer = answerList[id-1].Answer;
+            const {Id, Selected} = result;
+            const subject = questionsList[Id-1].Subject;
+            const answer = answerList[Id-1].Answer;
 
             return (
                 <Grid key={index} >
@@ -56,14 +55,14 @@ class Answers extends React.Component {
                     <Row>
                         <Link 
                             style={ {color: "white", textDecoration: "none",} } 
-                            to={ {pathname: '/answer', state: { id, selectedAnswer },} }
+                            to={ {pathname: '/answer', state: {Id, Selected},} }
                         >
                             { subject || `Question ${index+1}` } >
                         </Link>
                     </Row>
 
                     <Row textAlign="center"> 
-                        {answer === selectedAnswer ?
+                        {answer == Selected ?
                             <FiCheckCircle color="#33CCFF"/> :
                             <FaRegTimesCircle color="#FF6347"/>}
                     </Row>
