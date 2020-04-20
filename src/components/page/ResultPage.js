@@ -112,16 +112,15 @@ class Result extends React.Component {
 
     render() {
         const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"))
-        const result = _.sample(resultList[answers.score || 0]);
-        // TODO : score
-        
+        const result = _.sample(resultList[answers.score || 0])
+
         return (
             <Wrapper>
                 <LevelText>
                     Your level is
                 </LevelText>
 
-                <GradationText fontSize={1.5} fontWeight= {"bold"}>
+                <GradationText fontSize={1.5} fontWeight={"bold"}>
                     {result.Name}
                 </GradationText >
 
@@ -152,7 +151,7 @@ class Result extends React.Component {
                 </GradationButton>
 
                 {/* TODO should fix default array for debugging([1,2]) */}
-                <Answers answerSheet = {answers}/>
+                <Answers answerSheet={answers}/>
 
                 <Footer/>
             </Wrapper>

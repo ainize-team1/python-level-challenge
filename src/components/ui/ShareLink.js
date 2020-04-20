@@ -41,13 +41,13 @@ class ShareLink extends React.Component {
             <Wrapper>
                 {/* TODO ADD URL */}
                 <Row>
-                    <FacebookShareButton url= { window.location.href }>
+                    <FacebookShareButton url={ window.location.href }>
                         <FacebookIcon size= {32} round= {true}/>
                     </FacebookShareButton>
                 </Row>
 
                 <Row>
-                    <TwitterShareButton url= { window.location.href }>
+                    <TwitterShareButton url={ window.location.href }>
                         <TwitterIcon size={32} round= {true}/>
                     </TwitterShareButton>
                 </Row>

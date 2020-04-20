@@ -15,7 +15,7 @@ const Grid = styled.div`
 
 const Row = styled.div`
     margin-left: 10px;
-    font-size: 12px;\
+    font-size: 12px;
     padding-top: 2px;
     text-align: ${props => props.textAlign || "left"};
 `;
@@ -43,12 +43,12 @@ class Answers extends React.Component {
     render() {
         const renderedList = this.props.answerSheet.map( (result, index) => {
             // FIX ME this(id=3) is code for debuging
-            const { id=3, selectedAnswer } = result
-            const subject = questionsList[id-1].Subject
-            const answer = answerList[id-1].Answer
+            const { id=3, selectedAnswer } = result;
+            const subject = questionsList[id-1].Subject;
+            const answer = answerList[id-1].Answer;
 
             return (
-                <Grid key={ index } >
+                <Grid key={index} >
                     <Row>
                         {index+1}
                     </Row>
@@ -64,8 +64,8 @@ class Answers extends React.Component {
 
                     <Row textAlign="center"> 
                         {answer === selectedAnswer ?
-                            <FiCheckCircle color= "#33CCFF"/> :
-                            <FaRegTimesCircle color= "#FF6347"/>}
+                            <FiCheckCircle color="#33CCFF"/> :
+                            <FaRegTimesCircle color="#FF6347"/>}
                     </Row>
                 </Grid>
             );
@@ -73,7 +73,7 @@ class Answers extends React.Component {
     
         return (
             <>
-                <ShowAnswerList onClick= { this.onClick }>
+                <ShowAnswerList onClick={ this.onClick }>
                     {this.state.clicked ? "Hide your answers ▲":"See your answers ▼"}
                 </ShowAnswerList>
 
