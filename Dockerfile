@@ -1,10 +1,12 @@
-FROM node:12
-WORKDIR /workspace
-COPY package*.json ./
-RUN npm install
-RUN npm install react-scripts
+FROM mhart/alpine-node:12 AS builder
+WORKDIR /app
 COPY . .
+RUN npm install react-scripts -g --silent
+RUN npm install
+RUN npm run build
 
-EXPOSE 3000
-
-CMD ["npm", "start"]
+FROM node:12
+RUN yarn global add serve
+WORKDIR /app
+COPY --from=builder /app/build .
+CMD ["serve", "-p", "80", "-s", "."]

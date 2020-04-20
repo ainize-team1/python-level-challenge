@@ -13,13 +13,12 @@ const Wrapper = styled.div`
 `;
 /* 
     TODO(Dongcheol,Daesung)
-    - Add background image
-    - Design for full screen 
+    - Design for full screen
 */
 const Background = styled.div`
     height: 100vh;
     width: 48vh;
-    background: url('https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg') no-repeat center center; 
+    background: url(${require('../../static/img/intro/background.png')}) no-repeat center center; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
