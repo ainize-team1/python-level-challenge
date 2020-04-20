@@ -41,7 +41,7 @@ class Answers extends React.Component {
     }
 
     render() {
-        const renderedList = this.props.answerSheet.map( (result, index) => {
+        const renderedList = this.props.answerSheet.map((result, index) => {
             // FIX ME this(id=3) is code for debuging
             const { id=3, selectedAnswer } = result;
             const subject = questionsList[id-1].Subject;
