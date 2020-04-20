@@ -22,8 +22,8 @@ const Image = styled.img`
         background-size: cover;
     }
     @media (max-width: 1000px) {
-        height: 50vh;
-        width: 50vh;
+        height: 40vh;
+        width: 40vh;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -76,20 +76,21 @@ const Wrapper = styled.div`
 `;
 
 const Description = styled.div`
-    font-size: 0.5rem;
+    font-size: 1.5rem;
     width: 90%;
     text-align: center;
+    font-size: 0.8em;
 `;
 
 const ScoreText = styled.div`
     color: grey;
-    font-size: 5px;
+    font-size: 1em;
     margin: 5px;
 `;
 
 const LevelText = styled.div`
     margin-top: 5%;
-    font-size: 8px
+    font-size: 1em;
 `;
 
 class Result extends React.Component {
@@ -135,7 +136,7 @@ class Result extends React.Component {
                     Your level is
                 </LevelText>
 
-                <GradationText fontSize={1.5} fontWeight={"bold"}>
+                <GradationText fontSize={2.3} fontWeight={"bold"}>
                     {result.Name}
                 </GradationText >
 

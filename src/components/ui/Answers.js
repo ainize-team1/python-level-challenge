@@ -8,21 +8,22 @@ import answerList from '../../static/json/python_answer.json';
 
 const Grid = styled.div`  
     display: grid;
-    width: 80%;
+    width: 100%;
     background: #191919;
+    padding:10px;
     grid-template-columns: 40px auto 40px;
+    font-size: 1em;
 `;
 
 const Row = styled.div`
     margin-left: 10px;
-    font-size: 12px;
     padding-top: 2px;
     text-align: ${props => props.textAlign || "left"};
 `;
 
 const ShowAnswerList = styled.div`
     color: grey;
-    font-size: 10px;
+    font-size: 1em;
     paddingBottom: 7px;
 `;
 
@@ -52,14 +53,14 @@ class Answers extends React.Component {
                         {index+1}
                     </Row>
 
-                    <Row>
-                        <Link 
-                            style={ {color: "white", textDecoration: "none",} } 
-                            to={ {pathname: '/answer', state: {Id, Selected},} }
-                        >
+                    <Link 
+                        style={{color: "white", textDecoration: "none",}} 
+                        to={{pathname: '/answer', state: {Id, Selected},}}
+                    >
+                        <Row>
                             { subject || `Question ${index+1}` } >
-                        </Link>
-                    </Row>
+                        </Row>
+                    </Link>
 
                     <Row textAlign="center"> 
                         {answer == Selected ?

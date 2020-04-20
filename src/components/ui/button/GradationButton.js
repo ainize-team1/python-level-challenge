@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const GradationButton = styled.button`
   padding: 0.375rem 0.75rem;
   font-family: IBM Plex Sans;
-  font-size: 0.75rem;
+  font-size: 1rem;
   line-height: 1.5;
   margin: 5px;
   width: 80%;
