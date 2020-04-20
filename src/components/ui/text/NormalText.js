@@ -6,7 +6,8 @@ const NormalText = styled.div`
     text-align: center;
     letter-spacing: 0.15px;
     color: #FFFFFF;
-    margin: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
 `
 
 export default NormalText
