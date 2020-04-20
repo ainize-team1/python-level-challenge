@@ -7,16 +7,11 @@ import FilledGradationButton from '../ui/button/FilledGradationButton';
 const Wrapper = styled.div`
 `;
 
-/*
-    TODO(Dongcheol,Daesung)
-    - Design for full screen
-*/
-
 const Background = styled.div`
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     @media (min-width: 1000px) {
         height: 100vh;
         width: 100vh;
@@ -50,14 +45,16 @@ class AppPage extends React.Component {
     render() {
         return (
                 <Background>
-                    <NormalText style= {{marginTop:"24px", fontSize:"16px"}}>
+                    <Wrapper>
                         <GradationText style= {{marginTop:"56px"}} fontSize={2.6} fontWeight={'bold'}>
                             PythonQuizFlex
                         </GradationText>
 
-                        Challenge and brag your python language level
-                    </NormalText>
-
+                        <NormalText style= {{marginTop:"24px", fontSize:"16px"}}>
+                            Challenge and brag your python language level
+                        </NormalText>
+                    </Wrapper>
+                    
                     <FilledGradationButton onClick={()=>window.location.href = '/quiz'}>
                         Start a Quiz
                     </FilledGradationButton>

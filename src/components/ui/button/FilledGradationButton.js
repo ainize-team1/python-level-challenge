@@ -11,7 +11,7 @@ const FilledGradationButton = styled.button`
     width: 300px;
     height: 50px;
     border: 0;
-    background: linear-gradient(94.95deg, #6f00cc 3.46%, #FF8C25 101.16%);
+    background: linear-gradient(94.95deg, #6f00cc 0%, #FF8C25 100%);
     box-shadow: 0px 10px 20px rgba(215, 85, 138, 0.2);
     border-radius: 10px;
     margin-left: auto;
