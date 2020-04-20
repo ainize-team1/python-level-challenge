@@ -39,6 +39,7 @@ class ShareLink extends React.Component {
     render(){
         return(
             <Wrapper>
+                {/* TODO ADD URL */}
                 <Row>
                     <FacebookShareButton url= { window.location.href }>
                         <FacebookIcon size= {32} round= {true}/>
