@@ -2,21 +2,27 @@ import React from 'react';
 import styled from 'styled-components';
 import Loader from 'react-loader-spinner'
 
+const Wrapper = styled.div`
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+`;
+
 const Background = styled.div`
-  background-color:rgba(0, 0, 0, 0.5);
-  width: 100%; 
-  height: 100%;
-  position: fixed;
+    background-color:rgba(0, 0, 0, 0.5);
+    width: 100%; 
+    height: 100%;
+    position: fixed;
 `;
 
 const LoadingText = styled.div`
-  text-align:center;
-  position: fixed;
-  top:60%;
-  left:50%;
-  color:#D7558A;
-  font-weight:bold;
-  transform: translate(-50%, 0);
+    text-align:center;
+    position: fixed;
+    top:60%;
+    left:50%;
+    color:#D7558A;
+    font-weight:bold;
+    transform: translate(-50%, 0);
 `;
 
 class Spinner extends React.Component {
@@ -31,7 +37,7 @@ class Spinner extends React.Component {
         const style = {position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)"};
         
         return(
-            <div>
+            <Wrapper>
                 <Background/>
 
                 <Loader 
@@ -45,7 +51,7 @@ class Spinner extends React.Component {
                 <LoadingText>
                     Populating a quiz...
                 </LoadingText>
-            </div>
+            </Wrapper>
         )
     }
 }
