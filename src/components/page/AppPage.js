@@ -5,10 +5,10 @@ import NormalText from '../ui/text/NormalText';
 import FilledGradationButton from '../ui/button/FilledGradationButton';
 import Spinner from '../ui/Spinner'
 
-const Wrapper = styled.div`
+const TextWrapper = styled.div`
 `;
 
-const Background = styled.div`
+const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -67,12 +67,12 @@ class AppPage extends React.Component {
                     <NormalText style= {{marginTop:"24px", fontSize:"16px"}}>
                         Challenge and brag your python language level
                     </NormalText>
-                </Wrapper>
+                </TextWrapper>
 
                 <FilledGradationButton onClick={ this.onSpinner }>
                     Start a Quiz
                 </FilledGradationButton>
-            </Background>
+            </Wrapper>
         );
     }
 }
