@@ -25,13 +25,13 @@ const GradationButton = styled.div`
         -webkit-border-image-slice: 2;
 
     :hover {
-      border-width: 1px;
-      border-style: solid;
-      border-image: linear-gradient(to right, #f2513c 0%, #cb60b3 100%);
-          -moz-border-image: -moz-linear-gradient(to right, #f2513c 0%, #cb60b3 100%);
-          -webkit-border-image: -webkit-linear-gradient(to right, #f2513c 0%, #cb60b3 100%);
-      border-image-slice: 2;
-          -webkit-border-image-slice: 2;
+        border-width: 1px;
+        border-style: solid;
+        border-image: linear-gradient(to right, #f2513c 0%, #cb60b3 100%);
+            -moz-border-image: -moz-linear-gradient(to right, #f2513c 0%, #cb60b3 100%);
+            -webkit-border-image: -webkit-linear-gradient(to right, #f2513c 0%, #cb60b3 100%);
+        border-image-slice: 2;
+            -webkit-border-image-slice: 2;
     }
 `;
 
