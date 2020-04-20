@@ -28,6 +28,7 @@ const Image = styled.img`
         background-size: cover;     
     }
 `;
+
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
