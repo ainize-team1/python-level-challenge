@@ -8,7 +8,6 @@ const GradationButton = styled.button`
   line-height: 1.5;
   margin: 5px;
   width: 80%;
-  max-width: 300px;
   font-weight: 500;
   background: #ef4e28;
   background: linear-gradient(to right, #6f00cc 0%, #f2513c 100%);
