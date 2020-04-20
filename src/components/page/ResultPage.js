@@ -22,12 +22,8 @@ const Image = styled.img`
         background-size: cover;
     }
     @media (max-width: 1000px) {
-        height: 40vh;
-        width: 40vh;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;     
+        height: auto;
+        width: 45vh;
     }
 `;
 
@@ -131,7 +127,6 @@ class Result extends React.Component {
                     <meta property="og:description" content={`${description}`} />
                     <meta property="og:image" content={require(`../../static/img/result/level_${score}.png`)} />
                 </Helmet>
-
                 <LevelText>
                     Your level is
                 </LevelText>
