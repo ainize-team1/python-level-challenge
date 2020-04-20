@@ -112,6 +112,7 @@ class Result extends React.Component {
     }
 
     render() {
+        const { title, description } = this.state;
         const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"))
         const result = _.sample(resultList[answers.score || 0])
 
@@ -125,7 +126,7 @@ class Result extends React.Component {
                     <meta property="og:title" content={`${title}`} />
                     <meta property="og:type" content="website" />
                     <meta property="og:description" content={`${description}`} />
-                    <meta property="og:image" content={require(`../../static/img/result/level_${level}.png`)} />
+                    <meta property="og:image" content={require(`../../static/img/result/level_${answers.score||1}.png`)} />
                 </Helmet>
 
                 <LevelText>

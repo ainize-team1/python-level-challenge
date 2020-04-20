@@ -56,10 +56,10 @@ class AppPage extends React.Component {
 
     render() {
         return (
-            <Background>
+            <Wrapper>
                 { this.state.clicked ? <Spinner/>: ""}
 
-                <Wrapper>
+                <TextWrapper>
                     <GradationText style= {{marginTop:"56px"}} fontSize={2.6} fontWeight={'bold'}>
                         PythonQuizFlex
                     </GradationText>
