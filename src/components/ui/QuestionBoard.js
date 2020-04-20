@@ -122,12 +122,13 @@ class Questionboard extends React.Component {
         }
     }
 
-    onButtonClick = (index) => {
+    onButtonClick = (index, question) => {
+        question.selected = index;
+        this.state.answers.push(question)
+        
         if (this.state.count < this.props.questions.length - 1) {
             this.setState({ count: this.state.count + 1 });
-            this.state.answers.push(index);
         } else {
-            this.state.answers.push(index);
             this.setRedirect();
         }
     }
@@ -168,7 +169,7 @@ class Questionboard extends React.Component {
                         if (answer) {
                             return (
                                 <AnswerButton key={`${i}`}
-                                    onClick={() => this.onButtonClick(i)}>
+                                    onClick={() => this.onButtonClick(i,questions[count])}>
                                         {questions[count].Answers[i]}
                                 </AnswerButton>
                             )
