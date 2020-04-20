@@ -9,7 +9,4 @@ const GradationText = styled.div`
     -webkit-text-fill-color: transparent;
 `;
 
-export default GradationText
-
-
-
+export default GradationText;
