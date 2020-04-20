@@ -124,9 +124,9 @@ class QuestionBoard extends React.Component {
         }
     }
 
-    onButtonClick = (index, question) => {
-        question.Selected = index;
-        this.state.answers.push(question)
+    onButtonClick = (index, id) => {
+        const answer = [id, index];
+        this.state.answers.push(answer);
         
         if (this.state.count < this.props.questions.length - 1) {
             this.setState({ count: this.state.count + 1 });
@@ -171,7 +171,7 @@ class QuestionBoard extends React.Component {
                         if (answer) {
                             return (
                                 <AnswerButton key={`${i}`}
-                                    onClick={() => this.onButtonClick(i,questions[count])}>
+                                    onClick={() => this.onButtonClick(i,questions[count].Id)}>
                                         {questions[count].Answers[i]}
                                 </AnswerButton>
                             )

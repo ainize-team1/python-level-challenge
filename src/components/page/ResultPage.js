@@ -112,7 +112,7 @@ class Result extends React.Component {
     render() {
         const {title, description} = this.state;
         const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"));
-        const score = answers.filter((answer) => {return answer.Selected==answerList[answer.Id-1].Answer}).length;
+        const score = answers.filter((answer) => {return answer[1]==answerList[answer[0]-1].Answer}).length;
         const result = _.sample(resultList[score]);
 
         return (
