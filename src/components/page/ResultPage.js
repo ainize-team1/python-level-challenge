@@ -1,21 +1,35 @@
 import React from 'react';
 import _ from 'underscore';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { Helmet } from "react-helmet";
 import resultList from '../../static/json/resultList';
 import ShareLink from '../ui/ShareLink';
 import Answers from '../ui/Answers';
 import GradationButton from '../ui/button/GradationButton.js';
 import GradationText from '../ui/text/GradationText.js';
+import Footer from '../ui/Footer';
 
 const base64url = require('base64-url');
 
-
 const Image = styled.img`
-    max-height:400px;
-    max-width:300px;
-    width:90%;
-    height:100%;
+    @media (min-width: 1000px) {
+        height: 500px;
+        width: 500px;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    @media (max-width: 1000px) {
+        height: 50vh;
+        width: 50vh;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;     
+    }
 `;
+
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -61,20 +75,20 @@ const Wrapper = styled.div`
 `;
 
 const Description = styled.div`
-    font-size:0.5rem;
-    width:90%;
-    text-align:center;
+    font-size: 0.5rem;
+    width: 90%;
+    text-align: center;
 `;
 
 const ScoreText = styled.div`
-    color:grey;
-    font-size:5px;
-    margin:5px;
+    color: grey;
+    font-size: 5px;
+    margin: 5px;
 `;
 
 const LevelText = styled.div`
-    margin-top:8px;
-    font-size:8px
+    margin-top: 5%;
+    font-size: 8px
 `;
 
 class Result extends React.Component {
@@ -82,13 +96,12 @@ class Result extends React.Component {
         super();
 
         this.state = {
-            title: "",
-            description:"",
-            imgsrc:"",
+            title: `Python Quiz Flex`,
+            description: "Let's take a look Python quiz and show off your score.",
+            imgsrc: "",
         };
     }
 
-    // base64 decode function
     decodeAnswer(encoded) {
         const decodedString = base64url.decode(encoded);
         try {
@@ -99,25 +112,38 @@ class Result extends React.Component {
     }
 
     render() {
-        const level = 10;   // TODO: Change level according to result (1~10)
-        const result = _.sample(resultList[level-1]);
-        // this.props.location.search   // TODO(dongcheol): answer can be retrieved from props.
+        const { title, description } = this.state;
+        const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"))
+        const result = _.sample(resultList[answers.score || 0])
 
         return (
             <Wrapper>
+                <Helmet>
+                    <title>{`${title}`}</title>
+                    <meta name="description" content={`${description}`} />
+                    <meta name="keywords" content={`ainize,python,programming languages,quiz`} />
+                    {/* Open Graph metadata */}
+                    <meta property="og:title" content={`${title}`} />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:description" content={`${description}`} />
+                    <meta property="og:image" content={require(`../../static/img/result/level_${answers.score||1}.png`)} />
+                </Helmet>
+
                 <LevelText>
                     Your level is
                 </LevelText>
 
-                <GradationText fontSize={1.5} fontWeight= {"bold"}>
+                <GradationText fontSize={1.5} fontWeight={"bold"}>
                     {result.Name}
                 </GradationText >
+
                 Top {result.Top}%
+
                 <ScoreText>
-                    Score: {this.props.score||0}/10
+                    Score: {answers.score || 0} / {answers.length}
                 </ScoreText>
 
-                <Image src={require(`../../static/img/result/level_${level}.png`)}/>
+                <Image src={require(`../../static/img/result/level_${answers.score||1}.png`)}/>
 
                 <Description>
                     {result.Description}
@@ -138,7 +164,9 @@ class Result extends React.Component {
                 </GradationButton>
 
                 {/* TODO should fix default array for debugging([1,2]) */}
-                <Answers answersList={this.props.answersList||[1,2,3,4,5,6,7,8,9,10]}/>
+                <Answers answerSheet={answers}/>
+
+                <Footer/>
             </Wrapper>
         )
     };

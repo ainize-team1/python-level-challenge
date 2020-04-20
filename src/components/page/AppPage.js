@@ -5,10 +5,10 @@ import NormalText from '../ui/text/NormalText';
 import FilledGradationButton from '../ui/button/FilledGradationButton';
 import Spinner from '../ui/Spinner'
 
-const Wrapper = styled.div`
+const TextWrapper = styled.div`
 `;
 
-const Background = styled.div`
+const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -44,9 +44,9 @@ class AppPage extends React.Component {
         };
     }
 
-    onClick = () => {
+    onSpinner = () => {
         this.setState({
-            clicked:true
+            clicked: true
         })
 
         setTimeout(() => {
@@ -56,8 +56,10 @@ class AppPage extends React.Component {
 
     render() {
         return (
-            <Background>
-                <Wrapper>
+            <Wrapper>
+                { this.state.clicked ? <Spinner/>: ""}
+
+                <TextWrapper>
                     <GradationText style= {{marginTop:"56px"}} fontSize={2.6} fontWeight={'bold'}>
                         PythonQuizFlex
                     </GradationText>
@@ -65,12 +67,12 @@ class AppPage extends React.Component {
                     <NormalText style= {{marginTop:"24px", fontSize:"16px"}}>
                         Challenge and brag your python language level
                     </NormalText>
-                </Wrapper>
+                </TextWrapper>
 
-                <FilledGradationButton onClick={()=>window.location.href = '/quiz'}>
+                <FilledGradationButton onClick={ this.onSpinner }>
                     Start a Quiz
                 </FilledGradationButton>
-            </Background>
+            </Wrapper>
         );
     }
 }
