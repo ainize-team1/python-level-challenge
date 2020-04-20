@@ -44,9 +44,9 @@ class AppPage extends React.Component {
         };
     }
 
-    onClick = () => {
+    onSpinner = () => {
         this.setState({
-            clicked:true
+            clicked: true
         })
 
         setTimeout(() => {
@@ -57,6 +57,8 @@ class AppPage extends React.Component {
     render() {
         return (
             <Background>
+                { this.state.clicked ? <Spinner/>: ""}
+
                 <Wrapper>
                     <GradationText style= {{marginTop:"56px"}} fontSize={2.6} fontWeight={'bold'}>
                         PythonQuizFlex
@@ -67,7 +69,7 @@ class AppPage extends React.Component {
                     </NormalText>
                 </Wrapper>
 
-                <FilledGradationButton onClick={()=>window.location.href = '/quiz'}>
+                <FilledGradationButton onClick={ this.onSpinner }>
                     Start a Quiz
                 </FilledGradationButton>
             </Background>
