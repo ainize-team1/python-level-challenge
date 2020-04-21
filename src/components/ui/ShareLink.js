@@ -1,6 +1,5 @@
 
 import React from 'react';
-import Toast from 'light-toast';
 import styled from 'styled-components'
 import { FaLink } from 'react-icons/fa';
 import { 
@@ -16,10 +15,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-
-
-
-
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 const Wrapper = styled.div`
     display: table;
@@ -50,9 +46,6 @@ class ShareLink extends React.Component {
         this.setState({clicked: false});
     };
 
-    copyToClipboard = () => {
-
-    };
     render(){
         return(
             <Wrapper>
@@ -76,7 +69,8 @@ class ShareLink extends React.Component {
                     open={this.state.clicked}
                     onClose={this.handleClose}
                     aria-labelledby="alert-dialog-title"
-                    aria-describedby="alert-dialog-description">
+                    aria-describedby="alert-dialog-description"
+                >
                     <DialogTitle id="alert-dialog-title">
                         URL copied to clipboard
                     </DialogTitle>
@@ -88,9 +82,11 @@ class ShareLink extends React.Component {
                     </DialogContent>
 
                     <DialogActions>
-                        <Button onClick={this.copyToClipboard} color="primary">
-                            Ok
-                        </Button>
+                        <CopyToClipboard text={window.location.href}>
+                            <Button onClick={this.handleClose} color="primary">
+                                Ok
+                            </Button>
+                        </CopyToClipboard>
                     </DialogActions>
                 </Dialog>
             </Wrapper>
