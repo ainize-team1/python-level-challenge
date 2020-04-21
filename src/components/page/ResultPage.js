@@ -153,13 +153,13 @@ class Result extends React.Component {
 
                 <ShareLink />
 
-                <GradationButton color="white" onClick={()=>window.location.href = '/'}>
-                    Start a new quiz
-                </GradationButton>
+                <GradationButton 
+                    onClick={()=>window.location.href = '/'}
+                    text={"Start a new quiz"}/>
 
-                <GradationButton color="white" onClick={()=>window.location.href = '/'}>
-                    Discuss the quiz with others
-                </GradationButton>
+                <GradationButton 
+                    onClick={()=>window.location.href = '/'}
+                    text={"Discuss the quiz with others"}/>
 
                 {/* TODO should fix default array for debugging([1,2]) */}
                 <Answers answerSheet={answers}/>
