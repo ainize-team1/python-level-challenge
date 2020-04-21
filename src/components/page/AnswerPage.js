@@ -19,18 +19,10 @@ class AnswerPage extends React.Component {
     render() {
         return (
             <Wrapper>
-                <AnswerBoard questionNumber={this.props.questionNumber}
-                             userAnswer={this.props.userAnswer}
-                             language='python'/>
+                <AnswerBoard language='python'/>
             </Wrapper>
         );
     }
 }
-
-AnswerPage.defaultProps = {
-  questionNumber: 13,
-  userAnswer: '2'
-};
-
 
 export default AnswerPage;
