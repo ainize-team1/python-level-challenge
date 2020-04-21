@@ -22,12 +22,8 @@ const Image = styled.img`
         background-size: cover;
     }
     @media (max-width: 1000px) {
-        height: 50vh;
-        width: 50vh;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;     
+        height: auto;
+        width: 45vh;
     }
 `;
 
@@ -76,20 +72,21 @@ const Wrapper = styled.div`
 `;
 
 const Description = styled.div`
-    font-size: 0.5rem;
+    font-size: 1.5rem;
     width: 90%;
     text-align: center;
+    font-size: 0.8em;
 `;
 
 const ScoreText = styled.div`
     color: grey;
-    font-size: 5px;
+    font-size: 1em;
     margin: 5px;
 `;
 
 const LevelText = styled.div`
     margin-top: 5%;
-    font-size: 8px
+    font-size: 1em;
 `;
 
 class Result extends React.Component {
@@ -115,7 +112,7 @@ class Result extends React.Component {
     render() {
         const {title, description} = this.state;
         const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"));
-        const score = answers.filter((answer) => {return answer.Selected==answerList[answer.Id-1].Answer}).length;
+        const score = answers[1].filter((answer,index) => {return answer==answerList[answers[0][index]-1].Answer}).length;
         const result = _.sample(resultList[score]);
 
         return (
@@ -130,19 +127,18 @@ class Result extends React.Component {
                     <meta property="og:description" content={`${description}`} />
                     <meta property="og:image" content={require(`../../static/img/result/level_${score}.png`)} />
                 </Helmet>
-
                 <LevelText>
                     Your level is
                 </LevelText>
 
-                <GradationText fontSize={1.5} fontWeight={"bold"}>
+                <GradationText fontSize={2.3} fontWeight={"bold"}>
                     {result.Name}
                 </GradationText >
 
                 Top {result.Top}%
 
                 <ScoreText>
-                    Score: {score} / {answers.length}
+                    Score: {score} / {answers[0].length}
                 </ScoreText>
 
                 <Image src={require(`../../static/img/result/level_${score}.png`)}/>
