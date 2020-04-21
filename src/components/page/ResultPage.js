@@ -147,7 +147,7 @@ class Result extends React.Component {
                     {result.Description}
                 </Description>
 
-                <GradationText fontSize={0.7}>
+                <GradationText fontSize={1}>
                     Flex your level
                 </GradationText>
 
