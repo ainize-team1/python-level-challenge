@@ -1,11 +1,10 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
+import {Link, BrowserRouter, withRouter} from 'react-router-dom';
 import styled from 'styled-components';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {tomorrowNight} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import questions from '../../static/json/python';
 import answers from '../../static/json/python_answer';
-const base64url = require('base64-url');
 
 const Wrapper = styled.div`
     width: 100vw;
@@ -15,7 +14,29 @@ const Wrapper = styled.div`
 `;
 
 const Header = styled.div`
-    margin-bottom: 16px;
+`;
+
+const ReturnButton = styled.button`
+    margin-left: ${props => props.marginLeft || 0}px;
+    margin-top: ${props => props.marginTop || 0}px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    outline: none;
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #333333;
+    :hover {
+        background-color: #b2b2b2;
+    }
+    :active {
+        background-color: #f2f2f2;
+    }
 `;
 
 const SubjectText = styled.div`
@@ -67,9 +88,8 @@ const ButtonWrapper = styled.div`
 `;
 
 const AnswerWrapper = styled.div`
-    class: 'parent';
+    display: flex;
     width: 100%;
-    overflow: auto;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 16px;
@@ -85,12 +105,10 @@ const AnswerWrapper = styled.div`
     border: none;
     outline: none;
 `;
-// url(${require('../../static/img/intro/background.png')})
+
 const BoxWrapper = styled.div`
-    float: left;
-    // height: 100%;
-    
-    margin-left: 9px;
+    position: relative;
+    flex: ${props => props.flex || '1'};
 `;
 
 const Box = styled.img`
@@ -98,31 +116,8 @@ const Box = styled.img`
 `;
 
 const Answer = styled.div`
-    vertical-align: middle;
-`;
-
-const AnswerButton = styled.button`
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 16px;
-    border-radius: 4px;
-    
-    font-family: IBM Plex Sans;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    color: #333333;
-    
-    background-color: ${props => props.backgroundColor || '#f2f2f2'};
-    border: none;
-    outline: none;
-    // :hover {
-    //     background-color: #b2b2b2;
-    // }
-    // :active {
-    //     background-color: #f2f2f2;
-    // }
+    flex: ${props => props.flex || '1'};
+    font-size: 18px;
 `;
 
 class AnswerBoard extends React.Component {
@@ -136,21 +131,25 @@ class AnswerBoard extends React.Component {
 
   };
 
-  onButtonClick = (index) => {
-
-  };
-
   render() {
-    const {questionNumber, userAnswer, language} = this.props;
-    const question = questions[questionNumber-1];
-    const originalAnswer = answers[questionNumber-1].Answer;
+    const {language} = this.props;
+    const {Id, Selected} = this.props.location.state;
+    const questionNumber = Id.toString();
+    const userAnswer = Selected.toString();
+    const question = questions[questionNumber - 1];
+    const originalAnswer = answers[questionNumber - 1].Answer;
     const correct = (userAnswer === originalAnswer);
 
     return (
         <Wrapper>
           <Header>
-            TODO: Result Button
+
           </Header>
+          <ReturnButton marginLeft={24}
+                        marginTop={19}
+                        onClick={() => this.props.history.goBack()}>
+            {'< Result'}
+          </ReturnButton>
 
           <SubjectText marginLeft={24} marginRight={24}>
             {`${question.Subject}`}
@@ -162,7 +161,7 @@ class AnswerBoard extends React.Component {
 
           <SyntaxHighlighterWrapper>
             {question.Code && <SyntaxHighlighter language={language}
-                                                         style={tomorrowNight}>
+                                                 style={tomorrowNight}>
               {question.Code}
             </SyntaxHighlighter>}
           </SyntaxHighlighterWrapper>
@@ -175,31 +174,33 @@ class AnswerBoard extends React.Component {
           <ButtonWrapper>
             {question.Answers.map((answer, i) => {
               let buttonColor = '#f2f2f2';
+              let checkBox = null;
+
               if (answer) {
                 if (correct) {
                   if (i.toString() === userAnswer) {
-                    /* TODO: White CheckBox */
+                    checkBox = require(
+                        '../../static/img/answer/CorrectWhite.svg');
                     buttonColor = '#56CCF2';
                   }
                 } else {
                   if (i.toString() === userAnswer) {
-                    /* TODO: Blue CheckBox */
-                    // buttonColor = '#338822';
-                  } else if(i.toString() === originalAnswer) {
-                    /* TODO: White XBox */
+                    checkBox = require(
+                        '../../static/img/answer/CorrectBlue.svg');
+                  } else if (i.toString() === originalAnswer) {
+                    checkBox = require('../../static/img/answer/Incorrect.svg');
                     buttonColor = '#EB5757';
                   }
                 }
 
                 return (
                     <AnswerWrapper backgroundColor={buttonColor}>
-
-                      <BoxWrapper>
-                        <Box src={require('../../static/img/answer/CorrectWhite.svg')}/>
-
+                      <BoxWrapper flex={1}>
+                        <Box src={checkBox}/>
                       </BoxWrapper>
-                      <Answer>{question.Answers[i]}</Answer>
-
+                      <Answer flex={6}>{question.Answers[i]}</Answer>
+                      <BoxWrapper flex={1}>
+                      </BoxWrapper>
                     </AnswerWrapper>
                 );
               }
@@ -212,4 +213,4 @@ class AnswerBoard extends React.Component {
   }
 }
 
-export default AnswerBoard;
+export default withRouter(AnswerBoard);
