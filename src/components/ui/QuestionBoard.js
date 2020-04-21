@@ -88,13 +88,11 @@ const AnswerButton = styled.button`
     font-family: IBM Plex Sans;
     font-size: 14px;
     font-weight: bold;
+    font-color: #333333;
     text-align: center;
-    color: #333333;
-    :hover {
-        background-color: #b2b2b2;
-    }
+    background-color: #f2f2f2;
     :active {
-        background-color: #f2f2f2;
+        background-color: #b2b2b2;
     }
 `;
 
@@ -156,10 +154,10 @@ class QuestionBoard extends React.Component {
                 </QuestionText>
 
                 <SyntaxHighlighterWrapper>
-                    {questions[count].Code && <SyntaxHighlighter language={language}
-                                                                 style={tomorrowNight}>
-                        {questions[count].Code}
-                    </SyntaxHighlighter>}
+                    {questions[count].Code &&
+                        <SyntaxHighlighter language={language} style={tomorrowNight}>
+                            {questions[count].Code}
+                        </SyntaxHighlighter>}
                 </SyntaxHighlighterWrapper>
 
                 <SelectText>
