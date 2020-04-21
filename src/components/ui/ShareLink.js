@@ -10,19 +10,16 @@ import {
     TwitterIcon,
 } from "react-share";
 
-const Wrapper = styled.div`  
-    display: flex;
-    width: 100%;
-    max-width: 300px;
-    align-items: center;
-    justify-content: center;    
+const Wrapper = styled.div`
+    display: table;
+    border-spacing: 30px 6px;
+    margin: 0 auto;
 `;
 
 const Row = styled.div`
-    margin: 10px;
-    font-size: 12px;
-    text-align: center;
-    padding-top: 2px;
+    display: table-cell;
+    vertical-align: middle;
+    align: center;
 `;
 
 class ShareLink extends React.Component {
@@ -64,7 +61,7 @@ class ShareLink extends React.Component {
                         document.body.removeChild(dummy);
                     });
                 }}>
-                    <FaLink size={20}/> 
+                    <FaLink size={26}/> 
                 </Row>
             </Wrapper>
         )
