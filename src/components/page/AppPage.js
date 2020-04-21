@@ -24,7 +24,7 @@ const Wrapper = styled.div`
     }
 
     @media (max-width: 1000px) {
-        height: 100vh;
+        height: 100%;
         width: 48vh;
         background: url(${require('../../static/img/intro/background.png')}) no-repeat center center; 
         -webkit-background-size: cover;
