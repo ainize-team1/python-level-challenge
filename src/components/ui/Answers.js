@@ -42,9 +42,9 @@ class Answers extends React.Component {
     }
 
     render() {
-        const renderedList = this.props.answerSheet.map((result, index) => {
-            const id = result[0];
-            const selected = result[1];
+        const renderedList = this.props.answerSheet[0].map((result, index) => {
+            const id = result;
+            const selected = this.props.answerSheet[1][index];
             const subject = questionsList[id-1].Subject;
             const answer = answerList[id-1].Answer;
 

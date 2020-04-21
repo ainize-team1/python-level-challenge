@@ -112,7 +112,7 @@ class Result extends React.Component {
     render() {
         const {title, description} = this.state;
         const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"));
-        const score = answers.filter((answer) => {return answer[1]==answerList[answer[0]-1].Answer}).length;
+        const score = answers[1].filter((answer,index) => {return answer==answerList[answers[0][index]-1].Answer}).length;
         const result = _.sample(resultList[score]);
 
         return (
@@ -138,7 +138,7 @@ class Result extends React.Component {
                 Top {result.Top}%
 
                 <ScoreText>
-                    Score: {score} / {answers.length}
+                    Score: {score} / {answers[0].length}
                 </ScoreText>
 
                 <Image src={require(`../../static/img/result/level_${score}.png`)}/>

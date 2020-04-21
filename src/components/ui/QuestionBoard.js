@@ -105,7 +105,7 @@ class QuestionBoard extends React.Component {
         this.state = {
             redirect: false,
             count: 0,
-            answers: [],
+            answers: [[], []],
         };
     }
 
@@ -125,8 +125,8 @@ class QuestionBoard extends React.Component {
     }
 
     onButtonClick = (index, id) => {
-        const answer = [id, index];
-        this.state.answers.push(answer);
+        this.state.answers[0].push(id);
+        this.state.answers[1].push(index);
         
         if (this.state.count < this.props.questions.length - 1) {
             this.setState({ count: this.state.count + 1 });
