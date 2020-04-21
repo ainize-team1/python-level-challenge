@@ -10,7 +10,7 @@ const Grid = styled.div`
     display: grid;
     width: 100%;
     background: #191919;
-    padding:10px;
+    padding: 10px;
     grid-template-columns: 40px auto 40px;
     font-size: 1em;
 `;
@@ -56,8 +56,7 @@ class Answers extends React.Component {
 
                     <Link 
                         style={{color: "white", textDecoration: "none",}} 
-                        to={{pathname: '/answer', state: {id, selected},}}
-                    >
+                        to={{pathname: '/answer', state: {id, selected},}}>
                         <Row>
                             { subject || `Question ${index+1}` } >
                         </Row>
