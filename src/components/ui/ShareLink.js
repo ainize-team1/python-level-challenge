@@ -10,6 +10,17 @@ import {
     TwitterIcon,
 } from "react-share";
 
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+
+
+
+
+
 const Wrapper = styled.div`
     display: table;
     border-spacing: 30px 6px;
@@ -27,12 +38,21 @@ class ShareLink extends React.Component {
         super();
 
         this.state = {
-            title: "",
-            description: "",
-            imgsrc: "",
+            clicked: false,
         };
     }
 
+    handleClickOpen = () => {
+        this.setState({clicked: true});
+    };
+    
+    handleClose = () => {
+        this.setState({clicked: false});
+    };
+
+    copyToClipboard = () => {
+
+    };
     render(){
         return(
             <Wrapper>
@@ -49,20 +69,30 @@ class ShareLink extends React.Component {
                     </TwitterShareButton>
                 </Row>
 
-                <Row onClick={() => {
-                    Toast.info('URL copied to clipboard', 500, () => {
-                        const dummy = document.createElement('input'),
-                        text = window.location.href;
-
-                        document.body.appendChild(dummy);
-                        dummy.value = text;
-                        dummy.select();
-                        document.execCommand('copy');
-                        document.body.removeChild(dummy);
-                    });
-                }}>
+                <Row onClick={this.handleClickOpen}>
                     <FaLink size={26}/> 
                 </Row>
+                <Dialog
+                    open={this.state.clicked}
+                    onClose={this.handleClose}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description">
+                    <DialogTitle id="alert-dialog-title">
+                        URL copied to clipboard
+                    </DialogTitle>
+
+                    <DialogContent>
+                        <DialogContentText id="alert-dialog-description">
+                            {window.location.href}
+                        </DialogContentText>
+                    </DialogContent>
+
+                    <DialogActions>
+                        <Button onClick={this.copyToClipboard} color="primary">
+                            Ok
+                        </Button>
+                    </DialogActions>
+                </Dialog>
             </Wrapper>
         )
     };
