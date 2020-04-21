@@ -65,6 +65,7 @@ class ShareLink extends React.Component {
                 <Row onClick={this.handleClickOpen}>
                     <FaLink size={26}/> 
                 </Row>
+
                 <Dialog
                     open={this.state.clicked}
                     onClose={this.handleClose}
@@ -83,7 +84,7 @@ class ShareLink extends React.Component {
 
                     <DialogActions>
                         <CopyToClipboard text={window.location.href}>
-                            <Button onClick={this.handleClose} color="primary">
+                            <Button onClick={this.handleClose} variant="contained" color="primary">
                                 Ok
                             </Button>
                         </CopyToClipboard>
