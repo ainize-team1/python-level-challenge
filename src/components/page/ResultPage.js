@@ -161,7 +161,6 @@ class Result extends React.Component {
                     onClick={()=>window.location.href = '/'}
                     text={"Discuss the quiz with others"}/>
 
-                {/* TODO should fix default array for debugging([1,2]) */}
                 <Answers answerSheet={answers}/>
 
                 <Footer/>
