@@ -10,6 +10,7 @@ const LevelText1 = styled.div`
     background: linear-gradient(to right, #6f00cc 0%, #f2513c 100%);
     border-radius: 20px;
 `
+
 const LevelText2 = styled.div`
     display: inline-block;
     padding: 0 1px;
@@ -22,9 +23,9 @@ const LevelText2 = styled.div`
     transition: all ease 0.5s 0s;
     :hover{
         background: white;
-
     }
 `
+
 const LevelText3 = styled.div`
     font-weight: bold;
     font-size: 1rem;
@@ -33,6 +34,7 @@ const LevelText3 = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 `
+
 class GradationButton extends React.Component {
     constructor() {
         super();
