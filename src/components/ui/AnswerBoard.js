@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, BrowserRouter, withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import styled from 'styled-components';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {tomorrowNight} from 'react-syntax-highlighter/dist/esm/styles/hljs';
@@ -121,96 +121,99 @@ const Answer = styled.div`
 `;
 
 class AnswerBoard extends React.Component {
-  constructor() {
-    super();
+    constructor(props) {
+        super(props);
 
-    this.state = {};
-  }
+        const {Id, Selected} = props.location.state;
+        this.state = {
+            questionNumber: Id.toString(),
+            userAnswer: Selected.toString(),
+            question: questions[Id - 1],
+            originalAnswer: answers[Id - 1].Answer,
+            correct: (Selected.toString() === answers[Id - 1].Answer),
+        };
+    }
 
-  renderRedirect = () => {
+    render() {
+        return (
+            <Wrapper>
+                <Header>
 
-  };
+                </Header>
+                <ReturnButton marginLeft={24}
+                              marginTop={19}
+                              onClick={() => this.props.history.goBack()}>
+                    {'< Result'}
+                </ReturnButton>
 
-  render() {
-    const {language} = this.props;
-    const {Id, Selected} = this.props.location.state;
-    const questionNumber = Id.toString();
-    const userAnswer = Selected.toString();
-    const question = questions[questionNumber - 1];
-    const originalAnswer = answers[questionNumber - 1].Answer;
-    const correct = (userAnswer === originalAnswer);
+                <SubjectText marginLeft={24} marginRight={24}>
+                    {`${this.state.question.Subject}`}
+                </SubjectText>
 
-    return (
-        <Wrapper>
-          <Header>
+                <QuestionText marginLeft={24} marginRight={24}>
+                    {`${this.state.question.Question}`}
+                </QuestionText>
 
-          </Header>
-          <ReturnButton marginLeft={24}
-                        marginTop={19}
-                        onClick={() => this.props.history.goBack()}>
-            {'< Result'}
-          </ReturnButton>
+                <SyntaxHighlighterWrapper>
+                    {this.state.question.Code &&
+                    <SyntaxHighlighter language={this.props.language}
+                                       style={tomorrowNight}>
+                        {this.state.question.Code}
+                    </SyntaxHighlighter>}
+                </SyntaxHighlighterWrapper>
 
-          <SubjectText marginLeft={24} marginRight={24}>
-            {`${question.Subject}`}
-          </SubjectText>
-
-          <QuestionText marginLeft={24} marginRight={24}>
-            {`${question.Question}`}
-          </QuestionText>
-
-          <SyntaxHighlighterWrapper>
-            {question.Code && <SyntaxHighlighter language={language}
-                                                 style={tomorrowNight}>
-              {question.Code}
-            </SyntaxHighlighter>}
-          </SyntaxHighlighterWrapper>
-
-          {
-            (correct ? (<SelectText color={'#56CCF2'}>Correct</SelectText>)
-                : (<SelectText color={'#EB5757'}>Wrong</SelectText>))
-          }
-
-          <ButtonWrapper>
-            {question.Answers.map((answer, i) => {
-              let buttonColor = '#f2f2f2';
-              let checkBox = null;
-
-              if (answer) {
-                if (correct) {
-                  if (i.toString() === userAnswer) {
-                    checkBox = require(
-                        '../../static/img/answer/CorrectWhite.svg');
-                    buttonColor = '#56CCF2';
-                  }
-                } else {
-                  if (i.toString() === userAnswer) {
-                    checkBox = require(
-                        '../../static/img/answer/CorrectBlue.svg');
-                  } else if (i.toString() === originalAnswer) {
-                    checkBox = require('../../static/img/answer/Incorrect.svg');
-                    buttonColor = '#EB5757';
-                  }
+                {
+                    (this.state.correct ? (
+                            <SelectText color={'#56CCF2'}>Correct</SelectText>)
+                        : (<SelectText color={'#EB5757'}>Wrong</SelectText>))
                 }
 
-                return (
-                    <AnswerWrapper backgroundColor={buttonColor}>
-                      <BoxWrapper flex={1}>
-                        <Box src={checkBox}/>
-                      </BoxWrapper>
-                      <Answer flex={6}>{question.Answers[i]}</Answer>
-                      <BoxWrapper flex={1}>
-                      </BoxWrapper>
-                    </AnswerWrapper>
-                );
-              }
-            })}
-          </ButtonWrapper>
+                <ButtonWrapper>
+                    {this.state.question.Answers.map((answer, i) => {
+                        let buttonColor = '#f2f2f2';
+                        let checkBox = null;
 
-          {this.renderRedirect()}
-        </Wrapper>
-    );
-  }
+                        if (answer) {
+                            if (this.state.correct) {
+                                if (i.toString() === this.state.userAnswer) {
+                                    checkBox = require(
+                                        '../../static/img/answer/CorrectWhite.svg');
+                                    buttonColor = '#56CCF2';
+                                }
+                            } else {
+                                if (i.toString() === this.state.userAnswer) {
+                                    checkBox = require(
+                                        '../../static/img/answer/CorrectBlue.svg');
+                                } else if (i.toString() ===
+                                    this.state.originalAnswer) {
+                                    checkBox = require(
+                                        '../../static/img/answer/Incorrect.svg');
+                                    buttonColor = '#EB5757';
+                                }
+                            }
+
+                            return (
+                                <AnswerWrapper backgroundColor={buttonColor}>
+                                    <BoxWrapper flex={1}>
+                                        <Box src={checkBox}/>
+                                    </BoxWrapper>
+
+                                    <Answer flex={6}>
+                                        {this.state.question.Answers[i]}
+                                    </Answer>
+
+                                    <BoxWrapper flex={1}>
+                                    </BoxWrapper>
+                                </AnswerWrapper>
+                            );
+                        } else {
+                            return null;
+                        }
+                    })}
+                </ButtonWrapper>
+            </Wrapper>
+        );
+    }
 }
 
 export default withRouter(AnswerBoard);
