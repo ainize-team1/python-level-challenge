@@ -96,8 +96,21 @@ class Result extends React.Component {
         this.state = {
             title: `Python Quiz Flex`,
             description: "Let's take a look Python quiz and show off your score.",
-            imgsrc: "",
+            answers: {},
+            score: null,
+            result: {},
         };
+    }
+
+    componentWillMount(){
+        const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"));
+        const score = answers[1].filter((answer,index) => {return answer===parseInt(answerList[answers[0][index]-1].Answer)}).length;
+        const result = _.sample(resultList[score]);
+        this.setState({
+            answers,
+            score,
+            result,
+        })
     }
 
     decodeAnswer(encoded) {
@@ -110,10 +123,7 @@ class Result extends React.Component {
     }
 
     render() {
-        const {title, description} = this.state;
-        const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"));
-        const score = answers[1].filter((answer,index) => {return answer===parseInt(answerList[answers[0][index]-1].Answer)}).length;
-        const result = _.sample(resultList[score]);
+        const {title, description, answers, score, result} = this.state;
 
         return (
             <Wrapper>
