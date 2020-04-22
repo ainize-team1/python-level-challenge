@@ -141,6 +141,7 @@ class Result extends React.Component {
                     <meta property="og:description" content={`${description}`} />
                     <meta property="og:image" content={require(`../../static/img/result/level_${score}.png`)} />
                 </Helmet>
+                
                 <LevelText>
                     Your level is
                 </LevelText>
