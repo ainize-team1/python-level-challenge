@@ -120,13 +120,13 @@ class AnswerBoard extends React.Component {
     constructor(props) {
         super(props);
 
-        const {Id, Selected} = props.location.state;
+        const {id, selected} = props.location.state;
         this.state = {
-            questionNumber: Id.toString(),
-            userAnswer: Selected.toString(),
-            question: questions[Id - 1],
-            originalAnswer: answers[Id - 1].Answer,
-            correct: (Selected.toString() === answers[Id - 1].Answer),
+            questionNumber: id.toString(),
+            userAnswer: selected.toString(),
+            question: questions[id - 1],
+            originalAnswer: answers[id - 1].Answer,
+            correct: (selected.toString() === answers[id - 1].Answer),
         };
     }
 
