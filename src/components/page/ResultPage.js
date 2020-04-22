@@ -155,7 +155,7 @@ class Result extends React.Component {
 
                 <GradationButton 
                     onClick={()=>window.location.href = '/'}
-                    text={"Start a new quiz"}/>
+                    text={"Start a new quiz"} />
 
                 <GradationButton 
                     onClick={()=>window.location.href = '/'}
