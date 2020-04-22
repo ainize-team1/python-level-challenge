@@ -89,6 +89,10 @@ const LevelText = styled.div`
     font-size: 1em;
 `;
 
+const TopText = styled.div`
+    font-size: 1.2em;
+`
+
 class Result extends React.Component {
     constructor() {
         super();
@@ -96,8 +100,21 @@ class Result extends React.Component {
         this.state = {
             title: `Python Quiz Flex`,
             description: "Let's take a look Python quiz and show off your score.",
-            imgsrc: "",
+            answers: {},
+            score: null,
+            result: {},
         };
+    }
+
+    componentWillMount(){
+        const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"));
+        const score = answers[1].filter((answer,index) => {return answer===parseInt(answerList[answers[0][index]-1].Answer)}).length;
+        const result = _.sample(resultList[score]);
+        this.setState({
+            answers,
+            score,
+            result,
+        })
     }
 
     decodeAnswer(encoded) {
@@ -110,10 +127,7 @@ class Result extends React.Component {
     }
 
     render() {
-        const {title, description} = this.state;
-        const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"));
-        const score = answers[1].filter((answer,index) => {return answer==answerList[answers[0][index]-1].Answer}).length;
-        const result = _.sample(resultList[score]);
+        const {title, description, answers, score, result} = this.state;
 
         return (
             <Wrapper>
@@ -127,15 +141,18 @@ class Result extends React.Component {
                     <meta property="og:description" content={`${description}`} />
                     <meta property="og:image" content={require(`../../static/img/result/level_${score}.png`)} />
                 </Helmet>
+                
                 <LevelText>
                     Your level is
                 </LevelText>
 
                 <GradationText fontSize={2.3} fontWeight={"bold"}>
                     {result.Name}
-                </GradationText >
+                </GradationText>
 
-                Top {result.Top}%
+                <TopText>
+                    Top {result.Top}%
+                </TopText>
 
                 <ScoreText>
                     Score: {score} / {answers[0].length}
@@ -147,24 +164,23 @@ class Result extends React.Component {
                     {result.Description}
                 </Description>
 
-                <GradationText fontSize={0.7}>
+                <GradationText fontSize={1}>
                     Flex your level
                 </GradationText>
 
                 <ShareLink />
 
-                <GradationButton color="white" onClick={()=>window.location.href = '/'}>
-                    Start a new quiz
-                </GradationButton>
+                <GradationButton 
+                    onClick={()=>window.location.href = '/'}
+                    text={"Start a new quiz"} />
 
-                <GradationButton color="white" onClick={()=>window.location.href = '/'}>
-                    Discuss the quiz with others
-                </GradationButton>
+                <GradationButton 
+                    onClick={()=>window.location.href = '/'}
+                    text={"Discuss the quiz with others"} />
 
-                {/* TODO should fix default array for debugging([1,2]) */}
-                <Answers answerSheet={answers}/>
+                <Answers answerSheet={answers} />
 
-                <Footer/>
+                <Footer />
             </Wrapper>
         )
     };

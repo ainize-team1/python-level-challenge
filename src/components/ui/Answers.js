@@ -46,10 +46,10 @@ class Answers extends React.Component {
             const id = result;
             const selected = this.props.answerSheet[1][index];
             const subject = questionsList[id-1].Subject;
-            const answer = answerList[id-1].Answer;
+            const answer = parseInt(answerList[id-1].Answer);
 
             return (
-                <Grid key={index} >
+                <Grid key={index}>
                     <Row>
                         {index+1}
                     </Row>
@@ -63,7 +63,7 @@ class Answers extends React.Component {
                     </Link>
 
                     <Row textAlign="center"> 
-                        {answer == selected ?
+                        {answer === selected ?
                             <FiCheckCircle color="#33CCFF"/> :
                             <FaRegTimesCircle color="#FF6347"/>}
                     </Row>
