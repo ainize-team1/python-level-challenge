@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
+import ainize from '../../static/img/footer/Ainize.svg'
+import github from '../../static/img/footer/Github.svg'
 
 const Wrapper = styled.div`
     width: 90%;
@@ -16,6 +18,11 @@ const Row = styled.div`
     vertical-align: middle;
 `;
 
+const Icon = styled.img`
+    vertical-align: middle;
+    margin-left: 10px;
+`;
+
 class Footer extends React.Component {
     constructor() {
         super();
@@ -29,11 +36,15 @@ class Footer extends React.Component {
           // TODO (Add icon)
             <Wrapper>
                 <Row>
-                    Contribute on 
+                    {"Contribute on"}
+
+                    <Icon src={github} />
                 </Row>
                 
                 <Row>
-                    Live on  
+                    {"Live on"}
+
+                    <Icon src={ainize} />
                 </Row>
             </Wrapper>        
         )
