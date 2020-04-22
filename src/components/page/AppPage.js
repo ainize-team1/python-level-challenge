@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import GradationText from '../ui/text/GradationText.js';
-import NormalText from '../ui/text/NormalText';
 import FilledGradationButton from '../ui/button/FilledGradationButton';
 import Spinner from '../ui/Spinner'
 
@@ -62,9 +61,22 @@ class AppPage extends React.Component {
             <Wrapper>
                 { this.state.clicked ? <Spinner/>: ""}
 
-                <TextWrapper style={{marginTop:"5%"}}>
-                    <img style={{width:"40px", height:"40px", marginLeft:"auto", marginRight:"auto", marginBottom:"28px"}} src={require('../../static/img/intro/python_logo.png')}/>
-                    <GradationText style={{marginTop:"0px", fontStyle:'italic', letterSpacing:'0.15px'}} fontSize={'3.125rem'} fontWeight={'bold'}>
+                <TextWrapper style={{marginTop: '5%'}}>
+                    <img style={{
+                        width: '40px',
+                        height: '40px',
+                        marginLeft: 'auto',
+                        marginRight: 'auto',
+                        marginBottom: '28px',
+                    }}
+                         src={require('../../static/img/intro/python_logo.png')}
+                         alt="Python logo"/>
+
+                    <GradationText style={{
+                        marginTop: '0px',
+                        fontStyle: 'italic',
+                        letterSpacing: '0.15px',
+                    }} fontSize={'3.125rem'} fontWeight={'bold'}>
                         PYTHON<br/>
                         LEVEL<br/>
                         CHALLENGE
