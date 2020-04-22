@@ -49,7 +49,7 @@ class Answers extends React.Component {
             const answer = parseInt(answerList[id-1].Answer);
 
             return (
-                <Grid key={index} >
+                <Grid key={index}>
                     <Row>
                         {index+1}
                     </Row>

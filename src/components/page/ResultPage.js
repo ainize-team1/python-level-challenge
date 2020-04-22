@@ -133,7 +133,7 @@ class Result extends React.Component {
 
                 <GradationText fontSize={2.3} fontWeight={"bold"}>
                     {result.Name}
-                </GradationText >
+                </GradationText>
 
                 Top {result.Top}%
 
@@ -159,11 +159,11 @@ class Result extends React.Component {
 
                 <GradationButton 
                     onClick={()=>window.location.href = '/'}
-                    text={"Discuss the quiz with others"}/>
+                    text={"Discuss the quiz with others"} />
 
-                <Answers answerSheet={answers}/>
+                <Answers answerSheet={answers} />
 
-                <Footer/>
+                <Footer />
             </Wrapper>
         )
     };

@@ -70,10 +70,9 @@ class ShareLink extends React.Component {
                     open={this.state.clicked}
                     onClose={this.handleClose}
                     aria-labelledby="alert-dialog-title"
-                    aria-describedby="alert-dialog-description"
-                >
+                    aria-describedby="alert-dialog-description">
                     <DialogTitle id="alert-dialog-title">
-                        URL copied to clipboard
+                        {"URL copied to clipboard"}
                     </DialogTitle>
 
                     <DialogContent>
@@ -85,7 +84,7 @@ class ShareLink extends React.Component {
                     <DialogActions>
                         <CopyToClipboard text={window.location.href}>
                             <Button onClick={this.handleClose} variant="contained" color="primary">
-                                Ok
+                                {"Ok"}
                             </Button>
                         </CopyToClipboard>
                     </DialogActions>

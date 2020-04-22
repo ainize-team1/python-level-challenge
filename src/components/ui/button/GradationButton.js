@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const LevelText1 = styled.div`
+const Wrapper = styled.div`
     cursor: pointer;
     display: inline-block;
     padding: 2px;
@@ -11,7 +11,7 @@ const LevelText1 = styled.div`
     border-radius: 20px;
 `
 
-const LevelText2 = styled.div`
+const Background = styled.div`
     display: inline-block;
     padding: 0 1px;
     height: 40px;
@@ -26,7 +26,7 @@ const LevelText2 = styled.div`
     }
 `
 
-const LevelText3 = styled.div`
+const GradientText = styled.div`
     font-weight: bold;
     font-size: 1rem;
     text-align: center;
@@ -45,13 +45,13 @@ class GradationButton extends React.Component {
 
     render(){
         return( 
-            <LevelText1 onClick={this.props.onClick}>
-                <LevelText2>
-                    <LevelText3>
+            <Wrapper onClick={this.props.onClick}>
+                <Background>
+                    <GradientText>
                         {this.props.text}
-                    </LevelText3>
-                </LevelText2>
-            </LevelText1>        
+                    </GradientText>
+                </Background>
+            </Wrapper>        
         )
     };
 }
