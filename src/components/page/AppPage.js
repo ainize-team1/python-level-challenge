@@ -18,7 +18,7 @@ const Wrapper = styled.div`
     @media (min-width: 1000px) {
         height: 100vh;
         width: 100vh;
-        background: url(${require('../../static/img/intro/background_desktop.png')}) no-repeat center center; 
+        background: url(${require('../../static/img/intro/background.jpeg')}) no-repeat center center; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -27,8 +27,8 @@ const Wrapper = styled.div`
 
     @media (max-width: 1000px) {
         height: 100vh;
-        width: 70vh;
-        background: url(${require('../../static/img/intro/background.png')}) no-repeat center center; 
+        width: 100%;
+        background: url(${require('../../static/img/intro/background.jpeg')}) no-repeat center center; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;

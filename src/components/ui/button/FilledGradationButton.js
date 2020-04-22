@@ -16,7 +16,7 @@ const FilledGradationButton = styled.button`
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20%;
+    margin-bottom: 17%;
 `
 
 export default FilledGradationButton
