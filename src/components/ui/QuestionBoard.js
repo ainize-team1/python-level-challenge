@@ -125,7 +125,7 @@ class QuestionBoard extends React.Component {
     onButtonClick = (index, id) => {
         this.state.answers[0].push(id);
         this.state.answers[1].push(index);
-        
+
         if (this.state.count < this.props.questions.length - 1) {
             this.setState({ count: this.state.count + 1 });
         } else {
@@ -155,9 +155,12 @@ class QuestionBoard extends React.Component {
 
                 <SyntaxHighlighterWrapper>
                     {questions[count].Code &&
-                        <SyntaxHighlighter language={language} style={tomorrowNight}>
-                            {questions[count].Code}
-                        </SyntaxHighlighter>}
+                    <SyntaxHighlighter
+                        codeTagProps={{style: {fontFamily: 'IBM Plex Mono'}}}
+                        language={language}
+                        style={tomorrowNight}>
+                        {questions[count].Code}
+                    </SyntaxHighlighter>}
                 </SyntaxHighlighterWrapper>
 
                 <SelectText>

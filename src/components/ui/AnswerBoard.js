@@ -152,7 +152,8 @@ class AnswerBoard extends React.Component {
 
                 <SyntaxHighlighterWrapper>
                     {this.state.question.Code &&
-                    <SyntaxHighlighter language={this.props.language}
+                    <SyntaxHighlighter codeTagProps={{style: {fontFamily: 'IBM Plex Mono'}}}
+                                       language={this.props.language}
                                        style={tomorrowNight}>
                         {this.state.question.Code}
                     </SyntaxHighlighter>}
