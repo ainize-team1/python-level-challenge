@@ -6,6 +6,9 @@ import FilledGradationButton from '../ui/button/FilledGradationButton';
 import Spinner from '../ui/Spinner'
 
 const TextWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 `;
 
 const Wrapper = styled.div`
@@ -59,18 +62,18 @@ class AppPage extends React.Component {
             <Wrapper>
                 { this.state.clicked ? <Spinner/>: ""}
 
-                <TextWrapper>
-                    <GradationText style= {{marginTop:"56px"}} fontSize={2.6} fontWeight={'bold'}>
-                        PythonQuizFlex
+                <TextWrapper style={{marginTop:"5%"}}>
+                    <img style={{width:"40px", height:"40px", marginLeft:"auto", marginRight:"auto", marginBottom:"28px"}} src={require('../../static/img/intro/python_logo.png')}/>
+                    <GradationText style={{marginTop:"0px", fontStyle:'italic', letterSpacing:'0.15px'}} fontSize={'3.125rem'} fontWeight={'bold'}>
+                        PYTHON<br/>
+                        LEVEL<br/>
+                        CHALLENGE
                     </GradationText>
 
-                    <NormalText style= {{marginTop:"24px", fontSize:"16px"}}>
-                        Challenge and brag your python language level
-                    </NormalText>
                 </TextWrapper>
 
                 <FilledGradationButton onClick={ this.onSpinner }>
-                    Start a Quiz
+                    Challenge!
                 </FilledGradationButton>
             </Wrapper>
         );

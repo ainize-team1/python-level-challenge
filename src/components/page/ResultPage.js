@@ -141,12 +141,12 @@ class Result extends React.Component {
                     <meta property="og:description" content={`${description}`} />
                     <meta property="og:image" content={require(`../../static/img/result/level_${score}.png`)} />
                 </Helmet>
-                
+
                 <LevelText>
                     Your level is
                 </LevelText>
 
-                <GradationText fontSize={2.3} fontWeight={"bold"}>
+                <GradationText fontSize={'2.3em'} fontWeight={"bold"}>
                     {result.Name}
                 </GradationText>
 
@@ -164,17 +164,17 @@ class Result extends React.Component {
                     {result.Description}
                 </Description>
 
-                <GradationText fontSize={1}>
+                <GradationText fontSize={'1em'}>
                     Flex your level
                 </GradationText>
 
                 <ShareLink />
 
-                <GradationButton 
+                <GradationButton
                     onClick={()=>window.location.href = '/'}
                     text={"Start a new quiz"} />
 
-                <GradationButton 
+                <GradationButton
                     onClick={()=>window.location.href = '/'}
                     text={"Discuss the quiz with others"} />
 
