@@ -89,6 +89,10 @@ const LevelText = styled.div`
     font-size: 1em;
 `;
 
+const TopText = styled.div`
+    font-size: 1.2em;
+`
+
 class Result extends React.Component {
     constructor() {
         super();
@@ -145,7 +149,9 @@ class Result extends React.Component {
                     {result.Name}
                 </GradationText>
 
-                Top {result.Top}%
+                <TopText>
+                    Top {result.Top}%
+                </TopText>
 
                 <ScoreText>
                     Score: {score} / {answers[0].length}
