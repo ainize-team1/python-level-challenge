@@ -85,7 +85,7 @@ const AnswerButton = styled.button`
     margin-bottom: 16px;
     border-radius: 4px;
     outline: none;
-    font-family: IBM Plex Sans;
+    font-family: IBM Plex Mono;
     font-size: 14px;
     font-weight: bold;
     font-color: #333333;

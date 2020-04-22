@@ -91,7 +91,7 @@ const AnswerWrapper = styled.div`
     margin-bottom: 16px;
     border-radius: 4px;
     
-    font-family: IBM Plex Sans;
+    font-family: IBM Plex Mono;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
