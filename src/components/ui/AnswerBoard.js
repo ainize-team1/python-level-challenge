@@ -1,11 +1,10 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import styled from 'styled-components';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {tomorrowNight} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import questions from '../../static/json/python';
 import answers from '../../static/json/python_answer';
-const base64url = require('base64-url');
 
 const Wrapper = styled.div`
     width: 100vw;
@@ -15,7 +14,25 @@ const Wrapper = styled.div`
 `;
 
 const Header = styled.div`
-    margin-bottom: 16px;
+`;
+
+const ReturnButton = styled.button`
+    margin-left: ${props => props.marginLeft || 0}px;
+    margin-top: ${props => props.marginTop || 0}px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    outline: none;
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    :active {
+        background-color: #f2f2f2;
+    }
 `;
 
 const SubjectText = styled.div`
@@ -67,9 +84,8 @@ const ButtonWrapper = styled.div`
 `;
 
 const AnswerWrapper = styled.div`
-    class: 'parent';
+    display: flex;
     width: 100%;
-    overflow: auto;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 16px;
@@ -85,12 +101,10 @@ const AnswerWrapper = styled.div`
     border: none;
     outline: none;
 `;
-// url(${require('../../static/img/intro/background.png')})
+
 const BoxWrapper = styled.div`
-    float: left;
-    // height: 100%;
-    
-    margin-left: 9px;
+    position: relative;
+    flex: ${props => props.flex || '1'};
 `;
 
 const Box = styled.img`
@@ -98,118 +112,104 @@ const Box = styled.img`
 `;
 
 const Answer = styled.div`
-    vertical-align: middle;
-`;
-
-const AnswerButton = styled.button`
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 16px;
-    border-radius: 4px;
-    
-    font-family: IBM Plex Sans;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    color: #333333;
-    
-    background-color: ${props => props.backgroundColor || '#f2f2f2'};
-    border: none;
-    outline: none;
-    // :hover {
-    //     background-color: #b2b2b2;
-    // }
-    // :active {
-    //     background-color: #f2f2f2;
-    // }
+    flex: ${props => props.flex || '1'};
+    font-size: 18px;
 `;
 
 class AnswerBoard extends React.Component {
-  constructor() {
-    super();
+    constructor(props) {
+        super(props);
 
-    this.state = {};
-  }
+        const {Id, Selected} = props.location.state;
+        this.state = {
+            questionNumber: Id.toString(),
+            userAnswer: Selected.toString(),
+            question: questions[Id - 1],
+            originalAnswer: answers[Id - 1].Answer,
+            correct: (Selected.toString() === answers[Id - 1].Answer),
+        };
+    }
 
-  renderRedirect = () => {
+    render() {
+        return (
+            <Wrapper>
+                <Header>
 
-  };
+                </Header>
+                <ReturnButton marginLeft={24}
+                              marginTop={19}
+                              onClick={() => this.props.history.goBack()}>
+                    {'< Result'}
+                </ReturnButton>
 
-  onButtonClick = (index) => {
+                <SubjectText marginLeft={24} marginRight={24}>
+                    {`${this.state.question.Subject}`}
+                </SubjectText>
 
-  };
+                <QuestionText marginLeft={24} marginRight={24}>
+                    {`${this.state.question.Question}`}
+                </QuestionText>
 
-  render() {
-    const {questionNumber, userAnswer, language} = this.props;
-    const question = questions[questionNumber-1];
-    const originalAnswer = answers[questionNumber-1].Answer;
-    const correct = (userAnswer === originalAnswer);
+                <SyntaxHighlighterWrapper>
+                    {this.state.question.Code &&
+                    <SyntaxHighlighter language={this.props.language}
+                                       style={tomorrowNight}>
+                        {this.state.question.Code}
+                    </SyntaxHighlighter>}
+                </SyntaxHighlighterWrapper>
 
-    return (
-        <Wrapper>
-          <Header>
-            TODO: Result Button
-          </Header>
-
-          <SubjectText marginLeft={24} marginRight={24}>
-            {`${question.Subject}`}
-          </SubjectText>
-
-          <QuestionText marginLeft={24} marginRight={24}>
-            {`${question.Question}`}
-          </QuestionText>
-
-          <SyntaxHighlighterWrapper>
-            {question.Code && <SyntaxHighlighter language={language}
-                                                         style={tomorrowNight}>
-              {question.Code}
-            </SyntaxHighlighter>}
-          </SyntaxHighlighterWrapper>
-
-          {
-            (correct ? (<SelectText color={'#56CCF2'}>Correct</SelectText>)
-                : (<SelectText color={'#EB5757'}>Wrong</SelectText>))
-          }
-
-          <ButtonWrapper>
-            {question.Answers.map((answer, i) => {
-              let buttonColor = '#f2f2f2';
-              if (answer) {
-                if (correct) {
-                  if (i.toString() === userAnswer) {
-                    /* TODO: White CheckBox */
-                    buttonColor = '#56CCF2';
-                  }
-                } else {
-                  if (i.toString() === userAnswer) {
-                    /* TODO: Blue CheckBox */
-                    // buttonColor = '#338822';
-                  } else if(i.toString() === originalAnswer) {
-                    /* TODO: White XBox */
-                    buttonColor = '#EB5757';
-                  }
+                {
+                    (this.state.correct ? (
+                            <SelectText color={'#56CCF2'}>Correct</SelectText>)
+                        : (<SelectText color={'#EB5757'}>Wrong</SelectText>))
                 }
 
-                return (
-                    <AnswerWrapper backgroundColor={buttonColor}>
+                <ButtonWrapper>
+                    {this.state.question.Answers.map((answer, i) => {
+                        let buttonColor = '#f2f2f2';
+                        let checkBox = null;
 
-                      <BoxWrapper>
-                        <Box src={require('../../static/img/answer/CorrectWhite.svg')}/>
+                        if (answer) {
+                            if (this.state.correct) {
+                                if (i.toString() === this.state.userAnswer) {
+                                    checkBox = require(
+                                        '../../static/img/answer/CorrectWhite.svg');
+                                    buttonColor = '#56CCF2';
+                                }
+                            } else {
+                                if (i.toString() === this.state.userAnswer) {
+                                    checkBox = require(
+                                        '../../static/img/answer/CorrectBlue.svg');
+                                } else if (i.toString() ===
+                                    this.state.originalAnswer) {
+                                    checkBox = require(
+                                        '../../static/img/answer/Incorrect.svg');
+                                    buttonColor = '#EB5757';
+                                }
+                            }
 
-                      </BoxWrapper>
-                      <Answer>{question.Answers[i]}</Answer>
+                            return (
+                                <AnswerWrapper backgroundColor={buttonColor}>
+                                    <BoxWrapper flex={1}>
+                                        <Box src={checkBox}/>
+                                    </BoxWrapper>
 
-                    </AnswerWrapper>
-                );
-              }
-            })}
-          </ButtonWrapper>
+                                    <Answer flex={6}>
+                                        {this.state.question.Answers[i]}
+                                    </Answer>
 
-          {this.renderRedirect()}
-        </Wrapper>
-    );
-  }
+                                    <BoxWrapper flex={1}>
+                                    </BoxWrapper>
+                                </AnswerWrapper>
+                            );
+                        } else {
+                            return null;
+                        }
+                    })}
+                </ButtonWrapper>
+            </Wrapper>
+        );
+    }
 }
 
-export default AnswerBoard;
+export default withRouter(AnswerBoard);
