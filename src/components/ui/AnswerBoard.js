@@ -30,10 +30,6 @@ const ReturnButton = styled.button`
     font-size: 14px;
     font-weight: bold;
     text-align: center;
-    color: #333333;
-    :hover {
-        background-color: #b2b2b2;
-    }
     :active {
         background-color: #f2f2f2;
     }
