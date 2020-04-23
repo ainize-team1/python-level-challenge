@@ -4,7 +4,8 @@ import FilledGradationButton from '../ui/button/FilledGradationButton';
 import GradationText from '../ui/text/GradationText';
 import Spinner from '../ui/Spinner';
 
-const bgDesktop = require('../../static/img/intro/background.jpeg');
+const backgroundImagePath = '../../static/img/intro/background.jpeg';
+const pythonImagePath = '../../static/img/intro/python_logo.png';
 
 const TextWrapper = styled.div`
     width: 100%;
@@ -21,7 +22,7 @@ const Wrapper = styled.div`
     @media (min-width: 1000px) {
         height: 100vh;
         width: 100vh;
-        background: url(${require('../../static/img/intro/background.jpeg')}) no-repeat center center; 
+        background: url(${backgroundImagePath}) no-repeat center center; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -31,7 +32,7 @@ const Wrapper = styled.div`
     @media (max-width: 1000px) {
         height: 100vh;
         width: 100%;
-        background: url(${require('../../static/img/intro/background.jpeg')}) no-repeat center center; 
+        background: url(${backgroundImagePath}) no-repeat center center; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -41,7 +42,7 @@ const Wrapper = styled.div`
 `;
 
 const LogoImg = styled.img.attrs({
-    src: require('../../static/img/intro/python_logo.png')
+    src: pythonImagePath
 })`
     width: 40px;
     height: 40px;
@@ -78,8 +79,7 @@ class AppPage extends React.Component {
 
     render() {
         return (
-            <Wrapper image={bgDesktop}>
-                <Background src={'../../static/img/intro/background-desktop.jpg'}></Background>
+            <Wrapper>
                 { this.state.clicked ? <Spinner/>: ""}
 
                 <TextWrapper>
