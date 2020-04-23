@@ -165,7 +165,7 @@ class Result extends React.Component {
                 </Description>
 
                 <GradationText fontSize={'1em'}>
-                    Flex your level
+                    {'Flex your level'}
                 </GradationText>
 
                 <ShareLink />
