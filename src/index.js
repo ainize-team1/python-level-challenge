@@ -12,6 +12,7 @@ import QuizPage from './components/page/QuizPage';
 import AnswerPage from './components/page/AnswerPage';
 // import NotFoundPage from 'components/page/NotFoundPage';
 // Constants
+import '../public/style.css';
 
 const Wrapper = styled.div`
   height: 100%;
