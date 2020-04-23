@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import GradationText from '../ui/text/GradationText.js';
-import NormalText from '../ui/text/NormalText';
 import FilledGradationButton from '../ui/button/FilledGradationButton';
+import GradationText from '../ui/text/GradationText';
 import Spinner from '../ui/Spinner'
 
 const TextWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
 `;
 
 const Wrapper = styled.div`
@@ -16,7 +19,7 @@ const Wrapper = styled.div`
     @media (min-width: 1000px) {
         height: 100vh;
         width: 100vh;
-        background: url(${require('../../static/img/intro/background-desktop.jpg')}) no-repeat center center; 
+        background: url(${require('../../static/img/intro/background.jpeg')}) no-repeat center center; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -24,15 +27,26 @@ const Wrapper = styled.div`
     }
 
     @media (max-width: 1000px) {
-        height: 100%;
-        width: 48vh;
-        background: url(${require('../../static/img/intro/background.png')}) no-repeat center center; 
+        height: 100vh;
+        width: 100%;
+        background: url(${require('../../static/img/intro/background.jpeg')}) no-repeat center center; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;     
     }
 
+`;
+
+const LogoImg = styled.img.attrs({
+    src: require('../../static/img/intro/python_logo.png')
+})`
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 28px;
+    alt: "Python logo";
 `;
 
 class AppPage extends React.Component {
@@ -60,17 +74,20 @@ class AppPage extends React.Component {
                 { this.state.clicked ? <Spinner/>: ""}
 
                 <TextWrapper>
-                    <GradationText style= {{marginTop:"56px"}} fontSize={2.6} fontWeight={'bold'}>
-                        PythonQuizFlex
+                    <LogoImg/>
+
+                    <GradationText fontSize={'3.125rem'}
+                                   fontStyle={'italic'}
+                                   marginTop={'0dp'}>
+                        {'PYTHON'}<br/>
+                        {'LEVEL'}<br/>
+                        {'CHALLENGE'}
                     </GradationText>
 
-                    <NormalText style= {{marginTop:"24px", fontSize:"16px"}}>
-                        Challenge and brag your python language level
-                    </NormalText>
                 </TextWrapper>
 
                 <FilledGradationButton onClick={ this.onSpinner }>
-                    Start a Quiz
+                    {'Challenge!'}
                 </FilledGradationButton>
             </Wrapper>
         );

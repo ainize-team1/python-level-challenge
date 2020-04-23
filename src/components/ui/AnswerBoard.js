@@ -174,17 +174,17 @@ class AnswerBoard extends React.Component {
                             if (this.state.correct) {
                                 if (i.toString() === this.state.userAnswer) {
                                     checkBox = require(
-                                        '../../static/img/answer/CorrectWhite.svg');
+                                        '../../static/img/answer/correct_white.svg');
                                     buttonColor = '#56CCF2';
                                 }
                             } else {
                                 if (i.toString() === this.state.userAnswer) {
                                     checkBox = require(
-                                        '../../static/img/answer/CorrectBlue.svg');
+                                        '../../static/img/answer/correct_blue.svg');
                                 } else if (i.toString() ===
                                     this.state.originalAnswer) {
                                     checkBox = require(
-                                        '../../static/img/answer/Incorrect.svg');
+                                        '../../static/img/answer/incorrect.svg');
                                     buttonColor = '#EB5757';
                                 }
                             }
