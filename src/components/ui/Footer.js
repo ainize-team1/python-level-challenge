@@ -1,7 +1,7 @@
 import React from 'react';
-import styled from 'styled-components'
-import ainize from '../../static/img/footer/Ainize.svg'
-import github from '../../static/img/footer/Github.svg'
+import styled from 'styled-components';
+import ainize from '../../static/img/footer/Ainize.svg';
+import github from '../../static/img/footer/Github.svg';
 
 const Wrapper = styled.div`
     width: 90%;
