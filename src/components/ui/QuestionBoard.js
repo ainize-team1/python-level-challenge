@@ -155,10 +155,9 @@ class QuestionBoard extends React.Component {
 
                 <SyntaxHighlighterWrapper>
                     {questions[count].Code &&
-                    <SyntaxHighlighter
-                        codeTagProps={{style: {fontFamily: 'IBM Plex Mono'}}}
-                        language={language}
-                        style={tomorrowNight}>
+                    <SyntaxHighlighter codeTagProps={{style: {fontFamily: 'IBM Plex Mono'}}}
+                                       language={language}
+                                       style={tomorrowNight}>
                         {questions[count].Code}
                     </SyntaxHighlighter>}
                 </SyntaxHighlighterWrapper>
