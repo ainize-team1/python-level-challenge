@@ -72,10 +72,9 @@ const Wrapper = styled.div`
 `;
 
 const Description = styled.div`
-    font-size: 1.5rem;
+    margin-top: 10px;
+    font-size: 1rem;
     width: 90%;
-    text-align: center;
-    font-size: 0.8em;
 `;
 
 const ScoreText = styled.div`
