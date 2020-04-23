@@ -93,9 +93,9 @@ const TopText = styled.div`
     font-size: 1.2em;
 `
 
-class Result extends React.Component {
-    constructor() {
-        super();
+class ResultPage extends React.Component {
+    constructor(props) {
+        super(props);
 
         this.state = {
             title: `Python Quiz Flex`,
@@ -186,4 +186,4 @@ class Result extends React.Component {
     };
 }
 
-export default Result;
+export default ResultPage;
