@@ -126,21 +126,10 @@ class Result extends React.Component {
     }
 
     render() {
-        const {title, description, answers, score, result} = this.state;
+        const { answers, score, result } = this.state;
 
         return (
             <Wrapper>
-                <Helmet>
-                    <title>{`${title}`}</title>
-                    <meta name="description" content={`${description}`} />
-                    <meta name="keywords" content={`ainize,python,programming languages,quiz`} />
-                    {/* Open Graph metadata */}
-                    <meta property="og:title" content={`${title}`} />
-                    <meta property="og:type" content="website" />
-                    <meta property="og:description" content={`${description}`} />
-                    <meta property="og:image" content={require(`../../static/img/result/level_${score}.png`)} />
-                </Helmet>
-
                 <LevelText>
                     {'Your level is'}
                 </LevelText>
