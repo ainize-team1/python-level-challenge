@@ -17,10 +17,15 @@
 
 ## How to run
 
-### On local
+### On local(dev)
 ```
-npm install
-npm start
+npm run watch
+npm run dev
+```
+### On local(prod)
+```
+npm run build
+npm run production
 ```
 
 ### On docker
