@@ -91,7 +91,7 @@ const AnswerWrapper = styled.div`
     margin-bottom: 16px;
     border-radius: 4px;
     
-    font-family: IBM Plex Sans;
+    font-family: IBM Plex Mono;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
@@ -152,7 +152,8 @@ class AnswerBoard extends React.Component {
 
                 <SyntaxHighlighterWrapper>
                     {this.state.question.Code &&
-                    <SyntaxHighlighter language={this.props.language}
+                    <SyntaxHighlighter codeTagProps={{style: {fontFamily: 'IBM Plex Mono'}}}
+                                       language={this.props.language}
                                        style={tomorrowNight}>
                         {this.state.question.Code}
                     </SyntaxHighlighter>}
