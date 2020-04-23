@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import FilledGradationButton from '../ui/button/FilledGradationButton';
 import GradationText from '../ui/text/GradationText';
-import Spinner from '../ui/Spinner'
+import Spinner from '../ui/Spinner';
+
+const bgDesktop = require('../../static/img/intro/background.jpeg');
 
 const TextWrapper = styled.div`
     width: 100%;
@@ -49,6 +51,12 @@ const LogoImg = styled.img.attrs({
     alt: "Python logo";
 `;
 
+const Background = styled.img`
+    position: relative;
+    width: 245px;
+    object-fit: contain;
+`;
+
 class AppPage extends React.Component {
     constructor() {
         super();
@@ -64,13 +72,14 @@ class AppPage extends React.Component {
         })
 
         setTimeout(() => {
-            window.location.href = '/quiz'
+            window.location.href = '/quiz';
         }, 750)
     }
 
     render() {
         return (
-            <Wrapper>
+            <Wrapper image={bgDesktop}>
+                <Background src={'../../static/img/intro/background-desktop.jpg'}></Background>
                 { this.state.clicked ? <Spinner/>: ""}
 
                 <TextWrapper>

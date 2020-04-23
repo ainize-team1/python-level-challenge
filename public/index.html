@@ -1,19 +1,21 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
   <head>
-    <title>Programmign language quizzes</title>
-
     <meta charset="utf-8" />
     <!-- TODO: favicon needs to be updated -->
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="title" content="Python Quiz Flex" data-react-helmet="true" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <link rel="manifest" href="manifest.json" />
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+    </head>
+
+    <body>
+      <div id="root"></div>
+    </body>
+
+   <!-- Bundle files -->
+   <script src="/dist/lib.bundle.js"></script>
+   <script src="<%= APP_BUNDLE_URL %>"></script>
 </html>
