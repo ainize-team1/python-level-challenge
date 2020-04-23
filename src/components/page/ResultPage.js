@@ -143,7 +143,7 @@ class Result extends React.Component {
                 </Helmet>
 
                 <LevelText>
-                    Your level is
+                    {'Your level is'}
                 </LevelText>
 
                 <GradationText fontSize={'2.3em'} fontWeight={"bold"}>
