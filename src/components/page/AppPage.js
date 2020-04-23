@@ -37,6 +37,17 @@ const Wrapper = styled.div`
 
 `;
 
+const LogoImg = styled.img.attrs({
+    src: require('../../static/img/intro/python_logo.png')
+})`
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 28px;
+    alt: "Python logo";
+`;
+
 class AppPage extends React.Component {
     constructor() {
         super();
@@ -62,15 +73,7 @@ class AppPage extends React.Component {
                 { this.state.clicked ? <Spinner/>: ""}
 
                 <TextWrapper style={{marginTop: '5%'}}>
-                    <img style={{
-                        width: '40px',
-                        height: '40px',
-                        marginLeft: 'auto',
-                        marginRight: 'auto',
-                        marginBottom: '28px',
-                    }}
-                         src={require('../../static/img/intro/python_logo.png')}
-                         alt="Python logo"/>
+                    <LogoImg/>
 
                     <GradationText style={{
                         marginTop: '0px',
