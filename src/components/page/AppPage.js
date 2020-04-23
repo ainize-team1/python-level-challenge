@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import GradationText from '../ui/text/GradationText.js';
 import FilledGradationButton from '../ui/button/FilledGradationButton';
 import Spinner from '../ui/Spinner'
 
@@ -8,6 +7,7 @@ const TextWrapper = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-top: 5%;
 `;
 
 const Wrapper = styled.div`
@@ -48,6 +48,18 @@ const LogoImg = styled.img.attrs({
     alt: "Python logo";
 `;
 
+const GradationTitle = styled.div`  
+    font-size: 3.125rem;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    background: linear-gradient(92.18deg, #AD1DF0 3.46%, #FF8C25 101.16%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+`;
+
 class AppPage extends React.Component {
     constructor() {
         super();
@@ -72,18 +84,14 @@ class AppPage extends React.Component {
             <Wrapper>
                 { this.state.clicked ? <Spinner/>: ""}
 
-                <TextWrapper style={{marginTop: '5%'}}>
+                <TextWrapper>
                     <LogoImg/>
 
-                    <GradationText style={{
-                        marginTop: '0px',
-                        fontStyle: 'italic',
-                        letterSpacing: '0.15px',
-                    }} fontSize={'3.125rem'} fontWeight={'bold'}>
+                    <GradationTitle>
                         PYTHON<br/>
                         LEVEL<br/>
                         CHALLENGE
-                    </GradationText>
+                    </GradationTitle>
 
                 </TextWrapper>
 
