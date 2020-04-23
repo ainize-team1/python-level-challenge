@@ -1,6 +1,6 @@
 module.exports = {
     apps: [{
-        name: 'StickyBoard',
+        name: 'Python Quiz Flex',
         script: './app.js',
         instances: 'max',
         autorestart: true,
