@@ -8,7 +8,7 @@ const app = Express();
 const server = new Server(app);   // Initialize the server
 const router = Express.Router();
 
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 3000;
 const env = process.env.NODE_ENV || 'production';
 
 // Set app bundle URL depends on running environment
@@ -36,19 +36,19 @@ app.use('/dist', Express.static(path.join(__dirname, 'dist')));
 app.use('/api', router);
 
 app.get('*', function (req, res) {
-    res.render('index', { 'APP_BUNDLE_URL': appBundleUrl });
+  res.render('index', { 'APP_BUNDLE_URL': appBundleUrl });
 });
 
 router.get('/', function (req, res) {
-  res.json({ test: 'test' });
+  res.json({ api: 'Here is an API endpoint.' });
 });
 
 
 // Start the server
 server.listen(port, err => {
   if (err) {
-      console.error(err);
-      return;
+    console.error(err);
+    return;
   }
   console.info(`Server running on http://localhost:${port} [${env}]`);
 });

@@ -28,7 +28,7 @@ npm run build
 npm run production
 ```
 
-### On docker
+### Thru docker
 ```
 docker build -t <Name> .
 docker run -p 80:80 -d <Name>

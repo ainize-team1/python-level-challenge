@@ -37,6 +37,13 @@ const config = {
             use: [
                 {
                     loader: 'file-loader',
+                    options: {
+                        name: '[path][name].[ext]',
+                        outputPath: (file) => {
+                          let path = file.split("src/static/img")[1];
+                          return path;
+                        }
+                    }
                 },
             ],
         }]

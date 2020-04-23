@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import GradationText from '../ui/text/GradationText.js';
 import NormalText from '../ui/text/NormalText';
 import FilledGradationButton from '../ui/button/FilledGradationButton';
-import Spinner from '../ui/Spinner'
+import Spinner from '../ui/Spinner';
+
+const bgDesktop = require('../../static/img/intro/background-desktop.jpg');
 
 const TextWrapper = styled.div`
 `;
@@ -16,7 +18,7 @@ const Wrapper = styled.div`
     @media (min-width: 1000px) {
         height: 100vh;
         width: 100vh;
-        background: url(${require('../../static/img/intro/background-desktop.jpg')}) no-repeat center center; 
+        background: url(${props=>props.bgDesktop}) no-repeat center center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -26,13 +28,19 @@ const Wrapper = styled.div`
     @media (max-width: 1000px) {
         height: 100%;
         width: 48vh;
-        background: url(${require('../../static/img/intro/background.png')}) no-repeat center center; 
+        background: url(${require('../../static/img/intro/background.png')}) no-repeat center center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;     
     }
 
+`;
+
+const Background = styled.img`
+    position: relative;
+    width: 245px;
+    object-fit: contain;
 `;
 
 class AppPage extends React.Component {
@@ -50,13 +58,14 @@ class AppPage extends React.Component {
         })
 
         setTimeout(() => {
-            window.location.href = '/quiz'
+            window.location.href = '/quiz';
         }, 750)
     }
 
     render() {
         return (
-            <Wrapper>
+            <Wrapper image={bgDesktop}>
+                <Background src={'../../static/img/intro/background-desktop.jpg'}></Background>
                 { this.state.clicked ? <Spinner/>: ""}
 
                 <TextWrapper>
