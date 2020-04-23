@@ -60,20 +60,20 @@ class AppPage extends React.Component {
     render() {
         return (
             <Wrapper>
-                { this.state.clicked ? <Spinner/>: ""}
+                {this.state.clicked ? <Spinner/>: ""}
 
                 <TextWrapper>
-                    <GradationText style= {{marginTop:"56px"}} fontSize={2.6} fontWeight={'bold'}>
-                        PythonQuizFlex
+                    <GradationText style={{marginTop:"56px"}} fontSize={2.6} fontWeight={'bold'}>
+                        {"PythonQuizFlex"}
                     </GradationText>
 
-                    <NormalText style= {{marginTop:"24px", fontSize:"16px"}}>
-                        Challenge and brag your python language level
+                    <NormalText style={{marginTop:"24px", fontSize:"16px"}}>
+                        {"Challenge and brag your python language level"}
                     </NormalText>
                 </TextWrapper>
 
-                <FilledGradationButton onClick={ this.onSpinner }>
-                    Start a Quiz
+                <FilledGradationButton onClick={this.onSpinner}>
+                    {"Start a Quiz"}
                 </FilledGradationButton>
             </Wrapper>
         );

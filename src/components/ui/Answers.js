@@ -66,7 +66,7 @@ class Answers extends React.Component {
     });
 
     render() {
-        const { showAnswer, toggleAnswer } = this.context;
+        const {showAnswer, toggleAnswer} = this.context;
     
         return (
             <>
