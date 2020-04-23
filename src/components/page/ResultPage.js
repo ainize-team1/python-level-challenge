@@ -9,6 +9,7 @@ import Answers from '../ui/Answers';
 import GradationButton from '../ui/button/GradationButton.js';
 import GradationText from '../ui/text/GradationText.js';
 import Footer from '../ui/Footer';
+import MyContext from '../context/MyContext';
 
 const base64url = require('base64-url');
 
@@ -107,6 +108,8 @@ class ResultPage extends React.Component {
     }
 
     componentWillMount(){
+        if(this.context.redirect) window.location.href = '/';
+        
         const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"));
         const score = answers[1].filter((answer,index) => {return answer===parseInt(answerList[answers[0][index]-1].Answer)}).length;
         const result = _.sample(resultList[score]);
@@ -141,7 +144,7 @@ class ResultPage extends React.Component {
                     <meta property="og:description" content={`${description}`} />
                     <meta property="og:image" content={require(`../../static/img/result/level_${score}.png`)} />
                 </Helmet>
-                
+
                 <LevelText>
                     Your level is
                 </LevelText>
@@ -185,5 +188,7 @@ class ResultPage extends React.Component {
         )
     };
 }
+
+ResultPage.contextType = MyContext;
 
 export default ResultPage;

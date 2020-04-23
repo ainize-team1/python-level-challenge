@@ -7,6 +7,7 @@ class MyContextProvider extends React.Component{
 
         this.state = {
             showAnswer: false,
+            redirect: true,
         }
     }
 
@@ -16,13 +17,21 @@ class MyContextProvider extends React.Component{
         }));
     }
 
+    toggleRedirect = () => {
+        this.setState(prevState => ({
+            redirect: !prevState.redirect,
+        }));
+    }
+
     render() {
-        const { showAnswer } = this.state;
+        const {showAnswer, redirect} = this.state;
 
         return (
             <MyContext.Provider value={{
                 showAnswer: showAnswer,
                 toggleAnswer: this.toggleAnswer,
+                redirect: redirect,
+                toggleRedirect: this.toggleRedirect,
             }}>
                 {this.props.children}
             </MyContext.Provider>

@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import GradationText from '../ui/text/GradationText.js';
 import NormalText from '../ui/text/NormalText';
 import FilledGradationButton from '../ui/button/FilledGradationButton';
-import Spinner from '../ui/Spinner'
+import Spinner from '../ui/Spinner';
+import MyContext from '../context/MyContext';
 
 const TextWrapper = styled.div`
 `;
@@ -47,11 +48,13 @@ class AppPage extends React.Component {
     onSpinner = () => {
         this.setState({
             clicked: true
-        })
+        });
+        
+        this.context.toggleRedirect();
 
         setTimeout(() => {
-            window.location.href = '/quiz'
-        }, 750)
+            this.props.history.push('/quiz')
+        }, 750);
     }
 
     render() {
@@ -76,5 +79,7 @@ class AppPage extends React.Component {
         );
     }
 }
+
+AppPage.contextType = MyContext;
 
 export default AppPage;
