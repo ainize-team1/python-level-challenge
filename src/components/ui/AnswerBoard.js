@@ -6,6 +6,10 @@ import {tomorrowNight} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import questions from '../../static/json/python';
 import answers from '../../static/json/python_answer';
 
+const correctWhiteImagePath = '../../static/img/answer/correct_white.svg';
+const correctBlueImagePath = '../../static/img/answer/correct_blue.svg';
+const incorrectImagePath = '../../static/img/answer/incorrect.svg';
+
 const Wrapper = styled.div`
     width: 100vw;
     min-width: 300px;
@@ -173,18 +177,15 @@ class AnswerBoard extends React.Component {
                         if (answer) {
                             if (this.state.correct) {
                                 if (i.toString() === this.state.userAnswer) {
-                                    checkBox = require(
-                                        '../../static/img/answer/correct_white.svg');
+                                    checkBox = correctWhiteImagePath;
                                     buttonColor = '#56CCF2';
                                 }
                             } else {
                                 if (i.toString() === this.state.userAnswer) {
-                                    checkBox = require(
-                                        '../../static/img/answer/correct_blue.svg');
+                                    checkBox = correctBlueImagePath;
                                 } else if (i.toString() ===
                                     this.state.originalAnswer) {
-                                    checkBox = require(
-                                        '../../static/img/answer/incorrect.svg');
+                                    checkBox = incorrectImagePath;
                                     buttonColor = '#EB5757';
                                 }
                             }
