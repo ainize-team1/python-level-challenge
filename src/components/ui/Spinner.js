@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Loader from 'react-loader-spinner'
+import Loader from 'react-loader-spinner';
 
 const Wrapper = styled.div`
     display: flex;
