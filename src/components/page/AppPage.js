@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import FilledGradationButton from '../ui/button/FilledGradationButton';
+import Context from '../context/Context';
 import GradationText from '../ui/text/GradationText';
 import Spinner from '../ui/Spinner';
 
@@ -70,17 +71,19 @@ class AppPage extends React.Component {
     onSpinner = () => {
         this.setState({
             clicked: true
-        })
+        });
+        
+        this.context.toggleRedirect();
 
         setTimeout(() => {
-            window.location.href = '/quiz';
-        }, 750)
+            this.props.history.push('/quiz');
+        }, 500+ Math.floor(Math.random()*500));
     }
 
     render() {
         return (
             <Wrapper>
-                { this.state.clicked ? <Spinner/>: ""}
+                {this.state.clicked ? <Spinner/>: ""}
 
                 <TextWrapper>
                     <LogoImg/>
@@ -92,7 +95,6 @@ class AppPage extends React.Component {
                         {'LEVEL'}<br/>
                         {'CHALLENGE'}
                     </GradationText>
-
                 </TextWrapper>
 
                 <FilledGradationButton onClick={ this.onSpinner }>
@@ -102,5 +104,7 @@ class AppPage extends React.Component {
         );
     }
 }
+
+AppPage.contextType = Context;
 
 export default AppPage;

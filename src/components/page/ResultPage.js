@@ -9,6 +9,7 @@ import Answers from '../ui/Answers';
 import GradationButton from '../ui/button/GradationButton.js';
 import GradationText from '../ui/text/GradationText.js';
 import Footer from '../ui/Footer';
+import Context from '../context/Context';
 
 const base64url = require('base64-url');
 
@@ -92,9 +93,9 @@ const TopText = styled.div`
     font-size: 1.2em;
 `
 
-class Result extends React.Component {
-    constructor() {
-        super();
+class ResultPage extends React.Component {
+    constructor(props) {
+        super(props);
 
         this.state = {
             title: `Python Quiz Flex`,
@@ -106,6 +107,8 @@ class Result extends React.Component {
     }
 
     componentWillMount(){
+        if(this.context.redirect) window.location.href = '/';
+        
         const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"));
         const score = answers[1].filter((answer,index) => {return answer===parseInt(answerList[answers[0][index]-1].Answer)}).length;
         const result = _.sample(resultList[score]);
@@ -139,11 +142,11 @@ class Result extends React.Component {
                 </GradationText>
 
                 <TopText>
-                    Top {result.Top}%
+                    {"Top"} {result.Top}%
                 </TopText>
 
                 <ScoreText>
-                    Score: {score} / {answers[0].length}
+                    {"Score:"} {score} / {answers[0].length}
                 </ScoreText>
 
                 <Image src={require(`../../static/img/result/level_${score}.png`)}/>
@@ -174,4 +177,6 @@ class Result extends React.Component {
     };
 }
 
-export default Result;
+ResultPage.contextType = Context;
+
+export default ResultPage;
