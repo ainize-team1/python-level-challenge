@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
-import {FiCheckCircle} from 'react-icons/fi'
-import {FaRegTimesCircle} from 'react-icons/fa'
+import {FaRegTimesCircle, FaRegCheckCircle} from 'react-icons/fa'
 import questionsList from '../../static/json/python.json';
 import answerList from '../../static/json/python_answer.json';
 
@@ -64,7 +63,7 @@ class Answers extends React.Component {
 
                     <Row textAlign="center"> 
                         {answer === selected ?
-                            <FiCheckCircle color="#33CCFF"/> :
+                            <FaRegCheckCircle color="#33CCFF"/> :
                             <FaRegTimesCircle color="#FF6347"/>}
                     </Row>
                 </Grid>
