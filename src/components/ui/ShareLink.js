@@ -35,7 +35,12 @@ class ShareLink extends React.Component {
 
         this.state = {
             clicked: false,
+            href: "",
         };
+    }
+
+    componentDidMount = () => {
+        this.setState({href: window.location.href});
     }
 
     handleClickOpen = () => {
@@ -47,17 +52,19 @@ class ShareLink extends React.Component {
     };
 
     render(){
+        const {href} = this.state;
+
         return(
             <Wrapper>
                 {/* TODO ADD URL */}
                 <Row>
-                    <FacebookShareButton url={ window.location.href }>
+                    <FacebookShareButton url={href}>
                         <FacebookIcon size={32} round={true}/>
                     </FacebookShareButton>
                 </Row>
 
                 <Row>
-                    <TwitterShareButton url={ window.location.href }>
+                    <TwitterShareButton url={href}>
                         <TwitterIcon size={32} round={true}/>
                     </TwitterShareButton>
                 </Row>
@@ -77,12 +84,12 @@ class ShareLink extends React.Component {
 
                     <DialogContent>
                         <DialogContentText id="alert-dialog-description">
-                            {window.location.href}
+                            {href}
                         </DialogContentText>
                     </DialogContent>
 
                     <DialogActions>
-                        <CopyToClipboard text={window.location.href}>
+                        <CopyToClipboard text={href}>
                             <Button onClick={this.handleClose} variant="contained" color="primary">
                                 {"Ok"}
                             </Button>
