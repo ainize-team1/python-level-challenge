@@ -7,9 +7,9 @@ import {
 } from "react-share";
 
 // TODO Change Icon
-// import facebookIcon from '../../static/img/shareIcon/Facebook.svg'
-// import twitterIcon from '../../static/img/shareIcon/Twitter.svg'
-// import copyIcon from '../../static/img/shareIcon/Copy.svg'
+// import facebookIcon from '../../static/img/shareIcon/Facebook.svg';
+// import twitterIcon from '../../static/img/shareIcon/Twitter.svg';
+// import copyIcon from '../../static/img/shareIcon/Copy.svg';
 
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
