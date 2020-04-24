@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import FilledGradationButton from '../ui/button/FilledGradationButton';
-import Context from '../context/Context';
 import GradationText from '../ui/text/GradationText';
 import Spinner from '../ui/Spinner';
 
@@ -73,8 +72,6 @@ class AppPage extends React.Component {
             clicked: true
         });
 
-        this.context.toggleRedirect();
-
         setTimeout(() => {
             this.props.history.push('/quiz');
         }, 500+ Math.floor(Math.random()*500));
@@ -105,7 +102,5 @@ class AppPage extends React.Component {
         );
     }
 }
-
-AppPage.contextType = Context;
 
 export default AppPage;

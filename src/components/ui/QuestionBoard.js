@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { tomorrowNight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import Context from '../context/Context';
 
 const base64url = require('base64-url');
 
@@ -115,6 +116,7 @@ class QuestionBoard extends React.Component {
 
     renderRedirect = () => {
         if (this.state.redirect) {
+            this.context.toggleRedirect();
             const encoded = base64url.encode(JSON.stringify(this.state.answers));
 
             return <Redirect to={ { pathname: `/result`,
@@ -184,5 +186,7 @@ class QuestionBoard extends React.Component {
         );
     }
 }
+
+QuestionBoard.contextType = Context;
 
 export default QuestionBoard;
