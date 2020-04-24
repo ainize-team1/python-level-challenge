@@ -22,7 +22,8 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 const Wrapper = styled.div`
     display: table;
     border-spacing: 30px 6px;
-    margin: 0 auto;
+    margin: 10px auto;
+    margin-bottom: 30px;
 `;
 
 const Row = styled.div`

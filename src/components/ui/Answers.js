@@ -25,6 +25,7 @@ const ShowAnswerList = styled.div`
     color: grey;
     font-size: 1em;
     paddingBottom: 7px;
+    margin-top: 20px;
 `;
 
 class Answers extends React.Component {

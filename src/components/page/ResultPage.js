@@ -154,7 +154,7 @@ class ResultPage extends React.Component {
                     {result.Description}
                 </Description>
 
-                <GradationText fontSize={'1em'}>
+                <GradationText fontSize={'1em'} marginTop={'25px'}>
                     {'Flex your level'}
                 </GradationText>
 
