@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+// TODO : Chnage these value to icon
+// import ainize from '../../static/img/footer/Ainize.svg'
+// import github from '../../static/img/footer/Github.svg'
 
 const Wrapper = styled.div`
     width: 90%;
