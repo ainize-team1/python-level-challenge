@@ -2,6 +2,7 @@ const Express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const path = require('path');
+const { Helmet } = require('react-helmet');
 const Server = require('http').Server;
 
 const app = Express();
@@ -36,7 +37,9 @@ app.use('/dist', Express.static(path.join(__dirname, 'dist')));
 app.use('/api', router);
 
 app.get('*', function (req, res) {
-  res.render('index', { 'APP_BUNDLE_URL': appBundleUrl });
+  res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, function (err, html) {
+    res.send(html);
+  });
 });
 
 router.get('/', function (req, res) {

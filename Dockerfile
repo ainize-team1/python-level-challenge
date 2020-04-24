@@ -1,9 +1,13 @@
-FROM mhart/alpine-node:12 AS builder
-WORKDIR /app
-COPY package*.json ./
-RUN npm run build
-RUN npm run production
+FROM mhart/alpine-node:12 AS build
+WORKDIR /usr/src/app
+COPY    . .
+RUN     npm install
+RUN     npm run build
 
-# COPY . .
-# EXPOSE 80
-# CMD ["node", "app.js"]
+FROM    node:10-alpine
+WORKDIR /usr/src/app
+COPY    --from=build /usr/src/app ./
+
+EXPOSE  3000
+
+CMD     [ "npm", "start" ]

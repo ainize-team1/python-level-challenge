@@ -11,7 +11,9 @@ import Result from './components/page/ResultPage';
 import QuizPage from './components/page/QuizPage';
 import AnswerPage from './components/page/AnswerPage';
 // import NotFoundPage from 'components/page/NotFoundPage';
+import ContextProvider from './components/context/ContextProvider';
 // Constants
+import '../public/style.css';
 
 const Wrapper = styled.div`
   height: 100%;
@@ -21,19 +23,20 @@ const Wrapper = styled.div`
 `;
 
 const globalNavigationBar = (
-  <Wrapper>
-    <Router>
-      {/* Content */}
-      <Switch>
-        <Route exact path='/' component={AppPage} />
-        <Route path='/quiz' component={QuizPage} />
-        <Route path='/answer' component={AnswerPage}/>
-        <Route path='/result' component={Result} />
-
-        {/* <Route component={NotFoundPage} /> */}
-      </Switch>
-    </Router>
-  </Wrapper>
+  <ContextProvider>
+    <Wrapper>
+      <Router>
+        {/* Content */}
+        <Switch>
+          <Route exact path='/' component={AppPage} />
+          <Route path='/quiz' component={QuizPage} />
+          <Route path='/answer' component={AnswerPage} />
+          <Route path='/result' component={Result} />
+          {/* <Route component={NotFoundPage} /> */}
+        </Switch>
+      </Router>
+    </Wrapper>
+  </ContextProvider>
 )
 
 ReactDOM.render(globalNavigationBar, document.getElementById('root'));

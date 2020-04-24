@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import {FaRegTimesCircle, FaRegCheckCircle} from 'react-icons/fa';
 import questionsList from '../../static/json/python.json';
 import answerList from '../../static/json/python_answer.json';
+import Context from '../context/Context';
 
 const Grid = styled.div`  
     display: grid;
@@ -27,59 +28,56 @@ const ShowAnswerList = styled.div`
 `;
 
 class Answers extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
-            clicked: false,
         };
     }
 
-    onClick= ()=>{
-        if(this.state.clicked) this.setState({clicked:false})
-        else this.setState({clicked: true})
-    }
+    renderList = () => this.props.answerSheet[0].map((result, index) => {
+        const id = result;
+        const selected = this.props.answerSheet[1][index];
+        const subject = questionsList[id-1].Subject;
+        const answer = parseInt(answerList[id-1].Answer);
 
-    render() {
-        const renderedList = this.props.answerSheet[0].map((result, index) => {
-            const id = result;
-            const selected = this.props.answerSheet[1][index];
-            const subject = questionsList[id-1].Subject;
-            const answer = parseInt(answerList[id-1].Answer);
+        return (
+            <Grid key={index}>
+                <Row>
+                    {index+1}
+                </Row>
 
-            return (
-                <Grid key={index}>
+                <Link 
+                    style={{color: "white", textDecoration: "none",}} 
+                    to={{pathname: '/answer', state: {id, selected},}}>
                     <Row>
-                        {index+1}
+                        { subject || `Question ${index+1}` } >
                     </Row>
+                </Link>
 
-                    <Link 
-                        style={{color: "white", textDecoration: "none",}} 
-                        to={{pathname: '/answer', state: {id, selected},}}>
-                        <Row>
-                            { subject || `Question ${index+1}` } >
-                        </Row>
-                    </Link>
-
-                    <Row textAlign="center"> 
-                        {answer === selected ?
-                            <FaRegCheckCircle color="#33CCFF"/> :
-                            <FaRegTimesCircle color="#FF6347"/>}
-                    </Row>
-                </Grid>
-            );
-        });
+                <Row textAlign="center"> 
+                    {answer === selected ?
+                        <FaRegCheckCircle color="#33CCFF"/> :
+                        <FaRegTimesCircle color="#FF6347"/>}
+                </Row>
+            </Grid>
+        );
+    });
+    render() {
+        const { showAnswer, toggleAnswer } = this.context;
     
         return (
             <>
-                <ShowAnswerList onClick={ this.onClick }>
-                    {this.state.clicked ? "Hide your answers ▲":"See your answers ▼"}
+                <ShowAnswerList onClick={toggleAnswer}>
+                    {showAnswer ? "Hide your answers ▲":"See your answers ▼"}
                 </ShowAnswerList>
 
-                {this.state.clicked ? renderedList: ""}
+                {showAnswer && this.renderList()}
             </>
         )
     };
 }
+
+Answers.contextType = Context;
 
 export default Answers;
