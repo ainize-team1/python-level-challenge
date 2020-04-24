@@ -72,7 +72,7 @@ class AppPage extends React.Component {
         this.setState({
             clicked: true
         });
-        
+
         this.context.toggleRedirect();
 
         setTimeout(() => {
@@ -90,6 +90,7 @@ class AppPage extends React.Component {
 
                     <GradationText fontSize={'3.125rem'}
                                    fontStyle={'italic'}
+                                   fontWeight={'bold'}
                                    marginTop={'0dp'}>
                         {'PYTHON'}<br/>
                         {'LEVEL'}<br/>
