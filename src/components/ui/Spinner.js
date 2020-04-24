@@ -34,8 +34,6 @@ class Spinner extends React.Component {
     }
 
     render() {
-        const style = {position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'};
-        
         return(
             <Wrapper>
                 <Background/>
@@ -45,7 +43,7 @@ class Spinner extends React.Component {
                     color='#D7558A'
                     height={80}
                     width={80}
-                    style={style}
+                    style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}
                 />
 
                 <LoadingText>

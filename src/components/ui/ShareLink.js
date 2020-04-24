@@ -47,19 +47,19 @@ class ShareLink extends React.Component {
     }
 
     componentDidMount = () => {
-        this.setState({href: window.location.href});
+        this.setState({ href: window.location.href });
     }
 
     handleClickOpen = () => {
-        this.setState({clicked: true});
+        this.setState({ clicked: true });
     };
     
     handleClose = () => {
-        this.setState({clicked: false});
+        this.setState({ clicked: false });
     };
 
     render(){
-        const {href} = this.state;
+        const { href } = this.state;
 
         return(
             <Wrapper>

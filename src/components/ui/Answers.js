@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import {FaRegTimesCircle, FaRegCheckCircle} from 'react-icons/fa';
+import { FaRegTimesCircle, FaRegCheckCircle } from 'react-icons/fa';
 import questionsList from '../../static/json/python.json';
 import answerList from '../../static/json/python_answer.json';
 import Context from '../context/Context';
