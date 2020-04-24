@@ -91,7 +91,7 @@ const AnswerWrapper = styled.div`
     margin-bottom: 16px;
     border-radius: 4px;
     
-    font-family: IBM Plex Sans;
+    font-family: IBM Plex Mono;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
@@ -152,7 +152,8 @@ class AnswerBoard extends React.Component {
 
                 <SyntaxHighlighterWrapper>
                     {this.state.question.Code &&
-                    <SyntaxHighlighter language={this.props.language}
+                    <SyntaxHighlighter codeTagProps={{style: {fontFamily: 'IBM Plex Mono'}}}
+                                       language={this.props.language}
                                        style={tomorrowNight}>
                         {this.state.question.Code}
                     </SyntaxHighlighter>}
@@ -173,17 +174,17 @@ class AnswerBoard extends React.Component {
                             if (this.state.correct) {
                                 if (i.toString() === this.state.userAnswer) {
                                     checkBox = require(
-                                        '../../static/img/answer/CorrectWhite.svg');
+                                        '../../static/img/answer/correct_white.svg');
                                     buttonColor = '#56CCF2';
                                 }
                             } else {
                                 if (i.toString() === this.state.userAnswer) {
                                     checkBox = require(
-                                        '../../static/img/answer/CorrectBlue.svg');
+                                        '../../static/img/answer/correct_blue.svg');
                                 } else if (i.toString() ===
                                     this.state.originalAnswer) {
                                     checkBox = require(
-                                        '../../static/img/answer/Incorrect.svg');
+                                        '../../static/img/answer/incorrect.svg');
                                     buttonColor = '#EB5757';
                                 }
                             }

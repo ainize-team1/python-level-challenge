@@ -13,6 +13,7 @@ import AnswerPage from './components/page/AnswerPage';
 // import NotFoundPage from 'components/page/NotFoundPage';
 import ContextProvider from './components/context/ContextProvider';
 // Constants
+import '../public/style.css';
 
 const Wrapper = styled.div`
   height: 100%;

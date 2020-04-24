@@ -73,10 +73,9 @@ const Wrapper = styled.div`
 `;
 
 const Description = styled.div`
-    font-size: 1.5rem;
+    margin-top: 10px;
+    font-size: 1rem;
     width: 90%;
-    text-align: center;
-    font-size: 0.8em;
 `;
 
 const ScoreText = styled.div`
@@ -130,26 +129,15 @@ class ResultPage extends React.Component {
     }
 
     render() {
-        const {title, description, answers, score, result} = this.state;
+        const { answers, score, result } = this.state;
 
         return (
             <Wrapper>
-                <Helmet>
-                    <title>{`${title}`}</title>
-                    <meta name="description" content={`${description}`} />
-                    <meta name="keywords" content={`ainize,python,programming languages,quiz`} />
-                    {/* Open Graph metadata */}
-                    <meta property="og:title" content={`${title}`} />
-                    <meta property="og:type" content="website" />
-                    <meta property="og:description" content={`${description}`} />
-                    <meta property="og:image" content={require(`../../static/img/result/level_${score}.png`)} />
-                </Helmet>
-
                 <LevelText>
-                    {"Your level is"}
+                    {'Your level is'}
                 </LevelText>
 
-                <GradationText fontSize={2.3} fontWeight={"bold"}>
+                <GradationText fontSize={'2.3em'} fontWeight={"bold"}>
                     {result.Name}
                 </GradationText>
 
@@ -167,17 +155,17 @@ class ResultPage extends React.Component {
                     {result.Description}
                 </Description>
 
-                <GradationText fontSize={1}>
-                    {"Flex your level"}
+                <GradationText fontSize={'1em'}>
+                    {'Flex your level'}
                 </GradationText>
 
                 <ShareLink />
 
-                <GradationButton 
+                <GradationButton
                     onClick={()=>window.location.href = '/'}
                     text={"Start a new quiz"} />
 
-                <GradationButton 
+                <GradationButton
                     onClick={()=>window.location.href = '/'}
                     text={"Discuss the quiz with others"} />
 
