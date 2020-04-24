@@ -9,6 +9,7 @@ const Wrapper = styled.div`
     width: 80%;
     background: linear-gradient(to right, #6f00cc 0%, #f2513c 100%);
     border-radius: 20px;
+    margin-bottom: 1em;
 `
 
 const Background = styled.div`
