@@ -37,12 +37,12 @@ class Footer extends React.Component {
           // TODO (Add icon)
             <Wrapper>
                 <Row>
-                    {"Contribute on"}
+                    {'Contribute on'}
 
                     <Icon src={'../static/img/footer/Github.svg'} />
                 </Row>
                 <Row>
-                    {"Live on"}
+                    {'Live on'}
 
                     <Icon src={'../static/img/footer/Ainize.svg'} />
                 </Row>

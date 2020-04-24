@@ -48,17 +48,17 @@ class Answers extends React.Component {
                 </Row>
 
                 <Link 
-                    style={{color: "white", textDecoration: "none",}} 
+                    style={{color: 'white', textDecoration: 'none',}} 
                     to={{pathname: '/answer', state: {id, selected},}}>
                     <Row>
                         { subject || `Question ${index+1}` } >
                     </Row>
                 </Link>
 
-                <Row textAlign="center"> 
+                <Row textAlign='center'> 
                     {answer === selected ?
-                        <FaRegCheckCircle color="#33CCFF"/> :
-                        <FaRegTimesCircle color="#FF6347"/>}
+                        <FaRegCheckCircle color='#33CCFF'/> :
+                        <FaRegTimesCircle color='#FF6347'/>}
                 </Row>
             </Grid>
         );
@@ -69,7 +69,7 @@ class Answers extends React.Component {
         return (
             <>
                 <ShowAnswerList onClick={toggleAnswer}>
-                    {showAnswer ? "Hide your answers ▲":"See your answers ▼"}
+                    {showAnswer ? 'Hide your answers ▲':'See your answers ▼'}
                 </ShowAnswerList>
 
                 {showAnswer && this.renderList()}

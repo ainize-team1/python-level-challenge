@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { 
     FacebookShareButton,
     TwitterShareButton,
-} from "react-share";
+} from 'react-share';
 
 // TODO Change Icon
 // import facebookIcon from '../../static/img/shareIcon/Facebook.svg';
@@ -42,7 +42,7 @@ class ShareLink extends React.Component {
 
         this.state = {
             clicked: false,
-            href: "",
+            href: '',
         };
     }
 
@@ -66,39 +66,39 @@ class ShareLink extends React.Component {
                 {/* TODO ADD URL */}
                 <Row>
                     <FacebookShareButton url={href}>
-                        <Icon src={"../../static/img/shareIcon/Facebook.svg"} />
+                        <Icon src={'../../static/img/shareIcon/Facebook.svg'} />
                     </FacebookShareButton>
                 </Row>
 
                 <Row>
                     <TwitterShareButton url={href}>
-                        <Icon src={"../../static/img/shareIcon/Twitter.svg"} />
+                        <Icon src={'../../static/img/shareIcon/Twitter.svg'} />
                     </TwitterShareButton>
                 </Row>
 
                 <Row onClick={this.handleClickOpen}>
-                    <Icon src={"../../static/img/shareIcon/Copy.svg"} />
+                    <Icon src={'../../static/img/shareIcon/Copy.svg'} />
                 </Row>
 
                 <Dialog
                     open={this.state.clicked}
                     onClose={this.handleClose}
-                    aria-labelledby="alert-dialog-title"
-                    aria-describedby="alert-dialog-description">
-                    <DialogTitle id="alert-dialog-title">
-                        {"URL copied to clipboard"}
+                    aria-labelledby='alert-dialog-title'
+                    aria-describedby='alert-dialog-description'>
+                    <DialogTitle id='alert-dialog-title'>
+                        {'URL copied to clipboard'}
                     </DialogTitle>
 
                     <DialogContent>
-                        <DialogContentText id="alert-dialog-description">
+                        <DialogContentText id='alert-dialog-description'>
                             {href}
                         </DialogContentText>
                     </DialogContent>
 
                     <DialogActions>
                         <CopyToClipboard text={href}>
-                            <Button onClick={this.handleClose} variant="contained" color="primary">
-                                {"Ok"}
+                            <Button onClick={this.handleClose} variant='contained' color='primary'>
+                                {'Ok'}
                             </Button>
                         </CopyToClipboard>
                     </DialogActions>

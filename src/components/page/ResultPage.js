@@ -109,7 +109,7 @@ class ResultPage extends React.Component {
     componentWillMount(){
         if(this.context.redirect) window.location.href = '/';
         
-        const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"));
+        const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get('answers'));
         const score = answers[1].filter((answer,index) => {return answer===parseInt(answerList[answers[0][index]-1].Answer)}).length;
         const result = _.sample(resultList[score]);
         this.setState({
@@ -137,16 +137,16 @@ class ResultPage extends React.Component {
                     {'Your level is'}
                 </LevelText>
 
-                <GradationText fontSize={'2.3em'} fontWeight={"bold"}>
+                <GradationText fontSize={'2.3em'} fontWeight={'bold'}>
                     {result.Name}
                 </GradationText>
 
                 <TopText>
-                    {"Top"} {result.Top}%
+                    {'Top'} {result.Top}%
                 </TopText>
 
                 <ScoreText>
-                    {"Score:"} {score} / {answers[0].length}
+                    {'Score:'} {score} / {answers[0].length}
                 </ScoreText>
 
                 <Image src={`../../static/img/result/level_${score}.png`} />
@@ -163,11 +163,11 @@ class ResultPage extends React.Component {
 
                 <GradationButton
                     onClick={()=>window.location.href = '/'}
-                    text={"Start a new quiz"} />
+                    text={'Start a new quiz'} />
 
                 <GradationButton
                     onClick={()=>window.location.href = '/'}
-                    text={"Discuss the quiz with others"} />
+                    text={'Discuss the quiz with others'} />
 
                 <Answers answerSheet={answers} />
 
