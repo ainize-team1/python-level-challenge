@@ -4,7 +4,7 @@ import GradationText from '../ui/text/GradationText.js';
 import NormalText from '../ui/text/NormalText';
 import FilledGradationButton from '../ui/button/FilledGradationButton';
 import Spinner from '../ui/Spinner';
-import MyContext from '../context/MyContext';
+import Context from '../context/Context';
 
 const TextWrapper = styled.div`
 `;
@@ -51,7 +51,7 @@ class AppPage extends React.Component {
         });
         
         this.context.toggleRedirect();
-        
+
         setTimeout(() => {
             this.props.history.push('/quiz')
         }, 500+ Math.floor(Math.random()*500));
@@ -80,6 +80,6 @@ class AppPage extends React.Component {
     }
 }
 
-AppPage.contextType = MyContext;
+AppPage.contextType = Context;
 
 export default AppPage;

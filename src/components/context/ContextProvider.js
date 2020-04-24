@@ -1,7 +1,7 @@
 import React from 'react'
-import MyContext from './MyContext'
+import Context from './Context'
 
-class MyContextProvider extends React.Component{
+class ContextProvider extends React.Component{
     constructor(props) {
         super(props);
 
@@ -27,16 +27,16 @@ class MyContextProvider extends React.Component{
         const { showAnswer, redirect } = this.state;
 
         return (
-            <MyContext.Provider value={{
+            <Context.Provider value={{
                 showAnswer: showAnswer,
                 toggleAnswer: this.toggleAnswer,
                 redirect: redirect,
                 toggleRedirect: this.toggleRedirect,
             }}>
                 {this.props.children}
-            </MyContext.Provider>
+            </Context.Provider>
         )
     }
 }
 
-export default MyContextProvider;
+export default ContextProvider;

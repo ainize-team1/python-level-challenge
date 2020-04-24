@@ -5,7 +5,7 @@ import {FiCheckCircle} from 'react-icons/fi'
 import {FaRegTimesCircle} from 'react-icons/fa'
 import questionsList from '../../static/json/python.json';
 import answerList from '../../static/json/python_answer.json';
-import MyContext from '../context/MyContext';
+import Context from '../context/Context';
 
 const Grid = styled.div`  
     display: grid;
@@ -80,6 +80,6 @@ class Answers extends React.Component {
     };
 }
 
-Answers.contextType = MyContext;
+Answers.contextType = Context;
 
 export default Answers;

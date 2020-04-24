@@ -11,7 +11,7 @@ import Result from './components/page/ResultPage';
 import QuizPage from './components/page/QuizPage';
 import AnswerPage from './components/page/AnswerPage';
 // import NotFoundPage from 'components/page/NotFoundPage';
-import MyContextProvider from './components/context/MyContextProvider';
+import ContextProvider from './components/context/ContextProvider';
 // Constants
 
 const Wrapper = styled.div`
@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 `;
 
 const globalNavigationBar = (
-  <MyContextProvider>
+  <ContextProvider>
     <Wrapper>
       <Router>
         {/* Content */}
@@ -35,7 +35,7 @@ const globalNavigationBar = (
         </Switch>
       </Router>
     </Wrapper>
-  </MyContextProvider>
+  </ContextProvider>
 )
 
 ReactDOM.render(globalNavigationBar, document.getElementById('root'));

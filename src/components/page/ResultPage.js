@@ -9,7 +9,7 @@ import Answers from '../ui/Answers';
 import GradationButton from '../ui/button/GradationButton.js';
 import GradationText from '../ui/text/GradationText.js';
 import Footer from '../ui/Footer';
-import MyContext from '../context/MyContext';
+import Context from '../context/Context';
 
 const base64url = require('base64-url');
 
@@ -189,6 +189,6 @@ class ResultPage extends React.Component {
     };
 }
 
-ResultPage.contextType = MyContext;
+ResultPage.contextType = Context;
 
 export default ResultPage;
