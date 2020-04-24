@@ -25,6 +25,13 @@ const LoadingText = styled.div`
     transform: translate(-50%, 0);
 `;
 
+const StyledLoader = styled(Loader)`
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+`
+
 class Spinner extends React.Component {
     constructor() {
         super();
@@ -38,13 +45,11 @@ class Spinner extends React.Component {
             <Wrapper>
                 <Background/>
 
-                <Loader 
+                <StyledLoader 
                     type='TailSpin'
                     color='#D7558A'
                     height={80}
-                    width={80}
-                    style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}
-                />
+                    width={80} />
 
                 <LoadingText>
                     Populating a quiz...
