@@ -1,7 +1,6 @@
 import React from 'react';
 import _ from 'underscore';
 import styled from 'styled-components';
-import { Helmet } from "react-helmet";
 import resultList from '../../static/json/resultList';
 import answerList from '../../static/json/python_answer.json';
 import ShareLink from '../ui/ShareLink';
@@ -109,8 +108,8 @@ class ResultPage extends React.Component {
     componentWillMount(){
         if(this.context.redirect) window.location.href = '/';
         
-        const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get("answers"));
-        const score = answers[1].filter((answer,index) => {return answer===parseInt(answerList[answers[0][index]-1].Answer)}).length;
+        const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get('answers'));
+        const score = answers[1].filter((answer,index) => { return answer===parseInt(answerList[answers[0][index]-1].Answer) }).length;
         const result = _.sample(resultList[score]);
         this.setState({
             answers,
@@ -137,19 +136,19 @@ class ResultPage extends React.Component {
                     {'Your level is'}
                 </LevelText>
 
-                <GradationText fontSize={'2.3em'} fontWeight={"bold"}>
+                <GradationText fontSize={'2.3em'} fontWeight={'bold'}>
                     {result.Name}
                 </GradationText>
 
                 <TopText>
-                    {"Top"} {result.Top}%
+                    {'Top'} {result.Top}%
                 </TopText>
 
                 <ScoreText>
-                    {"Score:"} {score} / {answers[0].length}
+                    {'Score:'} {score} / {answers[0].length}
                 </ScoreText>
 
-                <Image src={require(`../../static/img/result/level_${score}.png`)}/>
+                <Image src={`../../static/img/result/level_${score}.png`} />
 
                 <Description>
                     {result.Description}
@@ -163,11 +162,11 @@ class ResultPage extends React.Component {
 
                 <GradationButton
                     onClick={()=>window.location.href = '/'}
-                    text={"Start a new quiz"} />
+                    text={'Start a new quiz'} />
 
                 <GradationButton
                     onClick={()=>window.location.href = '/'}
-                    text={"Discuss the quiz with others"} />
+                    text={'Discuss the quiz with others'} />
 
                 <Answers answerSheet={answers} />
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import ainize from '../../static/img/footer/Ainize.svg';
-import github from '../../static/img/footer/Github.svg';
+// TODO : Chnage these value to icon
+// import ainize from '../../static/img/footer/Ainize.svg';
+// import github from '../../static/img/footer/Github.svg';
 
 const Wrapper = styled.div`
     width: 90%;
@@ -36,15 +37,14 @@ class Footer extends React.Component {
           // TODO (Add icon)
             <Wrapper>
                 <Row>
-                    {"Contribute on"}
+                    {'Contribute on'}
 
-                    <Icon src={github} />
+                    <Icon src={'../static/img/footer/Github.svg'} />
                 </Row>
-                
                 <Row>
-                    {"Live on"}
+                    {'Live on'}
 
-                    <Icon src={ainize} />
+                    <Icon src={'../static/img/footer/Ainize.svg'} />
                 </Row>
             </Wrapper>        
         )

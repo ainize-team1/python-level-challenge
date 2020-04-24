@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Loader from 'react-loader-spinner'
+import Loader from 'react-loader-spinner';
 
 const Wrapper = styled.div`
     display: flex;
@@ -25,6 +25,13 @@ const LoadingText = styled.div`
     transform: translate(-50%, 0);
 `;
 
+const StyledLoader = styled(Loader)`
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+`
+
 class Spinner extends React.Component {
     constructor() {
         super();
@@ -34,19 +41,15 @@ class Spinner extends React.Component {
     }
 
     render() {
-        const style = {position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)"};
-        
         return(
             <Wrapper>
                 <Background/>
 
-                <Loader 
-                    type="TailSpin"
-                    color="#D7558A"
+                <StyledLoader 
+                    type='TailSpin'
+                    color='#D7558A'
                     height={80}
-                    width={80}
-                    style={style}
-                />
+                    width={80} />
 
                 <LoadingText>
                     Populating a quiz...
