@@ -31,7 +31,7 @@ npm run production
 ### Thru docker
 ```
 docker build -t <Name> .
-docker run -p 80:80 -d <Name>
+docker run -p 80:3000 -d <Name>
 ```
 
 ## How to contribute
