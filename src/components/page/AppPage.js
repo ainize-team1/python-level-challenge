@@ -51,10 +51,10 @@ class AppPage extends React.Component {
         });
         
         this.context.toggleRedirect();
-
+        
         setTimeout(() => {
             this.props.history.push('/quiz')
-        }, 750);
+        }, 500+ Math.floor(Math.random()*500));
     }
 
     render() {

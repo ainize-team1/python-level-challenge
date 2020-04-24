@@ -24,7 +24,7 @@ class MyContextProvider extends React.Component{
     }
 
     render() {
-        const {showAnswer, redirect} = this.state;
+        const { showAnswer, redirect } = this.state;
 
         return (
             <MyContext.Provider value={{
