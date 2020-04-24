@@ -53,7 +53,7 @@ class AppPage extends React.Component {
         this.context.toggleRedirect();
 
         setTimeout(() => {
-            this.props.history.push('/quiz')
+            this.props.history.push('/quiz');
         }, 500+ Math.floor(Math.random()*500));
     }
 

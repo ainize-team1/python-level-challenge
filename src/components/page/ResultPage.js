@@ -146,7 +146,7 @@ class ResultPage extends React.Component {
                 </Helmet>
 
                 <LevelText>
-                    Your level is
+                    {"Your level is"}
                 </LevelText>
 
                 <GradationText fontSize={2.3} fontWeight={"bold"}>
@@ -154,11 +154,11 @@ class ResultPage extends React.Component {
                 </GradationText>
 
                 <TopText>
-                    Top {result.Top}%
+                    {"Top"} {result.Top}%
                 </TopText>
 
                 <ScoreText>
-                    Score: {score} / {answers[0].length}
+                    {"Score:"} {score} / {answers[0].length}
                 </ScoreText>
 
                 <Image src={require(`../../static/img/result/level_${score}.png`)}/>
@@ -168,7 +168,7 @@ class ResultPage extends React.Component {
                 </Description>
 
                 <GradationText fontSize={1}>
-                    Flex your level
+                    {"Flex your level"}
                 </GradationText>
 
                 <ShareLink />
