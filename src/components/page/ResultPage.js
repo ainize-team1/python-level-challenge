@@ -157,7 +157,7 @@ class Result extends React.Component {
                     Score: {score} / {answers[0].length}
                 </ScoreText>
 
-                <Image src={`../../static/img/result/level_${score}.png`}/>
+                <Image src={`../../static/img/result/level_${score}.png`} />
 
                 <Description>
                     {result.Description}
