@@ -1,13 +1,15 @@
 
 import React from 'react';
 import styled from 'styled-components'
-import { FaLink } from 'react-icons/fa';
 import { 
     FacebookShareButton,
     TwitterShareButton,
-    FacebookIcon,
-    TwitterIcon,
 } from "react-share";
+
+// TODO Change Icon
+// import facebookIcon from '../../static/img/shareIcon/Facebook.svg'
+// import twitterIcon from '../../static/img/shareIcon/Twitter.svg'
+// import copyIcon from '../../static/img/shareIcon/Copy.svg'
 
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -24,9 +26,14 @@ const Wrapper = styled.div`
 `;
 
 const Row = styled.div`
+    cursor: pointer;
     display: table-cell;
     vertical-align: middle;
     align: center;
+`;
+
+const Icon = styled.img`
+    vertical-align: middle;
 `;
 
 class ShareLink extends React.Component {
@@ -59,18 +66,18 @@ class ShareLink extends React.Component {
                 {/* TODO ADD URL */}
                 <Row>
                     <FacebookShareButton url={href}>
-                        <FacebookIcon size={32} round={true}/>
+                        <Icon src={"../../static/img/shareIcon/Facebook.svg"} />
                     </FacebookShareButton>
                 </Row>
 
                 <Row>
                     <TwitterShareButton url={href}>
-                        <TwitterIcon size={32} round={true}/>
+                        <Icon src={"../../static/img/shareIcon/Twitter.svg"} />
                     </TwitterShareButton>
                 </Row>
 
                 <Row onClick={this.handleClickOpen}>
-                    <FaLink size={26}/> 
+                    <Icon src={"../../static/img/shareIcon/Copy.svg"} />
                 </Row>
 
                 <Dialog
