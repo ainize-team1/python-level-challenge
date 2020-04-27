@@ -36,6 +36,10 @@ app.use('/static', Express.static(path.join(__dirname, 'src', 'static')));
 app.use('/dist', Express.static(path.join(__dirname, 'dist')));
 app.use('/api', router);
 
+app.get('/healthz', function (req, res) {
+  res.status(200).json({ status: 'UP' })
+});
+
 app.get('*', function (req, res) {
   res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, function (err, html) {
     res.send(html);
