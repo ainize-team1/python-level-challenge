@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 
 const Row = styled.div`
     margin-left: 10px;
-    font-size: 10px;
+    font-size: 0.625rem;
     display: table-cell;
     vertical-align: middle;
 `;
@@ -33,7 +33,7 @@ class Footer extends React.Component {
     }
 
     render(){
-        return( 
+        return(
           // TODO (Add icon)
             <Wrapper>
                 <Row>
@@ -46,7 +46,7 @@ class Footer extends React.Component {
 
                     <Icon src={'../static/img/footer/Ainize.svg'} />
                 </Row>
-            </Wrapper>        
+            </Wrapper>
         )
     };
 }

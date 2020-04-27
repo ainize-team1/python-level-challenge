@@ -79,17 +79,17 @@ const Description = styled.div`
 
 const ScoreText = styled.div`
     color: grey;
-    font-size: 1em;
+    font-size: 1rem;
     margin: 5px;
 `;
 
 const LevelText = styled.div`
     margin-top: 5%;
-    font-size: 1em;
+    font-size: 1rem;
 `;
 
 const TopText = styled.div`
-    font-size: 1.2em;
+    font-size: 1.2rem;
 `
 
 class ResultPage extends React.Component {
@@ -107,7 +107,7 @@ class ResultPage extends React.Component {
 
     componentWillMount(){
         if(this.context.redirect) window.location.href = '/';
-        
+
         const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get('answers'));
         const score = answers[1].filter((answer,index) => { return answer===parseInt(answerList[answers[0][index]-1].Answer) }).length;
         const result = _.sample(resultList[score]);
@@ -136,7 +136,7 @@ class ResultPage extends React.Component {
                     {'Your level is'}
                 </LevelText>
 
-                <GradationText fontSize={'2.3em'} fontWeight={'bold'}>
+                <GradationText fontSize={'2.3rem'} fontWeight={'bold'}>
                     {result.Name}
                 </GradationText>
 
@@ -154,7 +154,7 @@ class ResultPage extends React.Component {
                     {result.Description}
                 </Description>
 
-                <GradationText fontSize={'1em'} marginTop={'1.5em'}>
+                <GradationText fontSize={'1rem'} marginTop={'1.5rem'}>
                     {'Flex your level'}
                 </GradationText>
 

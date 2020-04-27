@@ -4,7 +4,7 @@ const FilledGradationButton = styled.button`
     font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 26px;
     letter-spacing: 0.15px;
     color: #FFFFFF;
