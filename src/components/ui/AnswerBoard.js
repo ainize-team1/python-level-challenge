@@ -191,7 +191,7 @@ class AnswerBoard extends React.Component {
                             }
 
                             return (
-                                <AnswerWrapper backgroundColor={buttonColor}>
+                                <AnswerWrapper backgroundColor={buttonColor} key={i}>
                                     <BoxWrapper flex={1}>
                                         <Box src={checkBox}/>
                                     </BoxWrapper>

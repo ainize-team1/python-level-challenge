@@ -116,7 +116,6 @@ class QuestionBoard extends React.Component {
 
     renderRedirect = () => {
         if (this.state.redirect) {
-            this.context.toggleRedirect();
             const encoded = base64url.encode(JSON.stringify(this.state.answers));
 
             return <Redirect to={ { pathname: `/result`,
@@ -131,6 +130,7 @@ class QuestionBoard extends React.Component {
         if (this.state.count < this.props.questions.length - 1) {
             this.setState({ count: this.state.count + 1 });
         } else {
+            this.context.toggleRedirect();
             this.setRedirect();
         }
     }
