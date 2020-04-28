@@ -37,7 +37,7 @@ app.use('/dist', Express.static(path.join(__dirname, 'dist')));
 app.use('/api', router);
 
 app.get('/healthz', function (req, res) {
-  res.status(200).json({ status: 'UP' })
+  res.sendStatus(200);
 });
 
 app.get('*', function (req, res) {
