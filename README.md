@@ -19,11 +19,14 @@
 
 ### On local(dev)
 ```
+npm install -g nodemon
+npm install
 npm run watch
 npm run dev
 ```
 ### On local(prod)
 ```
+npm install
 npm run build
 npm run production
 ```
