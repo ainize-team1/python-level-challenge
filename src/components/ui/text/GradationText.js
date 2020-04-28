@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const GradationText = styled.div`  
-    font-size: ${props => props.fontSize || '1em'};
+    font-size: ${props => props.fontSize || '1rem'};
     font-weight: ${props => props.fontWeight || "normal"};
     font-style: ${props => props.fontStyle || "normal"};
     text-align: center;

@@ -25,7 +25,7 @@ const CountText = styled.div`
     font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 18px;
     letter-spacing: 0.15px;
     color: #f2f2f2;
@@ -37,7 +37,7 @@ const SubjectText = styled.div`
     font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 2rem;
     line-height: 42px;
     letter-spacing: 0.15px;
     background: linear-gradient(to right, #AD1DF0 0%, #FF8C25 100%);
@@ -51,7 +51,7 @@ const QuestionText = styled.div`
     margin-right: ${props => props.marginRight || 0}px;
     margin-bottom: 24px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 21px;
     letter-spacing: 0.15px;
     color: #f2f2f2;
@@ -61,7 +61,7 @@ const SelectText = styled.div`
     margin-top: 32px;
     margin-bottom: 16px;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 21px;
     text-align: center;
     letter-spacing: 0.15px;
@@ -87,7 +87,7 @@ const AnswerButton = styled.button`
     border-radius: 4px;
     outline: none;
     font-family: IBM Plex Mono;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: bold;
     font-color: #333333;
     text-align: center;
