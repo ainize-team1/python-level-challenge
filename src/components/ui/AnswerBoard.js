@@ -183,11 +183,11 @@ class AnswerBoard extends React.Component {
                                 }
                             } else {
                                 if (i.toString() === this.state.userAnswer) {
-                                    checkBox = correctBlueImagePath;
-                                } else if (i.toString() ===
-                                    this.state.originalAnswer) {
                                     checkBox = incorrectImagePath;
                                     buttonColor = '#EB5757';
+                                } else if (i.toString() ===
+                                    this.state.originalAnswer) {
+                                    checkBox = correctBlueImagePath;
                                 }
                             }
 
