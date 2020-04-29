@@ -81,8 +81,6 @@ const SyntaxHighlighterWrapper = styled.div`
     margin-right: 24px;
 `;
 
-
-
 const ButtonWrapper = styled.div`
     text-align: center;
     margin-left: 24px;
@@ -97,6 +95,7 @@ const AnswerButton = styled.button`
     padding-right: 24px;
     margin-bottom: 16px;
     border-radius: 10px;
+    border: none;
     outline: none;
     font-family: IBM Plex Mono;
     font-size: 0.875rem;
