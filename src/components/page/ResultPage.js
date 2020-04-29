@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'underscore';
 import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
 import resultList from '../../static/json/resultList';
 import answerList from '../../static/json/python_answer.json';
 import ShareLink from '../ui/ShareLink';
@@ -150,6 +151,13 @@ class ResultPage extends React.Component {
 
         return (
             <Wrapper>
+                <Helmet>
+                    <meta property="og:title" content="Python Level Challenge" data-react-helmet="true" />
+                    <meta property="og:type" content="website" data-react-helmet="true" />
+                    <meta property="og:description" content={result.Description} data-react-helmet="true" />
+                    <meta property="og:image" content={`../../static/img/result/level_${score}.png`} data-react-helmet="true" />
+                </Helmet>
+
                 <LevelText>
                     {'Your level is'}
                 </LevelText>

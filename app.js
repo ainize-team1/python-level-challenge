@@ -2,7 +2,6 @@ const Express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const path = require('path');
-const { Helmet } = require('react-helmet');
 const Server = require('http').Server;
 
 const app = Express();
