@@ -11,7 +11,7 @@ const TextWrapper = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 5%;
+    margin-top: 10%;
 `;
 
 const Wrapper = styled.div`
@@ -30,7 +30,7 @@ const Wrapper = styled.div`
     }
 
     @media (max-width: 1000px) {
-        height: 100vh;
+        height: 100%;
         width: 100%;
         background: url(${backgroundImagePath}) no-repeat center center; 
         -webkit-background-size: cover;
@@ -85,7 +85,7 @@ class AppPage extends React.Component {
                 <TextWrapper>
                     <LogoImg/>
 
-                    <GradationText fontSize={'3.125rem'}
+                    <GradationText fontSize={'3rem'}
                                    fontStyle={'italic'}
                                    fontWeight={'bold'}
                                    marginTop={'0dp'}>

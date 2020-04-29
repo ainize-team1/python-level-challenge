@@ -6,8 +6,8 @@ const Wrapper = styled.div`
     display: inline-block;
     padding: 2px;
     margin: 4px;
-    width: 80%;
-    background: linear-gradient(to right, #6f00cc 0%, #f2513c 100%);
+    width: 90%;
+    background: linear-gradient(to right, #AD1DF0 0%, #f2513c 100%);
     border-radius: 20px;
     margin-bottom: 1em;
 `
@@ -31,9 +31,13 @@ const GradientText = styled.div`
     font-weight: bold;
     font-size: 1rem;
     text-align: center;
-    background: linear-gradient(to right, #6f00cc 0%, #f2513c 100%);
+    background: linear-gradient(to right, #AD1DF0 0%, #f2513c 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media (max-width: 1000px) {
+        font-size: 1.2rem;
+    }
 `
 
 class GradationButton extends React.Component {

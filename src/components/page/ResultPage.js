@@ -72,24 +72,41 @@ const Wrapper = styled.div`
 `;
 
 const Description = styled.div`
-    margin-top: 10px;
+    margin-top: 16px;
     font-size: 1rem;
+    text-align: center;
     width: 90%;
 `;
 
 const ScoreText = styled.div`
     color: grey;
-    font-size: 1rem;
-    margin: 5px;
+    font-size: 0.8rem;
+    margin: 8px;
+
+    @media (max-width: 1000px) {
+        font-size: 1rem;
+    }
 `;
 
 const LevelText = styled.div`
-    margin-top: 5%;
+    margin-top: 15%;
     font-size: 1rem;
+
+    @media (max-width: 1000px) {
+        font-size: 1.2rem;
+    }
 `;
 
 const TopText = styled.div`
+    margin-top: 24px;
     font-size: 1.2rem;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.2rem;
+
+    @media (max-width: 1000px) {
+        font-size: 1.4rem;
+    }
 `
 
 class ResultPage extends React.Component {
@@ -97,8 +114,8 @@ class ResultPage extends React.Component {
         super(props);
 
         this.state = {
-            title: `Python Quiz Flex`,
-            description: "Let's take a look Python quiz and show off your score.",
+            title: `Python Level Challenge`,
+            description: "Let's take a look Python quiz and show off your level.",
             answers: {},
             score: null,
             result: {},
@@ -154,7 +171,7 @@ class ResultPage extends React.Component {
                     {result.Description}
                 </Description>
 
-                <GradationText fontSize={'1rem'} marginTop={'1.5rem'}>
+                <GradationText fontWeight={'bold'} fontSize={'1.2rem'} marginTop={'3rem'}>
                     {'Flex your level'}
                 </GradationText>
 
