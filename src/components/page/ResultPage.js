@@ -13,6 +13,7 @@ import Context from '../context/Context';
 const base64url = require('base64-url');
 
 const Image = styled.img`
+    margin-top: 32px;
     @media (min-width: 1000px) {
         height: 500px;
         width: 500px;
