@@ -91,7 +91,9 @@ class ShareLink extends React.Component {
                     </DialogTitle>
 
                     <DialogContent>
-                        <DialogContentText id='alert-dialog-description'>
+                        <DialogContentText
+                            id='alert-dialog-description'
+                            style={{overflow: "hidden",textOverflow: "ellipsis"}}>
                             {href}
                         </DialogContentText>
                     </DialogContent>
