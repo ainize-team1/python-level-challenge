@@ -13,6 +13,7 @@ import Context from '../context/Context';
 const base64url = require('base64-url');
 
 const Image = styled.img`
+    margin-top: 32px;
     @media (min-width: 1000px) {
         height: 500px;
         width: 500px;
@@ -72,24 +73,41 @@ const Wrapper = styled.div`
 `;
 
 const Description = styled.div`
-    margin-top: 10px;
+    margin-top: 16px;
     font-size: 1rem;
+    text-align: center;
     width: 90%;
 `;
 
 const ScoreText = styled.div`
     color: grey;
-    font-size: 1em;
-    margin: 5px;
+    font-size: 0.8rem;
+    margin: 8px;
+
+    @media (max-width: 1000px) {
+        font-size: 1rem;
+    }
 `;
 
 const LevelText = styled.div`
-    margin-top: 5%;
-    font-size: 1em;
+    margin-top: 15%;
+    font-size: 1rem;
+
+    @media (max-width: 1000px) {
+        font-size: 1.2rem;
+    }
 `;
 
 const TopText = styled.div`
-    font-size: 1.2em;
+    margin-top: 24px;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.2rem;
+
+    @media (max-width: 1000px) {
+        font-size: 1.4rem;
+    }
 `
 
 class ResultPage extends React.Component {
@@ -97,8 +115,8 @@ class ResultPage extends React.Component {
         super(props);
 
         this.state = {
-            title: `Python Quiz Flex`,
-            description: "Let's take a look Python quiz and show off your score.",
+            title: `Python Level Challenge`,
+            description: "Let's take a look Python quiz and show off your level.",
             answers: {},
             score: null,
             result: {},
@@ -107,7 +125,7 @@ class ResultPage extends React.Component {
 
     componentWillMount(){
         if(this.context.redirect) window.location.href = '/';
-        
+
         const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get('answers'));
         const score = answers[1].filter((answer,index) => { return answer===parseInt(answerList[answers[0][index]-1].Answer) }).length;
         const result = _.sample(resultList[score]);
@@ -136,7 +154,7 @@ class ResultPage extends React.Component {
                     {'Your level is'}
                 </LevelText>
 
-                <GradationText fontSize={'2.3em'} fontWeight={'bold'}>
+                <GradationText fontSize={'2.3rem'} fontWeight={'bold'}>
                     {result.Name}
                 </GradationText>
 
@@ -154,7 +172,7 @@ class ResultPage extends React.Component {
                     {result.Description}
                 </Description>
 
-                <GradationText fontSize={'1em'} marginTop={'1.5em'}>
+                <GradationText fontWeight={'bold'} fontSize={'1.2rem'} marginTop={'3rem'}>
                     {'Flex your level'}
                 </GradationText>
 
