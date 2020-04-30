@@ -5,7 +5,7 @@ import styled from 'styled-components';
 // import github from '../../static/img/footer/Github.svg';
 
 const githubURL = 'https://github.com/ainize-team/python-level-challenge';
-const ainizeURL = 'https://ainize.ai/'
+const ainizeURL = 'https://ainize.ai/';
 
 const Wrapper = styled.div`
     width: 90%;

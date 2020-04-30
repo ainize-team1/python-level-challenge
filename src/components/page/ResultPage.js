@@ -12,7 +12,7 @@ import Context from '../context/Context';
 
 const base64url = require('base64-url');
 
-const redditURL = 'https://www.reddit.com/r/PythonLevelChallenge'
+const redditURL = 'https://www.reddit.com/r/PythonLevelChallenge';
 
 const Image = styled.img`
     margin-top: 32px;
