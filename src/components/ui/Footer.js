@@ -41,12 +41,12 @@ class Footer extends React.Component {
         return(
           // TODO (Add icon)
             <Wrapper>
-                <Row onClick={()=>window.location.href=githubURL}>
+                <Row onClick={() => window.location.href=githubURL}>
                     {'Contribute on'}
 
                     <Icon src={'../static/img/footer/Github.svg'} />
                 </Row>
-                <Row onClick={()=>window.location.href=ainizeURL}>
+                <Row onClick={() => window.location.href=ainizeURL}>
                     {'Live on'}
 
                     <Icon src={'../static/img/footer/Ainize.svg'} />
