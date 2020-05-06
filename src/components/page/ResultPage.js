@@ -12,7 +12,10 @@ import Context from '../context/Context';
 
 const base64url = require('base64-url');
 
+const redditURL = 'https://www.reddit.com/r/PythonLevelChallenge';
+
 const Image = styled.img`
+    margin-top: 32px;
     @media (min-width: 1000px) {
         height: 500px;
         width: 500px;
@@ -178,11 +181,11 @@ class ResultPage extends React.Component {
                 <ShareLink />
 
                 <GradationButton
-                    onClick={()=>window.location.href = '/'}
+                    onClick={() => window.location.href='/'}
                     text={'Start a new quiz'} />
 
                 <GradationButton
-                    onClick={()=>window.location.href = '/'}
+                    onClick={() => window.location.href=redditURL}
                     text={'Discuss the quiz with others'} />
 
                 <Answers answerSheet={answers} />

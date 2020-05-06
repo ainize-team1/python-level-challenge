@@ -4,6 +4,9 @@ import styled from 'styled-components';
 // import ainize from '../../static/img/footer/Ainize.svg';
 // import github from '../../static/img/footer/Github.svg';
 
+const githubURL = 'https://github.com/ainize-team/python-level-challenge';
+const ainizeURL = 'https://ainize.ai/';
+
 const Wrapper = styled.div`
     width: 90%;
     display: flex;
@@ -14,6 +17,7 @@ const Wrapper = styled.div`
 `;
 
 const Row = styled.div`
+    cursor: pointer;
     margin-left: 10px;
     font-size: 0.8rem;
     display: table-cell;
@@ -37,15 +41,15 @@ class Footer extends React.Component {
         return(
           // TODO (Add icon)
             <Wrapper>
-                <Row>
+                <Row onClick={() => window.location.href=githubURL}>
                     {'Contribute on'}
 
-                    <Icon src={'../static/img/footer/Github.svg'} />
+                    <Icon style={{paddingBottom:"2px"}} src={'../static/img/footer/Github.svg'} />
                 </Row>
-                <Row>
+                <Row onClick={() => window.location.href=ainizeURL}>
                     {'Live on'}
 
-                    <Icon src={'../static/img/footer/Ainize.svg'} />
+                    <Icon style={{paddingBottom:"3px"}} src={'../static/img/footer/Ainize.svg'} />
                 </Row>
             </Wrapper>
         )

@@ -29,13 +29,14 @@ const ReturnButton = styled.button`
     padding-right: 10px;
     margin-bottom: 10px;
     border-radius: 4px;
-    outline: none;
+    border: none;
     font-family: IBM Plex Sans;
     font-size: 0.875rem;
     font-weight: bold;
     text-align: center;
+    background-color: #e0e0e0;
     :active {
-        background-color: #f2f2f2;
+        background-color: #b2b2b2;
     }
 `;
 
@@ -156,7 +157,8 @@ class AnswerBoard extends React.Component {
 
                 <SyntaxHighlighterWrapper>
                     {this.state.question.Code &&
-                    <SyntaxHighlighter codeTagProps={{style: {fontFamily: 'IBM Plex Mono'}}}
+                    <SyntaxHighlighter customStyle={{padding: '16px'}}
+                                       codeTagProps={{style: {fontFamily: 'IBM Plex Mono'}}}
                                        language={this.props.language}
                                        style={tomorrowNight}>
                         {this.state.question.Code}
@@ -182,11 +184,11 @@ class AnswerBoard extends React.Component {
                                 }
                             } else {
                                 if (i.toString() === this.state.userAnswer) {
-                                    checkBox = correctBlueImagePath;
-                                } else if (i.toString() ===
-                                    this.state.originalAnswer) {
                                     checkBox = incorrectImagePath;
                                     buttonColor = '#EB5757';
+                                } else if (i.toString() ===
+                                    this.state.originalAnswer) {
+                                    checkBox = correctBlueImagePath;
                                 }
                             }
 
