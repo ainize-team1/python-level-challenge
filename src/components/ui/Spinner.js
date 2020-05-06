@@ -6,9 +6,6 @@ const Wrapper = styled.div`
     display: flex;
     margin: 0 auto;
     justify-content: center;
-`;
-
-const Background = styled.div`
     background-color:rgba(0, 0, 0, 0.5);
     width: 100%; 
     height: 100%;
@@ -43,8 +40,6 @@ class Spinner extends React.Component {
     render() {
         return(
             <Wrapper>
-                <Background/>
-
                 <StyledLoader 
                     type='TailSpin'
                     color='#D7558A'

@@ -29,13 +29,14 @@ const ReturnButton = styled.button`
     padding-right: 10px;
     margin-bottom: 10px;
     border-radius: 4px;
-    outline: none;
+    border: none;
     font-family: IBM Plex Sans;
     font-size: 0.875rem;
     font-weight: bold;
     text-align: center;
+    background-color: #e0e0e0;
     :active {
-        background-color: #f2f2f2;
+        background-color: #b2b2b2;
     }
 `;
 
