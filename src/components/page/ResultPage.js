@@ -116,8 +116,6 @@ class ResultPage extends React.Component {
         super(props);
 
         this.state = {
-            title: `Python Level Challenge`,
-            description: "Let's take a look Python quiz and show off your level.",
             answers: {},
             score: null,
             result: {},
@@ -125,7 +123,7 @@ class ResultPage extends React.Component {
     }
 
     componentWillMount(){
-        if(this.context.redirect) window.location.href = '/';
+        if (this.context.redirect) window.location.href = '/';
 
         const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get('answers'));
         const score = answers[1].filter((answer,index) => { return answer===parseInt(answerList[answers[0][index]-1].Answer) }).length;
@@ -134,7 +132,7 @@ class ResultPage extends React.Component {
             answers,
             score,
             result,
-        })
+        });
     }
 
     decodeAnswer(encoded) {
