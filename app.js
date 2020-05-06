@@ -32,6 +32,7 @@ app.use(cors());
 app.use(morgan('dev'));
 
 // Define static assets folder
+app.use('/public', Express.static(path.join(__dirname, 'public')));
 app.use('/static', Express.static(path.join(__dirname, 'src', 'static')));
 app.use('/dist', Express.static(path.join(__dirname, 'dist')));
 app.use('/api', router);
