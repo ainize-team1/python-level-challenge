@@ -173,7 +173,7 @@ class QuestionBoard extends React.Component {
 
                 <SyntaxHighlighterWrapper>
                     {questions[count].Code &&
-                    <SyntaxHighlighter customStyle={{padding: '16px'}}
+                    <SyntaxHighlighter customStyle={{padding: '16px', whiteSpace: 'pre-wrap', wordBreak: 'break-word'}}
                         codeTagProps={{style: {fontFamily: 'IBM Plex Mono', fontSize: '1.2rem'}}}
                                        language={language}
                                        style={tomorrowNight}
