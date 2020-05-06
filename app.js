@@ -4,6 +4,8 @@ const morgan = require('morgan');
 const path = require('path');
 const Server = require('http').Server;
 
+const { Helmet } = require('react-helmet');
+
 const app = Express();
 const server = new Server(app);   // Initialize the server
 const router = Express.Router();
@@ -39,8 +41,21 @@ app.get('/healthz', function (req, res) {
   res.sendStatus(200);
 });
 
-app.get('*', function (req, res) {
-  res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, function (err, html) {
+app.get('/', function (req, res) {
+  res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, (err, html) => {
+    html = html.replace(/\$OG_TITLE/g, 'Python Level Challenge');
+    html = html.replace(/\$OG_DESCRIPTION/g, `Let's take a look Python quiz and show off your score.`);
+    html = html.replace(/\$OG_IMAGE/g, `/static/img/intro/python_logo.png`);
+
+    res.send(html);
+  });
+});
+
+app.get('/result', function (req, res) {
+  res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, (err, html) => {
+    // html = html.replace(/\$OG_DESCRIPTION/g, `testeesetsetsetset`);
+    // html = html.replace(/\$OG_IMAGE/g, `/static/img/intro/python_logo.png`);
+
     res.send(html);
   });
 });
