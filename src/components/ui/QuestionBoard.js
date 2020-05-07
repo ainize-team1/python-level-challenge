@@ -121,7 +121,6 @@ class QuestionBoard extends React.Component {
             redirect: false,
             count: 0,
             answers: [[], []],
-            prevButtonKey: -1,
         };
     }
 
@@ -140,24 +139,16 @@ class QuestionBoard extends React.Component {
         }
     }
 
-    onButtonClick = (index, id, key) => {
+    onButtonClick = (index, id) => {
         this.state.answers[0].push(id);
         this.state.answers[1].push(index);
 
         if (this.state.count < this.props.questions.length - 1) {
-            this.setState({ count: this.state.count + 1, prevButtonKey: key });
+            this.setState({ count: this.state.count + 1 });
         } else {
             this.context.toggleRedirect();
             this.setRedirect();
         }
-    }
-
-    getButtonKey = (index) => {
-        if (this.state.prevButtonKey === -1)
-            return index;
-        if (index === this.state.prevButtonKey)
-            return -1;
-        return index;
     }
 
     render() {
@@ -198,10 +189,10 @@ class QuestionBoard extends React.Component {
                 <ButtonWrapper>
                     {questions[count].Answers.map((answer, i) => {
                         if (answer) {
-                            const key = this.getButtonKey(i);
                             return (
-                                <AnswerButton key={key}
-                                    onClick={() => this.onButtonClick(i, questions[count].Id, key)}>
+                                <AnswerButton
+                                    key={`${count}-${i}`}
+                                    onClick={() => this.onButtonClick(i, questions[count].Id)}>
                                     {questions[count].Answers[i]}
                                 </AnswerButton>
                             )
