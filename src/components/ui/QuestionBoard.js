@@ -190,9 +190,10 @@ class QuestionBoard extends React.Component {
                     {questions[count].Answers.map((answer, i) => {
                         if (answer) {
                             return (
-                                <AnswerButton key={`${i}`}
-                                    onClick={() => this.onButtonClick(i,questions[count].Id)}>
-                                        {questions[count].Answers[i]}
+                                <AnswerButton
+                                    key={`${count}-${i}`}
+                                    onClick={() => this.onButtonClick(i, questions[count].Id)}>
+                                    {questions[count].Answers[i]}
                                 </AnswerButton>
                             )
                         }
