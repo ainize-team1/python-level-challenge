@@ -2,8 +2,9 @@ const Express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const path = require('path');
-const { Helmet } = require('react-helmet');
 const Server = require('http').Server;
+const _ = require('underscore');
+const base64url = require('base64-url');
 
 const app = Express();
 const server = new Server(app);   // Initialize the server
@@ -41,8 +42,41 @@ app.get('/healthz', function (req, res) {
   res.sendStatus(200);
 });
 
-app.get('*', function (req, res) {
-  res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, function (err, html) {
+app.get('/', function (req, res) {
+  res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, (err, html) => {
+    html = html.replace(/\$OG_TITLE/g, 'Python Level Challenge');
+    html = html.replace(/\$OG_DESCRIPTION/g, `Let's take a look Python quiz and show off your score.`);
+    html = html.replace(/\$OG_IMAGE/g, `/static/img/intro/python_logo.png`);
+
+    res.send(html);
+  });
+});
+
+app.get('/quiz', function (req, res) {
+  res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, (err, html) => {
+    html = html.replace(/\$OG_TITLE/g, 'Python Level Challenge');
+    html = html.replace(/\$OG_DESCRIPTION/g, `Let's take a look Python quiz and show off your score.`);
+    html = html.replace(/\$OG_IMAGE/g, `/static/img/intro/python_logo.png`);
+
+    res.send(html);
+  });
+});
+
+app.get('/result', function (req, res) {
+  const resultList = require('./src/static/json/resultList');
+  const answerList = require('./src/static/json/python_answer.json');
+
+  const answers = decodeAnswer(req.query.answers);
+  const score = answers[1].filter((answer, index) => {
+    return answer === parseInt(answerList[answers[0][index] - 1].Answer)
+  }).length;
+  const result = _.sample(resultList[score]);
+
+  res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, (err, html) => {
+    html = html.replace(/\$OG_TITLE/g, 'Python Level Challenge');
+    html = html.replace(/\$OG_DESCRIPTION/g, `${result.Description}`);
+    html = html.replace(/\$OG_IMAGE/g, `/static/img/result/level_${score}.png`);
+
     res.send(html);
   });
 });
@@ -60,3 +94,12 @@ server.listen(port, err => {
   }
   console.info(`Server running on http://localhost:${port} [${env}]`);
 });
+
+function decodeAnswer(encoded) {
+  const decodedString = base64url.decode(encoded);
+  try {
+      return JSON.parse(decodedString);
+  } catch (e) {
+      return null;
+  }
+}

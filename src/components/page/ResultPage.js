@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'underscore';
 import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
 import resultList from '../../static/json/resultList';
 import answerList from '../../static/json/python_answer.json';
 import ShareLink from '../ui/ShareLink';
@@ -117,8 +118,6 @@ class ResultPage extends React.Component {
         super(props);
 
         this.state = {
-            title: `Python Level Challenge`,
-            description: "Let's take a look Python quiz and show off your level.",
             answers: {},
             score: null,
             result: {},
@@ -126,7 +125,7 @@ class ResultPage extends React.Component {
     }
 
     componentWillMount(){
-        if(this.context.redirect) window.location.href = '/';
+        if (this.context.redirect) window.location.href = '/';
 
         const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get('answers'));
         const score = answers[1].filter((answer,index) => { return answer===parseInt(answerList[answers[0][index]-1].Answer) }).length;
@@ -135,7 +134,7 @@ class ResultPage extends React.Component {
             answers,
             score,
             result,
-        })
+        });
     }
 
     decodeAnswer(encoded) {
@@ -152,6 +151,13 @@ class ResultPage extends React.Component {
 
         return (
             <Wrapper>
+                <Helmet>
+                    <meta property="og:title" content="Python Level Challenge" data-react-helmet="true" />
+                    <meta property="og:type" content="website" data-react-helmet="true" />
+                    <meta property="og:description" content={result.Description} data-react-helmet="true" />
+                    <meta property="og:image" content={`../../static/img/result/level_${score}.png`} data-react-helmet="true" />
+                </Helmet>
+
                 <LevelText>
                     {'Your level is'}
                 </LevelText>
