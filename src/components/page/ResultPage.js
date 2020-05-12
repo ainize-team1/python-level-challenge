@@ -127,7 +127,7 @@ class ResultPage extends React.Component {
     componentWillMount(){
         if (this.context.redirect) window.location.href = '/';
 
-        const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get('answers'));
+        const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get('query'));
         const score = answers[1].filter((answer,index) => { return answer===parseInt(answerList[answers[0][index]-1].Answer) }).length;
         const result = _.sample(resultList[score]);
         this.setState({

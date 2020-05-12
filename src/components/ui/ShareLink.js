@@ -17,7 +17,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const Wrapper = styled.div`
     display: table;
@@ -77,9 +77,11 @@ class ShareLink extends React.Component {
                     </TwitterShareButton>
                 </Row>
 
-                <Row onClick={this.handleClickOpen}>
-                    <Icon src={'../../static/img/shareIcon/Copy.svg'} />
-                </Row>
+                <CopyToClipboard text={href}>
+                    <Row onClick={this.handleClickOpen}>
+                        <Icon src={'../../static/img/shareIcon/Copy.svg'} />
+                    </Row>
+                </CopyToClipboard>
 
                 <Dialog
                     open={this.state.clicked}
@@ -99,11 +101,9 @@ class ShareLink extends React.Component {
                     </DialogContent>
 
                     <DialogActions>
-                        <CopyToClipboard text={href}>
-                            <Button onClick={this.handleClose} variant='contained' color='primary'>
-                                {'Ok'}
-                            </Button>
-                        </CopyToClipboard>
+                        <Button onClick={this.handleClose} variant='contained' color='primary'>
+                            {'Ok'}
+                        </Button>
                     </DialogActions>
                 </Dialog>
             </Wrapper>
