@@ -11,7 +11,7 @@ import GradationText from '../ui/text/GradationText.js';
 import Footer from '../ui/Footer';
 import Context from '../context/Context';
 
-const base64url = require('base64-url');
+const lz = require('lz-string');
 
 const redditURL = 'https://www.reddit.com/r/PythonLevelChallenge';
 
@@ -138,7 +138,8 @@ class ResultPage extends React.Component {
     }
 
     decodeAnswer(encoded) {
-        const decodedString = base64url.decode(encoded);
+        const decodedString = lz.decompressFromEncodedURIComponent(encoded);
+
         try {
             return JSON.parse(decodedString);
         } catch (e) {
