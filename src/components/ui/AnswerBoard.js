@@ -127,11 +127,11 @@ class AnswerBoard extends React.Component {
 
         const {id, selected} = props.location.state;
         this.state = {
-            questionNumber: id.toString(),
-            userAnswer: selected.toString(),
+            questionNumber: id,
+            userAnswer: selected,
             question: questions[id - 1],
             originalAnswer: answers[id - 1].Answer,
-            correct: (selected.toString() === answers[id - 1].Answer),
+            correct: (selected === answers[id - 1].Answer),
         };
     }
 
@@ -178,15 +178,15 @@ class AnswerBoard extends React.Component {
 
                         if (answer) {
                             if (this.state.correct) {
-                                if (i.toString() === this.state.userAnswer) {
+                                if (i === this.state.userAnswer) {
                                     checkBox = correctWhiteImagePath;
                                     buttonColor = '#56CCF2';
                                 }
                             } else {
-                                if (i.toString() === this.state.userAnswer) {
+                                if (i === this.state.userAnswer) {
                                     checkBox = incorrectImagePath;
                                     buttonColor = '#EB5757';
-                                } else if (i.toString() ===
+                                } else if (i ===
                                     this.state.originalAnswer) {
                                     checkBox = correctBlueImagePath;
                                 }
