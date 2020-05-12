@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const path = require('path');
 const Server = require('http').Server;
 const _ = require('underscore');
-const base64url = require('base64-url');
+const lz = require('lz-string');
 
 const app = Express();
 const server = new Server(app);   // Initialize the server
@@ -96,10 +96,11 @@ server.listen(port, err => {
 });
 
 function decodeAnswer(encoded) {
-  const decodedString = base64url.decode(encoded);
+  const decodedString = lz.decompressFromEncodedURIComponent(encoded);
+
   try {
-      return JSON.parse(decodedString);
+    return JSON.parse(decodedString);
   } catch (e) {
-      return null;
+    return null;
   }
 }

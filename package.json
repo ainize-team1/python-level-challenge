@@ -23,13 +23,13 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "base64-url": "^2.3.3",
     "cors": "^2.8.5",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
     "http": "0.0.1-security",
     "light-toast": "^0.2.3",
     "lodash": "^4.17.15",
+    "lz-string": "^1.4.4",
     "morgan": "^1.10.0",
     "pm2": "^4.3.1",
     "react": "^16.13.1",
@@ -55,6 +55,6 @@
     "image-webpack-loader": "^6.0.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.11.0"
   }
 }

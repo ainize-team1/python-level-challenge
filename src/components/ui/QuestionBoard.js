@@ -5,7 +5,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { tomorrowNight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import Context from '../context/Context';
 
-const base64url = require('base64-url');
+const lz = require('lz-string');
 
 const Wrapper = styled.div`
     width: 100vw;
@@ -132,7 +132,7 @@ class QuestionBoard extends React.Component {
 
     renderRedirect = () => {
         if (this.state.redirect) {
-            const encoded = base64url.encode(JSON.stringify(this.state.answers));
+            const encoded = lz.compressToEncodedURIComponent(JSON.stringify(this.state.answers));
 
             return <Redirect to={ { pathname: `/result`,
                                     search: `?answers=${encoded}` } } />
