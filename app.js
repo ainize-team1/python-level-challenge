@@ -43,20 +43,24 @@ app.get('/healthz', function (req, res) {
 });
 
 app.get('/', function (req, res) {
+  const fullURL = req.protocol + '://' + req.get('host');
+
   res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, (err, html) => {
     html = html.replace(/\$OG_TITLE/g, 'Python Level Challenge');
     html = html.replace(/\$OG_DESCRIPTION/g, `Let's take a look Python quiz and show off your score.`);
-    html = html.replace(/\$OG_IMAGE/g, `/static/img/intro/python_logo.png`);
+    html = html.replace(/\$OG_IMAGE/g, `${fullURL}/static/img/intro/python_logo.png`);
 
     res.send(html);
   });
 });
 
 app.get('/quiz', function (req, res) {
+  const fullURL = req.protocol + '://' + req.get('host');
+
   res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, (err, html) => {
     html = html.replace(/\$OG_TITLE/g, 'Python Level Challenge');
     html = html.replace(/\$OG_DESCRIPTION/g, `Let's take a look Python quiz and show off your score.`);
-    html = html.replace(/\$OG_IMAGE/g, `/static/img/intro/python_logo.png`);
+    html = html.replace(/\$OG_IMAGE/g, `${fullURL}/static/img/intro/python_logo.png`);
 
     res.send(html);
   });
@@ -65,6 +69,7 @@ app.get('/quiz', function (req, res) {
 app.get('/result', function (req, res) {
   const resultList = require('./src/static/json/resultList');
   const answerList = require('./src/static/json/python_answer.json');
+  const fullURL = req.protocol + '://' + req.get('host');
 
   const answers = decodeAnswer(req.query.answers);
   const score = answers[1].filter((answer, index) => {
@@ -73,9 +78,9 @@ app.get('/result', function (req, res) {
   const result = _.sample(resultList[score]);
 
   res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, (err, html) => {
-    html = html.replace(/\$OG_TITLE/g, 'Python Level Challenge');
+    html = html.replace(/\$OG_TITLE/g, `Your level is ${result.Name}`);
     html = html.replace(/\$OG_DESCRIPTION/g, `${result.Description}`);
-    html = html.replace(/\$OG_IMAGE/g, `/static/img/result/level_${score}.png`);
+    html = html.replace(/\$OG_IMAGE/g, `${fullURL}/static/img/result/level_${score}.png`);
 
     res.send(html);
   });
