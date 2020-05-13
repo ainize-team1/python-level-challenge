@@ -71,7 +71,7 @@ app.get('/result', function (req, res) {
   const answerList = require('./src/static/json/python_answer.json');
   const fullURL = req.protocol + '://' + req.get('host');
 
-  const answers = decodeAnswer(req.query.answers);
+  const answers = decodeAnswer(req.query.query);
   const score = answers[1].filter((answer, index) => {
     return answer === parseInt(answerList[answers[0][index] - 1].Answer)
   }).length;
