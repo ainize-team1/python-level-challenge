@@ -48,7 +48,7 @@ app.get('/', function (req, res) {
   res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, (err, html) => {
     html = html.replace(/\$OG_TITLE/g, 'Python Level Challenge');
     html = html.replace(/\$OG_DESCRIPTION/g, `Let's take a look Python quiz and show off your score.`);
-    html = html.replace(/\$OG_IMAGE/g, `${fullURL}/static/img/intro/python_logo.png`);
+    html = html.replace(/\$OG_IMAGE/g, `${fullURL}/static/img/intro/og_image_dimensions.png`);
 
     res.send(html);
   });
@@ -60,7 +60,7 @@ app.get('/quiz', function (req, res) {
   res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, (err, html) => {
     html = html.replace(/\$OG_TITLE/g, 'Python Level Challenge');
     html = html.replace(/\$OG_DESCRIPTION/g, `Let's take a look Python quiz and show off your score.`);
-    html = html.replace(/\$OG_IMAGE/g, `${fullURL}/static/img/intro/python_logo.png`);
+    html = html.replace(/\$OG_IMAGE/g, `${fullURL}/static/img/intro/og_image_dimensions.png`);
 
     res.send(html);
   });
