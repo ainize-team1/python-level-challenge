@@ -74,7 +74,7 @@ app.get('/result', function (req, res) {
 
   res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, (err, html) => {
     html = html.replace(/\$OG_TITLE/g, 'Python Level Challenge');
-    html = html.replace(/\$OG_DESCRIPTION/g, `${result.Description}`);
+    html = html.replace(/\$OG_DESCRIPTION/g, `${result.Description.replace(/\"/g, `&quot;`)}`);
     html = html.replace(/\$OG_IMAGE/g, `/static/img/result/level_${score}.png`);
 
     res.send(html);
