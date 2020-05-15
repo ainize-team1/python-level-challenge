@@ -1,12 +1,12 @@
 # Contribution Guidelines
-Ensure your pull request adheres to the following guidelines
-- Leave issues if you have any interesting ideas or bugs interesting ideas or bugs.
-- Use English in all cases(Communication, Comment, Code review...)
+Ensure your pull request adheres to the following guidelines.
+- Leave issues if you have any interesting ideas or bugs.
+- Use English in all cases(Communication, Comment, and Code review etc).
 
 ## Code contribution guide
-- Consist indentation of 4 spaces.
-- File name uses snake case for file name.
-- Variable name uses pascal case for react components and camel case for others.
+- Indentation of 4 spaces.
+- Name a react component file as pascal case, others snake case.
+- Name a react component variable as pascal case, others camel case.
 - Refer to existing codes.
 
 ## Quiz contribution guide
