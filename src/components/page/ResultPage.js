@@ -18,7 +18,7 @@ const redditURL = 'https://www.reddit.com/r/PythonLevelChallenge';
 const Image = styled.img`
     margin-top: 32px;
     @media (min-width: 1000px) {
-        height: 500px;
+        height: auto;
         width: 500px;
         -webkit-background-size: cover;
         -moz-background-size: cover;
