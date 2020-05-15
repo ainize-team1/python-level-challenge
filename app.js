@@ -43,20 +43,24 @@ app.get('/healthz', function (req, res) {
 });
 
 app.get('/', function (req, res) {
+  const fullURL = req.protocol + '://' + req.get('host');
+
   res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, (err, html) => {
     html = html.replace(/\$OG_TITLE/g, 'Python Level Challenge');
     html = html.replace(/\$OG_DESCRIPTION/g, `Let's take a look Python quiz and show off your score.`);
-    html = html.replace(/\$OG_IMAGE/g, `/static/img/intro/python_logo.png`);
+    html = html.replace(/\$OG_IMAGE/g, `${fullURL}/static/img/intro/og_image_dimensions.png`);
 
     res.send(html);
   });
 });
 
 app.get('/quiz', function (req, res) {
+  const fullURL = req.protocol + '://' + req.get('host');
+
   res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, (err, html) => {
     html = html.replace(/\$OG_TITLE/g, 'Python Level Challenge');
     html = html.replace(/\$OG_DESCRIPTION/g, `Let's take a look Python quiz and show off your score.`);
-    html = html.replace(/\$OG_IMAGE/g, `/static/img/intro/python_logo.png`);
+    html = html.replace(/\$OG_IMAGE/g, `${fullURL}/static/img/intro/og_image_dimensions.png`);
 
     res.send(html);
   });
@@ -65,19 +69,19 @@ app.get('/quiz', function (req, res) {
 app.get('/result', function (req, res) {
   const resultList = require('./src/static/json/resultList');
   const answerList = require('./src/static/json/python_answer.json');
+  const fullURL = req.protocol + '://' + req.get('host');
 
-  const answers = decodeAnswer(req.query.answers);
+  const answers = decodeAnswer(req.query.query);
   const score = answers[1].filter((answer, index) => {
     return answer === parseInt(answerList[answers[0][index] - 1].Answer)
   }).length;
   const result = _.sample(resultList[score]);
 
   res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, (err, html) => {
-    html = html.replace(/\$OG_TITLE/g, 'Python Level Challenge');
-    html = html.replace(/\$OG_DESCRIPTION/g, `${result.Description.replace(/\"/g, `&quot;`)}`);
-    html = html.replace(/\$OG_IMAGE/g, `/static/img/result/level_${score}.png`);
-
-    res.send(html);
+  html = html.replace(/\$OG_TITLE/g, `Your level is ${result.Name}`);
+  html = html.replace(/\$OG_DESCRIPTION/g, `${result.Description.replace(/\"/g, `&quot;`)}`);
+  html = html.replace(/\$OG_IMAGE/g, `${fullURL}/static/img/ogImage/level_${score}.png`);
+  res.send(html);
   });
 });
 

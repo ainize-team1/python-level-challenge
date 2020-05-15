@@ -135,7 +135,7 @@ class QuestionBoard extends React.Component {
             const encoded = lz.compressToEncodedURIComponent(JSON.stringify(this.state.answers));
 
             return <Redirect to={ { pathname: `/result`,
-                                    search: `?answers=${encoded}` } } />
+                                    search: `?query=${encoded}` } } />
         }
     }
 
