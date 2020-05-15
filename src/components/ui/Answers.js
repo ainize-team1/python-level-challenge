@@ -41,7 +41,7 @@ class Answers extends React.Component {
         const id = result;
         const selected = this.props.answerSheet[1][index];
         const subject = questionsList[id-1].Subject;
-        const answer = parseInt(answerList[id-1].Answer);
+        const answer = answerList[id-1].Answer;
 
         return (
             <Grid key={index}>
