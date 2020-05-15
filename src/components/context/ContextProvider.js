@@ -1,5 +1,5 @@
 import React from 'react'
-import Context from './context'
+import Context from './Context'
 
 class ContextProvider extends React.Component{
     constructor(props) {

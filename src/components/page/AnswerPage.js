@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import AnswerBoard from '../ui/answer_board';
+import AnswerBoard from '../ui/AnswerBoard';
 
 const Wrapper = styled.div`
     display: flex;

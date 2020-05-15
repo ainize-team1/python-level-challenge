@@ -6,12 +6,12 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 // Styled-components
 import styled from 'styled-components';
 // Pages
-import AppPage from './components/page/app_page';
-import Result from './components/page/result_page';
-import QuizPage from './components/page/quiz_page';
-import AnswerPage from './components/page/answer_page';
+import AppPage from './components/page/AppPage';
+import Result from './components/page/ResultPage';
+import QuizPage from './components/page/QuizPage';
+import AnswerPage from './components/page/AnswerPage';
 // import NotFoundPage from 'components/page/NotFoundPage';
-import ContextProvider from './components/context/context_provider';
+import ContextProvider from './components/context/ContextProvider';
 // Constants
 import '../public/style.css';
 
