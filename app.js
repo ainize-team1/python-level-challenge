@@ -78,11 +78,10 @@ app.get('/result', function (req, res) {
   const result = _.sample(resultList[score]);
 
   res.render('index', { 'APP_BUNDLE_URL': appBundleUrl }, (err, html) => {
-    html = html.replace(/\$OG_TITLE/g, `Your level is ${result.Name}`);
-    html = html.replace(/\$OG_DESCRIPTION/g, `${result.Description}`);
-    html = html.replace(/\$OG_IMAGE/g, `${fullURL}/static/img/ogImage/level_${score}.png`);
-
-    res.send(html);
+  html = html.replace(/\$OG_TITLE/g, `Your level is ${result.Name}`);
+  html = html.replace(/\$OG_DESCRIPTION/g, `${result.Description.replace(/\"/g, `&quot;`)}`);
+  html = html.replace(/\$OG_IMAGE/g, `${fullURL}/static/img/ogImage/level_${score}.png`);
+  res.send(html);
   });
 });
 
