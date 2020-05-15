@@ -192,7 +192,7 @@ class ResultPage extends React.Component {
                     text={'Start a new quiz'} />
 
                 <GradationButton
-                    onClick={() => window.location.href=redditURL}
+                    onClick={() => window.open(redditURL, "_blank")}
                     text={'Discuss the quiz with others'} />
 
                 <Answers answerSheet={answers} />
