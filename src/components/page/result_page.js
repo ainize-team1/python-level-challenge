@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'underscore';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
-import resultList from '../../static/json/resultList';
+import resultList from '../../static/json/result_list';
 import answerList from '../../static/json/python_answer.json';
 import ShareLink from '../ui/share_link';
 import Answers from '../ui/answers';

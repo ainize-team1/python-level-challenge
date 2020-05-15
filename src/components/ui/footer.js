@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 // TODO : Chnage these value to icon
-// import ainize from '../../static/img/footer/Ainize.svg';
-// import github from '../../static/img/footer/Github.svg';
+// import ainize from '../../static/img/footer/ainize.svg';
+// import github from '../../static/img/footer/github.svg';
 
 const githubURL = 'https://github.com/ainize-team/python-level-challenge';
 const ainizeURL = 'https://ainize.ai/';
@@ -44,12 +44,12 @@ class Footer extends React.Component {
                 <Row onClick={() => window.location.href=githubURL}>
                     {'Contribute on'}
 
-                    <Icon style={{paddingBottom:"2px"}} src={'../static/img/footer/Github.svg'} />
+                    <Icon style={{paddingBottom:"2px"}} src={'../static/img/footer/github.svg'} />
                 </Row>
                 <Row onClick={() => window.location.href=ainizeURL}>
                     {'Live on'}
 
-                    <Icon style={{paddingBottom:"3px"}} src={'../static/img/footer/Ainize.svg'} />
+                    <Icon style={{paddingBottom:"3px"}} src={'../static/img/footer/ainize.svg'} />
                 </Row>
             </Wrapper>
         )

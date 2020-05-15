@@ -67,7 +67,7 @@ app.get('/quiz', function (req, res) {
 });
 
 app.get('/result', function (req, res) {
-  const resultList = require('./src/static/json/resultList');
+  const resultList = require('./src/static/json/result_list');
   const answerList = require('./src/static/json/python_answer.json');
   const fullURL = req.protocol + '://' + req.get('host');
 
