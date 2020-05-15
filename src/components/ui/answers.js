@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { FaRegTimesCircle, FaRegCheckCircle } from 'react-icons/fa';
 import questionsList from '../../static/json/python.json';
 import answerList from '../../static/json/python_answer.json';
-import Context from '../context/Context';
+import Context from '../context/context';
 
 const Grid = styled.div`  
     display: grid;

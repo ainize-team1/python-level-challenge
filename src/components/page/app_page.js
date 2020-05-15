@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import FilledGradationButton from '../ui/button/FilledGradationButton';
+import FilledGradationButton from '../ui/button/filled_gradation_button';
 import GradationText from '../ui/text/GradationText';
-import Spinner from '../ui/Spinner';
+import Spinner from '../ui/spinner';
 
 const backgroundImagePath = '../../static/img/intro/background.jpeg';
 const pythonImagePath = '../../static/img/intro/python_logo.png';

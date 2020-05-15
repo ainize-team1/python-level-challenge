@@ -4,12 +4,12 @@ import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import resultList from '../../static/json/resultList';
 import answerList from '../../static/json/python_answer.json';
-import ShareLink from '../ui/ShareLink';
-import Answers from '../ui/Answers';
-import GradationButton from '../ui/button/GradationButton.js';
+import ShareLink from '../ui/share_link';
+import Answers from '../ui/answers';
+import GradationButton from '../ui/button/gradation_button.js';
 import GradationText from '../ui/text/GradationText.js';
-import Footer from '../ui/Footer';
-import Context from '../context/Context';
+import Footer from '../ui/footer';
+import Context from '../context/context';
 
 const lz = require('lz-string');
 

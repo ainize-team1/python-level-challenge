@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import QuestionBoard from '../ui/QuestionBoard';
+import QuestionBoard from '../ui/question_board';
 import questions from '../../static/json/python';
 
 const _ = require('lodash');
