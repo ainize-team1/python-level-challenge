@@ -1,15 +1,15 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { 
+import {
     FacebookShareButton,
     TwitterShareButton,
 } from 'react-share';
 
 // TODO Change Icon
-// import facebookIcon from '../../static/img/shareIcon/Facebook.svg';
-// import twitterIcon from '../../static/img/shareIcon/Twitter.svg';
-// import copyIcon from '../../static/img/shareIcon/Copy.svg';
+// import facebookIcon from '../../static/img/shareIcon/facebook.svg';
+// import twitterIcon from '../../static/img/shareIcon/twitter.svg';
+// import copyIcon from '../../static/img/shareIcon/copy.svg';
 
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -54,7 +54,7 @@ class ShareLink extends React.Component {
     handleClickOpen = () => {
         this.setState({ clicked: true });
     };
-    
+
     handleClose = () => {
         this.setState({ clicked: false });
     };
@@ -67,19 +67,19 @@ class ShareLink extends React.Component {
                 {/* TODO ADD URL */}
                 <Row>
                     <FacebookShareButton url={href}>
-                        <Icon src={'../../static/img/shareIcon/Facebook.svg'} />
+                        <Icon src={'../../static/img/shareIcon/facebook.svg'} />
                     </FacebookShareButton>
                 </Row>
 
                 <Row>
                     <TwitterShareButton url={href}>
-                        <Icon src={'../../static/img/shareIcon/Twitter.svg'} />
+                        <Icon src={'../../static/img/shareIcon/twitter.svg'} />
                     </TwitterShareButton>
                 </Row>
 
                 <CopyToClipboard text={href}>
                     <Row onClick={this.handleClickOpen}>
-                        <Icon src={'../../static/img/shareIcon/Copy.svg'} />
+                        <Icon src={'../../static/img/shareIcon/copy.svg'} />
                     </Row>
                 </CopyToClipboard>
 
