@@ -1,6 +1,6 @@
-# Programming Language Quizzes
+# Python Level Challenge
 
-### A simple online programming language quizzes
+### A simple online python quiz
 - Levels are provided based on result of quizzes
 - Solve quizzes and check your level!
 
@@ -39,3 +39,4 @@ docker run -p 80:3000 -d <Name>
 
 ## How to contribute
 - Feel free to post issues and pull requests. We need more programming language quizzes!
+- [Contribution Guide](https://github.com/ainize-team/python-level-challenge/blob/release/contributing.md)
