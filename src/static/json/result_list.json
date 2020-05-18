@@ -1,0 +1,91 @@
+[
+    [{
+        "Level": 0,
+        "Name": "Amoeba",
+        "Top": "0",
+        "Description": "Has most potential to be evolved. Just doesn't have a brain yet.",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
+    }],
+    [{
+        "Level": 1,
+        "Name": "Octopus",
+        "Top": "70",
+        "Description": "Heard of Github from a cat",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
+    }],
+    [{
+        "Level": 2,
+        "Name": "Pigeon",
+        "Top": "50",
+        "Description": "Just finished a 101 course. Is found anywhere.",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
+    }],
+    [{
+        "Level": 3,
+        "Name": "Dog",
+        "Top": "40",
+        "Description": "Is a pro at ultimate-frisbee. Not sure of his programming ability yet..",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
+    }],
+    [{
+        "Level": 4,
+        "Name": "Crow",
+        "Top": "30",
+        "Description": "Is often found around dead programs",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
+    }],
+    [{
+        "Level": 5,
+        "Name": "Rat",
+        "Top": "25",
+        "Description": "Is more productive during night. Hates code editors with white background.",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
+    }],
+    [{
+        "Level": 6,
+        "Name": "Parrot",
+        "Top": "20",
+        "Description": "\"Imitation precedes creation\" - Parrot, buried in Stackoverflow",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
+    }],
+    [{
+        "Level": 7,
+        "Name": "Elephant",
+        "Top": "10",
+        "Description": "Has a bigger brain and more neurons in it.",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
+    }],
+    [{
+        "Level": 8,
+        "Name": "Dolphin",
+        "Top": "1",
+        "Description": "Often belongs to a flock to create larger programs  together.",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
+    }],
+    [{
+        "Level": 9,
+        "Name": "Chimpanzee",
+        "Top": "0.1",
+        "Description": "Makes and uses tools for oneself to program better. Writes emails well.",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
+    }],
+    [{
+        "Level": 10,
+        "Name": "Alien",
+        "Top": "0.0001",
+        "Description": "Is able to use multi-dimensional language",
+        "ReferenceTitle": "",
+        "ReferenceLink": ""
+    }]
+]
+

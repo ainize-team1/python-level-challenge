@@ -2,33 +2,59 @@
   "name": "plp",
   "version": "0.1.0",
   "private": true,
+  "main": "app.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "watch": "npm run clean && npm run build-lib-dev && npm run watch-app-dev",
+    "watch-app-dev": "webpack-dev-server --progress --config=webpack.app.dev.js",
+    "build": "npm run clean && npm run build-lib-prod && npm run build-app-prod",
+    "build-lib-dev": "webpack --config webpack.lib.dev.js",
+    "build-lib-prod": "webpack --config webpack.lib.prod.js",
+    "build-app-dev": "webpack --config webpack.app.dev.js",
+    "build-app-prod": "webpack --config webpack.app.prod.js",
+    "start": "pm2-runtime start ecosystem.config.js --env production",
+    "dev": "NODE_ENV=development APP_MODE=dev NODE_PATH=src nodemon app.js",
+    "production": "NODE_ENV=production NODE_PATH=src node app.js"
+  },
+  "author": "Team1",
+  "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^4.9.11",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "cors": "^2.8.5",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "light-toast": "^0.2.3",
+    "lodash": "^4.17.15",
+    "lz-string": "^1.4.4",
+    "morgan": "^1.10.0",
+    "pm2": "^4.3.1",
     "react": "^16.13.1",
+    "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-helmet": "^6.0.0",
+    "react-icons": "^3.9.0",
+    "react-loader-spinner": "^3.1.14",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "react-share": "^4.1.0",
+    "react-syntax-highlighter": "^12.2.1",
+    "styled-components": "^5.1.0",
+    "underscore": "^1.10.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "babel-loader": "^8.1.0",
+    "file-loader": "^6.0.0",
+    "image-webpack-loader": "^6.0.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
   }
 }
