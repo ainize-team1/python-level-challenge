@@ -57,7 +57,7 @@ Ensure your pull request adheres to the following guidelines.
 - Sync answers with questions.
 - Questions and answers are added / modified / deleted according to the JSON format. See format below.
 - Format
-  - Question ([/src/static/json/python.json](https://github.com/ainize-team/python-level-challenge/blob/release/src/static/json/python.json))
+  - Question ([/src/static/json/python.json](https://github.com/ainize-team/python-level-challenge/blob/master/src/static/json/python.json))
     ```
     {
         "Id": (Integer, problem number in ascending order)[Required],
@@ -69,7 +69,7 @@ Ensure your pull request adheres to the following guidelines.
         "Reference": (String)[Optional]
     }
     ```
-  - Answer ([/src/static/json/python_answer.json](https://github.com/ainize-team/python-level-challenge/blob/release/src/static/json/python_answer.json))
+  - Answer ([/src/static/json/python_answer.json](https://github.com/ainize-team/python-level-challenge/blob/master/src/static/json/python_answer.json))
     ```
     {
         "Id": (Integer, answer number in ascending order, must sync with question number)
