@@ -18,8 +18,8 @@ class ContextProvider extends React.Component{
     }
 
     toggleRedirect = () => {
-        this.setState(prevState => ({
-            redirect: !prevState.redirect,
+        this.setState(() => ({
+            redirect: false,
         }));
     }
 

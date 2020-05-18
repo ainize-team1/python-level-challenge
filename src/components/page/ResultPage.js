@@ -1,7 +1,8 @@
 import React from 'react';
 import _ from 'underscore';
 import styled from 'styled-components';
-import resultList from '../../static/json/resultList';
+import { Helmet } from 'react-helmet';
+import resultList from '../../static/json/result_list';
 import answerList from '../../static/json/python_answer.json';
 import ShareLink from '../ui/ShareLink';
 import Answers from '../ui/Answers';
@@ -10,11 +11,14 @@ import GradationText from '../ui/text/GradationText.js';
 import Footer from '../ui/Footer';
 import Context from '../context/Context';
 
-const base64url = require('base64-url');
+const lz = require('lz-string');
+
+const redditURL = 'https://www.reddit.com/r/PythonLevelChallenge';
 
 const Image = styled.img`
+    margin-top: 32px;
     @media (min-width: 1000px) {
-        height: 500px;
+        height: auto;
         width: 500px;
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -72,24 +76,41 @@ const Wrapper = styled.div`
 `;
 
 const Description = styled.div`
-    margin-top: 10px;
+    margin-top: 16px;
     font-size: 1rem;
+    text-align: center;
     width: 90%;
 `;
 
 const ScoreText = styled.div`
     color: grey;
-    font-size: 1em;
-    margin: 5px;
+    font-size: 0.8rem;
+    margin: 8px;
+
+    @media (max-width: 1000px) {
+        font-size: 1rem;
+    }
 `;
 
 const LevelText = styled.div`
-    margin-top: 5%;
-    font-size: 1em;
+    margin-top: 15%;
+    font-size: 1rem;
+
+    @media (max-width: 1000px) {
+        font-size: 1.2rem;
+    }
 `;
 
 const TopText = styled.div`
-    font-size: 1.2em;
+    margin-top: 24px;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.2rem;
+
+    @media (max-width: 1000px) {
+        font-size: 1.4rem;
+    }
 `
 
 class ResultPage extends React.Component {
@@ -97,8 +118,6 @@ class ResultPage extends React.Component {
         super(props);
 
         this.state = {
-            title: `Python Quiz Flex`,
-            description: "Let's take a look Python quiz and show off your score.",
             answers: {},
             score: null,
             result: {},
@@ -106,20 +125,21 @@ class ResultPage extends React.Component {
     }
 
     componentWillMount(){
-        if(this.context.redirect) window.location.href = '/';
-        
-        const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get('answers'));
+        if (this.context.redirect) window.location.href = '/';
+
+        const answers = this.decodeAnswer(new URLSearchParams(this.props.location.search).get('query'));
         const score = answers[1].filter((answer,index) => { return answer===parseInt(answerList[answers[0][index]-1].Answer) }).length;
         const result = _.sample(resultList[score]);
         this.setState({
             answers,
             score,
             result,
-        })
+        });
     }
 
     decodeAnswer(encoded) {
-        const decodedString = base64url.decode(encoded);
+        const decodedString = lz.decompressFromEncodedURIComponent(encoded);
+
         try {
             return JSON.parse(decodedString);
         } catch (e) {
@@ -132,11 +152,18 @@ class ResultPage extends React.Component {
 
         return (
             <Wrapper>
+                <Helmet>
+                    <meta property="og:title" content="Python Level Challenge" data-react-helmet="true" />
+                    <meta property="og:type" content="website" data-react-helmet="true" />
+                    <meta property="og:description" content={result.Description} data-react-helmet="true" />
+                    <meta property="og:image" content={`../../static/img/result/level_${score}.png`} data-react-helmet="true" />
+                </Helmet>
+
                 <LevelText>
                     {'Your level is'}
                 </LevelText>
 
-                <GradationText fontSize={'2.3em'} fontWeight={'bold'}>
+                <GradationText fontSize={'2.3rem'} fontWeight={'bold'}>
                     {result.Name}
                 </GradationText>
 
@@ -154,18 +181,18 @@ class ResultPage extends React.Component {
                     {result.Description}
                 </Description>
 
-                <GradationText fontSize={'1em'}>
+                <GradationText fontWeight={'bold'} fontSize={'1.2rem'} marginTop={'3rem'}>
                     {'Flex your level'}
                 </GradationText>
 
                 <ShareLink />
 
                 <GradationButton
-                    onClick={()=>window.location.href = '/'}
+                    onClick={() => window.location.href='/'}
                     text={'Start a new quiz'} />
 
                 <GradationButton
-                    onClick={()=>window.location.href = '/'}
+                    onClick={() => window.open(redditURL, "_blank")}
                     text={'Discuss the quiz with others'} />
 
                 <Answers answerSheet={answers} />

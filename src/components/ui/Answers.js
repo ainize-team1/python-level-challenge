@@ -12,7 +12,7 @@ const Grid = styled.div`
     background: #191919;
     padding: 10px;
     grid-template-columns: 40px auto 40px;
-    font-size: 1em;
+    font-size: 1rem;
 `;
 
 const Row = styled.div`
@@ -23,8 +23,10 @@ const Row = styled.div`
 
 const ShowAnswerList = styled.div`
     color: grey;
-    font-size: 1em;
-    paddingBottom: 7px;
+    font-size: 1rem;
+    paddingBottom: 8px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 `;
 
 class Answers extends React.Component {
@@ -39,7 +41,7 @@ class Answers extends React.Component {
         const id = result;
         const selected = this.props.answerSheet[1][index];
         const subject = questionsList[id-1].Subject;
-        const answer = parseInt(answerList[id-1].Answer);
+        const answer = answerList[id-1].Answer;
 
         return (
             <Grid key={index}>
@@ -47,15 +49,15 @@ class Answers extends React.Component {
                     {index+1}
                 </Row>
 
-                <Link 
-                    style={{color: 'white', textDecoration: 'none',}} 
+                <Link
+                    style={{color: 'white', textDecoration: 'none',}}
                     to={{pathname: '/answer', state: {id, selected},}}>
                     <Row>
                         { subject || `Question ${index+1}` } >
                     </Row>
                 </Link>
 
-                <Row textAlign='center'> 
+                <Row textAlign='center'>
                     {answer === selected ?
                         <FaRegCheckCircle color='#33CCFF'/> :
                         <FaRegTimesCircle color='#FF6347'/>}
@@ -65,7 +67,7 @@ class Answers extends React.Component {
     });
     render() {
         const { showAnswer, toggleAnswer } = this.context;
-    
+
         return (
             <>
                 <ShowAnswerList onClick={toggleAnswer}>

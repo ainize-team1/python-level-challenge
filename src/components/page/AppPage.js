@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import FilledGradationButton from '../ui/button/FilledGradationButton';
-import Context from '../context/Context';
 import GradationText from '../ui/text/GradationText';
 import Spinner from '../ui/Spinner';
 
@@ -12,7 +11,7 @@ const TextWrapper = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 5%;
+    margin-top: 10%;
 `;
 
 const Wrapper = styled.div`
@@ -31,7 +30,7 @@ const Wrapper = styled.div`
     }
 
     @media (max-width: 1000px) {
-        height: 100vh;
+        height: 100%;
         width: 100%;
         background: url(${backgroundImagePath}) no-repeat center center; 
         -webkit-background-size: cover;
@@ -73,8 +72,6 @@ class AppPage extends React.Component {
             clicked: true
         });
 
-        this.context.toggleRedirect();
-
         setTimeout(() => {
             this.props.history.push('/quiz');
         }, 500+ Math.floor(Math.random()*500));
@@ -88,7 +85,7 @@ class AppPage extends React.Component {
                 <TextWrapper>
                     <LogoImg/>
 
-                    <GradationText fontSize={'3.125rem'}
+                    <GradationText fontSize={'3rem'}
                                    fontStyle={'italic'}
                                    fontWeight={'bold'}
                                    marginTop={'0dp'}>
@@ -105,7 +102,5 @@ class AppPage extends React.Component {
         );
     }
 }
-
-AppPage.contextType = Context;
 
 export default AppPage;

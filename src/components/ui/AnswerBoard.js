@@ -29,13 +29,14 @@ const ReturnButton = styled.button`
     padding-right: 10px;
     margin-bottom: 10px;
     border-radius: 4px;
-    outline: none;
+    border: none;
     font-family: IBM Plex Sans;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: bold;
     text-align: center;
+    background-color: #e0e0e0;
     :active {
-        background-color: #f2f2f2;
+        background-color: #b2b2b2;
     }
 `;
 
@@ -45,7 +46,7 @@ const SubjectText = styled.div`
     font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 2rem;
     line-height: 42px;
     letter-spacing: 0.15px;
     background: linear-gradient(to right, #AD1DF0 0%, #FF8C25 100%);
@@ -59,7 +60,7 @@ const QuestionText = styled.div`
     margin-right: ${props => props.marginRight || 0}px;
     margin-bottom: 24px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 21px;
     letter-spacing: 0.15px;
     color: #f2f2f2;
@@ -68,7 +69,7 @@ const QuestionText = styled.div`
 const SelectText = styled.div`
     margin-bottom: 24px;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 21px;
     text-align: center;
     letter-spacing: 0.15px;
@@ -96,7 +97,7 @@ const AnswerWrapper = styled.div`
     border-radius: 4px;
     
     font-family: IBM Plex Mono;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: bold;
     text-align: center;
     color: #333333;
@@ -117,7 +118,7 @@ const Box = styled.img`
 
 const Answer = styled.div`
     flex: ${props => props.flex || '1'};
-    font-size: 18px;
+    font-size: 1.125rem;
 `;
 
 class AnswerBoard extends React.Component {
@@ -126,11 +127,11 @@ class AnswerBoard extends React.Component {
 
         const {id, selected} = props.location.state;
         this.state = {
-            questionNumber: id.toString(),
-            userAnswer: selected.toString(),
+            questionNumber: id,
+            userAnswer: selected,
             question: questions[id - 1],
             originalAnswer: answers[id - 1].Answer,
-            correct: (selected.toString() === answers[id - 1].Answer),
+            correct: (selected === answers[id - 1].Answer),
         };
     }
 
@@ -156,7 +157,8 @@ class AnswerBoard extends React.Component {
 
                 <SyntaxHighlighterWrapper>
                     {this.state.question.Code &&
-                    <SyntaxHighlighter codeTagProps={{style: {fontFamily: 'IBM Plex Mono'}}}
+                    <SyntaxHighlighter customStyle={{padding: '16px'}}
+                                       codeTagProps={{style: {fontFamily: 'IBM Plex Mono'}}}
                                        language={this.props.language}
                                        style={tomorrowNight}>
                         {this.state.question.Code}
@@ -176,22 +178,22 @@ class AnswerBoard extends React.Component {
 
                         if (answer) {
                             if (this.state.correct) {
-                                if (i.toString() === this.state.userAnswer) {
+                                if (i === this.state.userAnswer) {
                                     checkBox = correctWhiteImagePath;
                                     buttonColor = '#56CCF2';
                                 }
                             } else {
-                                if (i.toString() === this.state.userAnswer) {
-                                    checkBox = correctBlueImagePath;
-                                } else if (i.toString() ===
-                                    this.state.originalAnswer) {
+                                if (i === this.state.userAnswer) {
                                     checkBox = incorrectImagePath;
                                     buttonColor = '#EB5757';
+                                } else if (i ===
+                                    this.state.originalAnswer) {
+                                    checkBox = correctBlueImagePath;
                                 }
                             }
 
                             return (
-                                <AnswerWrapper backgroundColor={buttonColor}>
+                                <AnswerWrapper backgroundColor={buttonColor} key={i}>
                                     <BoxWrapper flex={1}>
                                         <Box src={checkBox}/>
                                     </BoxWrapper>

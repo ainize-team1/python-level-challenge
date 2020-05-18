@@ -2,7 +2,7 @@
     [{
         "Level": 0,
         "Name": "Amoeba",
-        "Top": "-13427",
+        "Top": "0",
         "Description": "Has most potential to be evolved. Just doesn't have a brain yet.",
         "ReferenceTitle": "",
         "ReferenceLink": ""
@@ -35,7 +35,7 @@
         "Level": 4,
         "Name": "Crow",
         "Top": "30",
-        "Description": "Is often found around dead programsn",
+        "Description": "Is often found around dead programs",
         "ReferenceTitle": "",
         "ReferenceLink": ""
     }],
