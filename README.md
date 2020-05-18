@@ -1,13 +1,15 @@
-# Python Level Challenge
 
-## A simple online python quiz
+# Python Level Challenge
+<img src="./plc-logo.png" />
+
+Go to Challenge 👉
+[![Run on Ainize](https://ainize.ai/static/images/run_on_ainize_button.svg)](https://plc.pengin7384.endpoint.ainize.ai/)
+
+## 💯 A simple online python quiz
 - Levels are provided based on result of quizzes
 - Solve quizzes and check your level!
 
-## Support quiz languages
-- python
-
-## How to use
+## ⌨️ How to use
 - Open web browser(recommend `Chrome` browser)
 - Connect `http://localhost:3000`(It's for local environment. other uses `http://<IP>:<PORT>` form)
 - Click `Start a Quiz`
@@ -15,7 +17,7 @@
 - You can see quiz result
 - Share result with developer friends 
 
-## How to run
+## 🚀 How to run
 
 ### On local(dev)
 ```
@@ -37,7 +39,7 @@ docker build -t <Name> .
 docker run -p 80:3000 -d <Name>
 ```
 
-## How to contribute
+## 🛠 How to contribute
 Feel free to post issues and pull requests. We need more programming language quizzes!
 
 ### Basic contribution Guidelines
