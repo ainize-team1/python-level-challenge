@@ -264,7 +264,7 @@
         "Id": 20,
         "Subject": "Class",
         "Difficulty": 1,
-        "Question": "If you a class is derived from two different classes, it’s called ______",
+        "Question": "If a class is derived from two different classes, it’s called ______",
         "Code": "",
         "Answers": [
             "Multilevel Inheritance",
