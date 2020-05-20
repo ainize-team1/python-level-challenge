@@ -447,9 +447,9 @@
         "Question": "What is the output of the following",
         "Code": "x = 36 / 4 * (3 +  2) * 4 + 2\nprint(x)\n",
         "Answers": [
-            "182",
-            "37",
-            "117",
+            "182.0",
+            "37.0",
+            "117.0",
             "The Program executed with errors"
         ],
         "Reference": "https://pynative.com/basic-python-quiz-for-beginners/",
