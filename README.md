@@ -76,3 +76,10 @@ Ensure your pull request adheres to the following guidelines.
         "Answer": (Integer, 0 ~ ...)
     }
     ```
+
+## References
+Python quizzes are referred to below web-sites.
+- https://github.com/exostin/Python-quiz/blob/master/question_sets/questions_en.json
+- https://pynative.com/basic-python-quiz-for-beginners/
+- https://www.programiz.com/python-programming/quiz
+- https://realpython.com/quizzes/
