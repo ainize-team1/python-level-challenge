@@ -283,7 +283,7 @@
         "Answers": [
             "In Python, same operator may behave differently depending upon operands.",
             "You can change the way operators behave in Python.",
-            "Special method __add()__ is called when + operator is used.",
+            "Special method __add__() is called when + operator is used.",
             "All of the above."
         ],
         "Reference": "https://www.programiz.com/"
