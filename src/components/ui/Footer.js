@@ -33,26 +33,32 @@ class Footer extends React.Component {
     constructor() {
         super();
 
-        this.state = {
-        };
+        this.state = {};
     }
 
-    render(){
-        return(
-          // TODO (Add icon)
+    render() {
+        return (
+            // TODO (Add icon)
             <Wrapper>
-                <Row onClick={() => window.open(githubURL, "_blank")}>
+                <Row onClick={() => window.open(githubURL, '_blank')}>
                     {'Contribute on'}
 
-                    <Icon style={{paddingBottom:"2px"}} src={'../static/img/footer/github.svg'} />
+                    <Icon style={{paddingBottom: '2px'}} src={'../static/img/footer/github.svg'}/>
                 </Row>
-                <Row onClick={() => window.open(ainizeURL, "_blank")}>
+                <Row onClick={() => {
+                    window.gtag('event', 'poweredby_click', {
+                        'event_category': "spotainize_common",
+                        'non_interaction': false,
+                    });
+
+                    window.open(ainizeURL, '_blank');
+                }}>
                     {'Live on'}
 
-                    <Icon style={{paddingBottom:"3px"}} src={'../static/img/footer/ainize.svg'} />
+                    <Icon style={{paddingBottom: '3px'}} src={'../static/img/footer/ainize.svg'}/>
                 </Row>
             </Wrapper>
-        )
+        );
     };
 }
 
