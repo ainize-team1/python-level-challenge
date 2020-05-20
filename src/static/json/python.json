@@ -442,18 +442,17 @@
     },
     {
         "Id": 33,
-        "Subject": "Syntax",
+        "Subject": "Operator",
         "Difficulty": 0,
-        "Question": "What is the output of the following",
-        "Code": "x = 36 / 4 * (3 +  2) * 4 + 2\nprint(x)\n",
+        "Question": "What is the output of the following code",
+        "Code": "x = 6\ny = 2\nprint(x ** y, x // y)\n",
         "Answers": [
-            "182",
-            "37",
-            "117",
-            "The Program executed with errors"
+            "66 0",
+            "36 0",
+            "66 3",
+            "36 3"
         ],
-        "Reference": "https://pynative.com/basic-python-quiz-for-beginners/",
-        "Explain": "To choose the correct answer, You must know the operator precedence and associativity"
+        "Reference": "https://pynative.com/python-operators-and-expression-quiz/"
     },
     {
         "Id": 34,
