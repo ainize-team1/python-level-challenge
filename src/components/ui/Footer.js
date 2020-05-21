@@ -43,11 +43,11 @@ class Footer extends React.Component {
                 <Row onClick={() => window.open(githubURL, '_blank')}>
                     {'Contribute on'}
 
-                    <Icon style={{paddingBottom: '2px'}} src={'../static/img/footer/github.svg'}/>
+                    <Icon style={{paddingBottom: '2px'}} src={'../static/img/footer/github.svg'} />
                 </Row>
                 <Row onClick={() => {
                     window.gtag('event', 'poweredby_click', {
-                        'event_category': "spotainize_common",
+                        'event_category': 'spotainize_common',
                         'non_interaction': false,
                     });
 
@@ -55,7 +55,7 @@ class Footer extends React.Component {
                 }}>
                     {'Live on'}
 
-                    <Icon style={{paddingBottom: '3px'}} src={'../static/img/footer/ainize.svg'}/>
+                    <Icon style={{paddingBottom: '3px'}} src={'../static/img/footer/ainize.svg'} />
                 </Row>
             </Wrapper>
         );
