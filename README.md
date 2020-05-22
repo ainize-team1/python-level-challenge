@@ -6,16 +6,16 @@ Go to Challenge 👉
 [![Run on Ainize](https://ainize.ai/static/images/run_on_ainize_button.svg)](https://plc.pengin7384.endpoint.ainize.ai/)
 
 ## 💯 A simple online python quiz
-- Levels are provided based on result of quizzes
-- Solve quizzes and check your level!
+- Levels are set based on the quiz score
+- Solve quiz and check your level (please don't take it too seriously)!
 
 ## ⌨️ How to use
 - Open web browser(recommend `Chrome` browser)
 - Connect `http://localhost:3000`(It's for local environment. other uses `http://<IP>:<PORT>` form)
 - Click `Start a Quiz`
-- Enjoy quizzes!
-- You can see quiz result
-- Share result with developer friends 
+- Enjoy quiz!
+- You can see the score and the correct answers
+- Share the result with your friends 
 
 ## 🚀 How to run
 
@@ -40,23 +40,22 @@ docker run -p 80:3000 -d <Name>
 ```
 
 ## 🛠 How to contribute
-Feel free to post issues and pull requests. We need more programming language quizzes!
+Feel free to post issues and send pull requests. We need more items in the quiz pool!
 
 ### Basic contribution Guidelines
 Ensure your pull request adheres to the following guidelines.
-- Leave issues if you have any interesting ideas or bugs.
-- Use English in all cases(Communication, Comment, and Code review etc).
+- Create issues if you have any interesting ideas or bug reports
+- Use English in all cases (communication, comment, and code review etc)
 
 ### Code contribution guide
-- Indentation of 4 spaces.
-- Name a react component file as pascal case, others snake case.
-- Name a react component variable as pascal case, others camel case.
-- Refer to existing codes.
+- Indentation of 4 spaces
+- For React component file names, use pascal case. For other cases, use snake case.
+- For React component variable names, use pascal case. For other cases, use camel case.
+- Refer to existing code if you are not sure
 
-### Quiz contribution guide
-- Sync answers with questions.
-- Questions and answers are added / modified / deleted according to the JSON format. See format below.
-- Format
+### Quiz pool contribution guide
+- Sync answers with questions
+- Questions and answers are managed in JSON format. See the examples below:
   - Question ([/src/static/json/python.json](https://github.com/ainize-team/python-level-challenge/blob/master/src/static/json/python.json))
     ```
     {
@@ -77,8 +76,8 @@ Ensure your pull request adheres to the following guidelines.
     }
     ```
 
-## References
-Python quizzes are referred to below web-sites.
+## Notice
+For python quiz pool generation, we referred to the following web-sites.
 - https://github.com/exostin/Python-quiz/blob/master/question_sets/questions_en.json
 - https://pynative.com/basic-python-quiz-for-beginners/
 - https://www.programiz.com/python-programming/quiz
