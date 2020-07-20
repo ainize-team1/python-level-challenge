@@ -28,7 +28,7 @@
     "express": "^4.17.1",
     "http": "0.0.1-security",
     "light-toast": "^0.2.3",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "lz-string": "^1.4.4",
     "morgan": "^1.10.0",
     "pm2": "^4.3.1",
