@@ -3,7 +3,8 @@
 <img src="./plc-logo.png" />
 
 Go to Challenge 👉
-[![Run on Ainize](https://ainize.ai/static/images/run_on_ainize_button.svg)](https://plc.pengin7384.endpoint.ainize.ai/)
+[![Run on Ainize](https://ainize.ai/images/run_on_ainize_button.svg)](https://ainize.web.app/redirect?git_repo=https://github.com/ainize-team1/python-level-challenge)
+
 
 ## 💯 A simple online python quiz
 - Levels are set based on the quiz score
