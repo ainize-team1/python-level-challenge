@@ -43,7 +43,7 @@
     "react-share": "^4.1.0",
     "react-syntax-highlighter": "^12.2.1",
     "styled-components": "^5.1.0",
-    "underscore": "^1.10.2"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
