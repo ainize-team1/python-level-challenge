@@ -25,7 +25,7 @@
     "@testing-library/user-event": "^7.1.2",
     "cors": "^2.8.5",
     "ejs": "^3.0.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "http": "0.0.1-security",
     "light-toast": "^0.2.3",
     "lodash": "^4.17.15",
